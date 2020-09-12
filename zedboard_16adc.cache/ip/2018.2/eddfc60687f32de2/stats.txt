@@ -1,0 +1,4 @@
+NumberHits:7
+Timestamp: Fri Aug 28 01:49:01 UTC 2020
+VLNV: xilinx.com:ip:axi_bram_ctrl:4.0
+SynthRuntime: 47

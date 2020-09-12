@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Fri Aug 28 09:52:08 2020
+# Process ID: 10024
+# Current directory: D:/project/zedboard_16adc/zedboard_16adc.runs/design_1_axi_gpio_1_0_synth_1
+# Command line: vivado.exe -log design_1_axi_gpio_1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi_gpio_1_0.tcl
+# Log file: D:/project/zedboard_16adc/zedboard_16adc.runs/design_1_axi_gpio_1_0_synth_1/design_1_axi_gpio_1_0.vds
+# Journal file: D:/project/zedboard_16adc/zedboard_16adc.runs/design_1_axi_gpio_1_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script 'C:/Users/USER/AppData/Roaming/Xilinx/Vivado/Vivado_init.tcl'
+0 Beta devices matching pattern found, 0 enabled.
+source design_1_axi_gpio_1_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_axi_gpio_1_0, cache-ID = 105ae894b7a0d066.
+INFO: [Common 17-206] Exiting Vivado at Fri Aug 28 09:52:15 2020...

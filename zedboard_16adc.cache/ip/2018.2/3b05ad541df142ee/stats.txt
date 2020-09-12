@@ -1,0 +1,4 @@
+NumberHits:0
+Timestamp: Fri Aug 28 08:54:55 UTC 2020
+VLNV: xilinx.com:ip:smartconnect:1.0
+SynthRuntime: 589

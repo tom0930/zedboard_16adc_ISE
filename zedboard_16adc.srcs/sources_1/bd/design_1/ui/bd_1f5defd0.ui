@@ -1,0 +1,76 @@
+{
+   ExpandedHierarchyInLayout: "",
+   guistr: "# # String gsaved with Nlview 6.8.5  2018-01-30 bk=1.4354 VDI=40 GEI=35 GUI=JA:1.6 non-TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -y 300 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 320 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 2 -y 530 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 5 -y 1280 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -y 850 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 5 -y 80 -defaultsOSRD
+preplace inst result_0 -pg 1 -lvl 4 -y 1240 -defaultsOSRD
+preplace inst axi_bram_ctrl_index_0 -pg 1 -lvl 3 -y 680 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 5 -y 220 -defaultsOSRD
+preplace inst result_1 -pg 1 -lvl 4 -y 1380 -defaultsOSRD
+preplace inst axi_bram_ctrl_index_1 -pg 1 -lvl 3 -y 820 -defaultsOSRD
+preplace inst axi_gpio_2 -pg 1 -lvl 5 -y 400 -defaultsOSRD
+preplace inst result_2 -pg 1 -lvl 4 -y 1520 -defaultsOSRD
+preplace inst axi_bram_ctrl_index_2 -pg 1 -lvl 3 -y 960 -defaultsOSRD
+preplace inst axi_gpio_3 -pg 1 -lvl 5 -y 540 -defaultsOSRD
+preplace inst result_3 -pg 1 -lvl 4 -y 1660 -defaultsOSRD
+preplace inst axi_bram_ctrl_index_3 -pg 1 -lvl 3 -y 1100 -defaultsOSRD
+preplace inst axi_gpio_4 -pg 1 -lvl 5 -y 700 -defaultsOSRD
+preplace inst system_ila_0 -pg 1 -lvl 4 -y 1800 -defaultsOSRD
+preplace inst axi_bram_ctrl_result_0 -pg 1 -lvl 3 -y 1240 -defaultsOSRD
+preplace inst index_0 -pg 1 -lvl 4 -y 680 -defaultsOSRD
+preplace inst axi_gpio_5 -pg 1 -lvl 5 -y 860 -defaultsOSRD
+preplace inst axi_bram_ctrl_result_1 -pg 1 -lvl 3 -y 1380 -defaultsOSRD
+preplace inst index_1 -pg 1 -lvl 4 -y 820 -defaultsOSRD
+preplace inst axi_gpio_6 -pg 1 -lvl 5 -y 1000 -defaultsOSRD
+preplace inst axi_bram_ctrl_result_2 -pg 1 -lvl 3 -y 1520 -defaultsOSRD
+preplace inst index_2 -pg 1 -lvl 4 -y 960 -defaultsOSRD
+preplace inst axi_gpio_7 -pg 1 -lvl 5 -y 1160 -defaultsOSRD
+preplace inst axi_bram_ctrl_result_3 -pg 1 -lvl 3 -y 1660 -defaultsOSRD
+preplace inst index_3 -pg 1 -lvl 4 -y 1100 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 380 -defaultsOSRD
+preplace netloc smartconnect_0_M11_AXI 1 2 3 1160J 560 NJ 560 1820
+preplace netloc processing_system7_0_DDR 1 1 5 NJ 300 N 300 N 300 N 300 N
+preplace netloc axi_bram_ctrl_7_BRAM_PORTA 1 3 1 N
+preplace netloc smartconnect_0_M02_AXI 1 2 1 1220
+preplace netloc smartconnect_0_M01_AXI 1 2 1 1230
+preplace netloc processing_system7_0_FCLK_RESET0_N1 1 1 1 740
+preplace netloc smartconnect_0_M03_AXI 1 2 1 1190
+preplace netloc axi_bram_ctrl_0_BRAM_PORTA 1 3 1 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 760
+preplace netloc smartconnect_0_M14_AXI 1 2 3 1200J 570 NJ 570 1820
+preplace netloc smartconnect_0_M04_AXI 1 2 1 1170J
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 4 760 740 1260 1740 1550 1170 1830
+preplace netloc axi_bram_ctrl_2_BRAM_PORTA 1 3 1 N
+preplace netloc axi_gpio_4_gpio_io_o 1 3 3 1580 1310 1800J 1360 2150
+preplace netloc axi_gpio_2_gpio_io_o 1 3 3 1570 1300 1810J 1350 2160
+preplace netloc smartconnect_0_M06_AXI 1 2 1 1130J
+preplace netloc smartconnect_0_M00_AXI 1 2 1 1250
+preplace netloc smartconnect_0_M10_AXI 1 2 3 1140J 550 NJ 550 1800
+preplace netloc axi_bram_ctrl_5_BRAM_PORTA 1 3 1 N
+preplace netloc axi_gpio_0_gpio_io_o 1 3 3 1560 1180 1820 1340 2170
+preplace netloc xlconstant_0_dout 1 5 1 2130
+preplace netloc processing_system7_0_FIXED_IO 1 1 5 NJ 320 N 320 N 320 N 320 N
+preplace netloc smartconnect_0_M09_AXI 1 2 3 1120 200 N 200 N
+preplace netloc axi_bram_ctrl_3_BRAM_PORTA 1 3 1 N
+preplace netloc smartconnect_0_M12_AXI 1 2 3 1180J 580 NJ 580 1840
+preplace netloc axi_bram_ctrl_4_BRAM_PORTA 1 3 1 N
+preplace netloc smartconnect_0_M08_AXI 1 2 3 1100 60 N 60 N
+preplace netloc axi_bram_ctrl_6_BRAM_PORTA 1 3 1 N
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 5 20 520 750 750 1250 1750 1540 1160 1790
+preplace netloc smartconnect_0_M15_AXI 1 2 3 1240 600 N 600 1800
+preplace netloc smartconnect_0_M13_AXI 1 2 3 1210J 590 NJ 590 1810
+preplace netloc axi_bram_ctrl_1_BRAM_PORTA 1 3 1 N
+preplace netloc axi_gpio_6_gpio_io_o 1 3 3 1590 1320 1790J 1370 2140
+preplace netloc smartconnect_0_M07_AXI 1 2 1 1110J
+preplace netloc smartconnect_0_M05_AXI 1 2 1 1150J
+levelinfo -pg 1 0 530 930 1400 1690 1990 2190 -top -110 -bot 1900
+",
+}
+{
+   da_ps7_cnt: "1",
+}
