@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Fri Aug 28 16:55:11 2020
-| Host         : DESKTOP-CUAMMK2 running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Wed Oct 21 18:10:30 2020
+| Host         : DESKTOP-U60VC6L running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_smartconnect_0_0_utilization_synth.rpt -pb design_1_smartconnect_0_0_utilization_synth.pb
 | Design       : design_1_smartconnect_0_0
 | Device       : 7z020clg484-1
@@ -30,16 +30,16 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 23721 |     0 |     53200 | 44.59 |
-|   LUT as Logic             | 16164 |     0 |     53200 | 30.38 |
-|   LUT as Memory            |  7557 |     0 |     17400 | 43.43 |
-|     LUT as Distributed RAM |  6396 |     0 |           |       |
-|     LUT as Shift Register  |  1161 |     0 |           |       |
-| Slice Registers            | 29231 |     0 |    106400 | 27.47 |
-|   Register as Flip Flop    | 29231 |     0 |    106400 | 27.47 |
+| Slice LUTs*                | 15963 |     0 |     53200 | 30.01 |
+|   LUT as Logic             | 10394 |     0 |     53200 | 19.54 |
+|   LUT as Memory            |  5569 |     0 |     17400 | 32.01 |
+|     LUT as Distributed RAM |  4732 |     0 |           |       |
+|     LUT as Shift Register  |   837 |     0 |           |       |
+| Slice Registers            | 18374 |     0 |    106400 | 17.27 |
+|   Register as Flip Flop    | 18374 |     0 |    106400 | 17.27 |
 |   Register as Latch        |     0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |   124 |     0 |     26600 |  0.47 |
-| F8 Muxes                   |    58 |     0 |     13300 |  0.44 |
+| F7 Muxes                   |     4 |     0 |     26600 |  0.02 |
+| F8 Muxes                   |     0 |     0 |     13300 |  0.00 |
 +----------------------------+-------+-------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 988   |          Yes |         Set |            - |
-| 28243 |          Yes |       Reset |            - |
+| 783   |          Yes |         Set |            - |
+| 17591 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -148,21 +148,20 @@ Table of Contents
 +----------+-------+---------------------+
 | Ref Name |  Used | Functional Category |
 +----------+-------+---------------------+
-| FDRE     | 28243 |        Flop & Latch |
-| RAMD32   |  9544 |  Distributed Memory |
-| LUT2     |  7755 |                 LUT |
-| LUT6     |  4484 |                 LUT |
-| LUT3     |  3478 |                 LUT |
-| RAMS32   |  3148 |  Distributed Memory |
-| LUT5     |  2988 |                 LUT |
-| LUT4     |  2972 |                 LUT |
-| SRLC32E  |  1048 |  Distributed Memory |
-| LUT1     |   999 |                 LUT |
-| FDSE     |   988 |        Flop & Latch |
-| MUXF7    |   124 |               MuxFx |
-| CARRY4   |   116 |          CarryLogic |
-| SRL16E   |   113 |  Distributed Memory |
-| MUXF8    |    58 |               MuxFx |
+| FDRE     | 17591 |        Flop & Latch |
+| RAMD32   |  7060 |  Distributed Memory |
+| LUT6     |  3571 |                 LUT |
+| LUT3     |  2998 |                 LUT |
+| LUT5     |  2330 |                 LUT |
+| RAMS32   |  2328 |  Distributed Memory |
+| LUT4     |  2146 |                 LUT |
+| LUT2     |  1207 |                 LUT |
+| LUT1     |   818 |                 LUT |
+| FDSE     |   783 |        Flop & Latch |
+| SRL16E   |   645 |  Distributed Memory |
+| SRLC32E  |   192 |  Distributed Memory |
+| CARRY4   |    68 |          CarryLogic |
+| MUXF7    |     4 |               MuxFx |
 +----------+-------+---------------------+
 
 

@@ -1,0 +1,613 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Oct 22 10:00:34 2020
+# Process ID: 13336
+# Current directory: D:/zedboard_16adc/zedboard_16adc.runs/design_1_total_link_ctrl_0_0_synth_1
+# Command line: vivado.exe -log design_1_total_link_ctrl_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_total_link_ctrl_0_0.tcl
+# Log file: D:/zedboard_16adc/zedboard_16adc.runs/design_1_total_link_ctrl_0_0_synth_1/design_1_total_link_ctrl_0_0.vds
+# Journal file: D:/zedboard_16adc/zedboard_16adc.runs/design_1_total_link_ctrl_0_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_total_link_ctrl_0_0.tcl -notrace
+Command: synth_design -top design_1_total_link_ctrl_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9840 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 477.133 ; gain = 106.699
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_total_link_ctrl_0_0' [d:/zedboard_16adc/zedboard_16adc.srcs/sources_1/bd/design_1/ip/design_1_total_link_ctrl_0_0/synth/design_1_total_link_ctrl_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'total_link_ctrl' [D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/new/total_link_ctrl.v:23]
+	Parameter idel bound to: 4'b0000 
+	Parameter len_check bound to: 4'b0001 
+	Parameter wd_data bound to: 4'b0010 
+	Parameter loop bound to: 4'b0011 
+INFO: [Synth 8-155] case statement is not full and has no default [D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/new/total_link_ctrl.v:133]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/new/total_link_ctrl.v:182]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/new/total_link_ctrl.v:231]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/new/total_link_ctrl.v:280]
+WARNING: [Synth 8-4767] Trying to implement RAM 'data_mem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
+	2: Unable to determine number of words or word size in RAM. 
+	3: No valid read/write found for RAM. 
+RAM "data_mem_reg" dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'total_link_ctrl' (1#1) [D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/new/total_link_ctrl.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_total_link_ctrl_0_0' (2#1) [d:/zedboard_16adc/zedboard_16adc.srcs/sources_1/bd/design_1/ip/design_1_total_link_ctrl_0_0/synth/design_1_total_link_ctrl_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 2260.969 ; gain = 1890.535
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 2260.969 ; gain = 1890.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:14 ; elapsed = 00:01:16 . Memory (MB): peak = 2260.969 ; gain = 1890.535
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.040 . Memory (MB): peak = 2671.020 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 2671.020 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:04 . Memory (MB): peak = 2779.402 ; gain = 108.383
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:02:42 ; elapsed = 00:02:40 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:02:42 ; elapsed = 00:02:40 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:02:42 ; elapsed = 00:02:40 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_0_reg' in module 'total_link_ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'state_1_reg' in module 'total_link_ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'state_2_reg' in module 'total_link_ctrl'
+INFO: [Synth 8-802] inferred FSM for state register 'state_3_reg' in module 'total_link_ctrl'
+INFO: [Synth 8-5544] ROM "en_index_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_result_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_result_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_index_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_index_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_result_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_result_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_index_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_index_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_result_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_result_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_index_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_index_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_result_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_result_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_index_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_index_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_result_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_result_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_index_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_0" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_index_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_result_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_result_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_index_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_1" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_index_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_result_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_result_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_index_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_2" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_index_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_result_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "en_result_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_index_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_3" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idel |                               00 |                             0000
+               len_check |                               01 |                             0001
+                 wd_data |                               10 |                             0010
+                    loop |                               11 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_0_reg' using encoding 'sequential' in module 'total_link_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idel |                               00 |                             0000
+               len_check |                               01 |                             0001
+                 wd_data |                               10 |                             0010
+                    loop |                               11 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_1_reg' using encoding 'sequential' in module 'total_link_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idel |                               00 |                             0000
+               len_check |                               01 |                             0001
+                 wd_data |                               10 |                             0010
+                    loop |                               11 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_2_reg' using encoding 'sequential' in module 'total_link_ctrl'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    idel |                               00 |                             0000
+               len_check |                               01 |                             0001
+                 wd_data |                               10 |                             0010
+                    loop |                               11 |                             0011
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_3_reg' using encoding 'sequential' in module 'total_link_ctrl'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:08:39 ; elapsed = 00:08:38 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |muxpart__8233_total_link_ctrl |           1|     49140|
+|2     |total_link_ctrl__GB1          |           1|      9336|
+|3     |muxpart__8234_total_link_ctrl |           1|     49140|
+|4     |muxpart__8232_total_link_ctrl |           1|     49140|
+|5     |total_link_ctrl__GB4          |           1|        24|
+|6     |muxpart__8235_total_link_ctrl |           1|     49140|
+|7     |total_link_ctrl__GB6          |           1|     29030|
+|8     |total_link_ctrl__GB7          |           1|     26932|
++------+------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 12    
++---Registers : 
+	               32 Bit    Registers := 12    
+	               12 Bit    Registers := 4100  
+	                1 Bit    Registers := 16    
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 12    
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 4096  
+	   4 Input      1 Bit        Muxes := 20    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module total_link_ctrl 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 12    
++---Registers : 
+	               32 Bit    Registers := 12    
+	               12 Bit    Registers := 4100  
+	                1 Bit    Registers := 16    
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 12    
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      2 Bit        Muxes := 8     
+	   5 Input      1 Bit        Muxes := 4096  
+	   4 Input      1 Bit        Muxes := 20    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port link7[3] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port link7[2] driven by constant 1
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port link7[1] driven by constant 1
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port link7[0] driven by constant 1
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port we_index[3] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port we_index[2] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port we_index[1] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port we_index[0] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port we_result[3] driven by constant 1
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port we_result[2] driven by constant 1
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port we_result[1] driven by constant 1
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port we_result[0] driven by constant 1
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[31] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[30] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[29] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[28] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[27] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[26] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[25] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[24] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[23] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[22] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[21] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[20] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[19] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[18] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[17] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[16] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[15] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[14] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[13] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_0[12] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[31] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[30] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[29] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[28] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[27] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[26] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[25] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[24] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[23] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[22] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[21] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[20] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[19] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[18] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[17] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[16] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[15] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[14] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[13] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_1[12] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[31] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[30] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[29] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[28] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[27] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[26] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[25] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[24] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[23] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[22] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[21] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[20] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[19] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[18] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[17] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[16] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[15] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[14] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[13] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_2[12] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[31] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[30] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[29] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[28] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[27] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[26] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[25] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[24] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[23] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[22] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[21] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[20] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[19] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[18] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[17] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[16] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[15] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[14] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[13] driven by constant 0
+INFO: [Synth 8-3917] design design_1_total_link_ctrl_0_0 has port data_out_result_3[12] driven by constant 0
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3322][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3323][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3324][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3325][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3326][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3327][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3328][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3329][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3330][0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3330][1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3330][2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_4/\data_mem_reg[3330][3] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:10:14 ; elapsed = 00:10:27 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |muxpart__8233_total_link_ctrl |           1|     49140|
+|2     |total_link_ctrl__GB1          |           1|        24|
+|3     |muxpart__8234_total_link_ctrl |           1|     49140|
+|4     |muxpart__8232_total_link_ctrl |           1|     49140|
+|5     |total_link_ctrl__GB4          |           1|        24|
+|6     |muxpart__8235_total_link_ctrl |           1|     49140|
+|7     |total_link_ctrl__GB6          |           1|      6155|
+|8     |total_link_ctrl__GB7          |           1|      6771|
++------+------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:10:27 ; elapsed = 00:10:41 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:10:30 ; elapsed = 00:10:44 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------------+------------+----------+
+|      |RTL Partition                 |Replication |Instances |
++------+------------------------------+------------+----------+
+|1     |muxpart__8233_total_link_ctrl |           1|      3109|
+|2     |total_link_ctrl__GB1          |           1|        24|
+|3     |muxpart__8234_total_link_ctrl |           1|      3109|
+|4     |muxpart__8232_total_link_ctrl |           1|      3109|
+|5     |total_link_ctrl__GB4          |           1|        24|
+|6     |muxpart__8235_total_link_ctrl |           1|      3109|
+|7     |total_link_ctrl__GB6          |           1|      6155|
+|8     |total_link_ctrl__GB7          |           1|      6771|
++------+------------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:10:36 ; elapsed = 00:10:50 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:10:37 ; elapsed = 00:10:51 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:10:37 ; elapsed = 00:10:51 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:10:37 ; elapsed = 00:10:51 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:10:37 ; elapsed = 00:10:51 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:10:38 ; elapsed = 00:10:52 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:10:38 ; elapsed = 00:10:52 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    96|
+|2     |LUT1   |   133|
+|3     |LUT3   |    19|
+|4     |LUT4   |   153|
+|5     |LUT5   |   135|
+|6     |LUT6   |  3280|
+|7     |MUXF7  |  1632|
+|8     |MUXF8  |   816|
+|9     |FDRE   |  3528|
++------+-------+------+
+
+Report Instance Areas: 
++------+---------+----------------+------+
+|      |Instance |Module          |Cells |
++------+---------+----------------+------+
+|1     |top      |                |  9792|
+|2     |  inst   |total_link_ctrl |  9792|
++------+---------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:10:38 ; elapsed = 00:10:52 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:08:11 ; elapsed = 00:09:44 . Memory (MB): peak = 2779.402 ; gain = 1890.535
+Synthesis Optimization Complete : Time (s): cpu = 00:10:38 ; elapsed = 00:10:52 . Memory (MB): peak = 2779.402 ; gain = 2408.969
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 2544 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'design_1_total_link_ctrl_0_0' is not ideal for floorplanning, since the cellview 'total_link_ctrl' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2779.402 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+263 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:10:42 ; elapsed = 00:10:56 . Memory (MB): peak = 2779.402 ; gain = 2422.266
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2779.402 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/zedboard_16adc/zedboard_16adc.runs/design_1_total_link_ctrl_0_0_synth_1/design_1_total_link_ctrl_0_0.dcp' has been generated.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2779.402 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/zedboard_16adc/zedboard_16adc.runs/design_1_total_link_ctrl_0_0_synth_1/design_1_total_link_ctrl_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_total_link_ctrl_0_0_utilization_synth.rpt -pb design_1_total_link_ctrl_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Oct 22 10:11:45 2020...

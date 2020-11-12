@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Oct 21 17:56:39 2020
+# Process ID: 5692
+# Current directory: D:/zedboard_16adc/zedboard_16adc.runs/design_1_blk_mem_gen_3_0_synth_1
+# Command line: vivado.exe -log design_1_blk_mem_gen_3_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_blk_mem_gen_3_0.tcl
+# Log file: D:/zedboard_16adc/zedboard_16adc.runs/design_1_blk_mem_gen_3_0_synth_1/design_1_blk_mem_gen_3_0.vds
+# Journal file: D:/zedboard_16adc/zedboard_16adc.runs/design_1_blk_mem_gen_3_0_synth_1\vivado.jou
+#-----------------------------------------------------------
+source design_1_blk_mem_gen_3_0.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_blk_mem_gen_3_0, cache-ID = 84f54dd763d74f3e.
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 21 17:56:48 2020...

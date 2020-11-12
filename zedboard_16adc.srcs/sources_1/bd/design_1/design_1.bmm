@@ -1,53 +1,53 @@
 WORKFLOW_OPERATION simulation,dialog;
 
-DEFINE_MEMORY_TYPE index_0_16K_1_MEM_DEVICE [0x00004000] 32;
-DEFINE_MEMORY_TYPE index_1_16K_1_MEM_DEVICE [0x00004000] 32;
-DEFINE_MEMORY_TYPE index_2_16K_1_MEM_DEVICE [0x00004000] 32;
-DEFINE_MEMORY_TYPE index_3_16K_1_MEM_DEVICE [0x00004000] 32;
-DEFINE_MEMORY_TYPE result_0_16K_1_MEM_DEVICE [0x00004000] 32;
-DEFINE_MEMORY_TYPE result_1_16K_1_MEM_DEVICE [0x00004000] 32;
-DEFINE_MEMORY_TYPE result_2_16K_1_MEM_DEVICE [0x00004000] 32;
-DEFINE_MEMORY_TYPE result_3_16K_1_MEM_DEVICE [0x00004000] 32;
+DEFINE_MEMORY_TYPE index_0_16K_3_MEM_DEVICE [0x00004000] 32;
+DEFINE_MEMORY_TYPE index_1_16K_3_MEM_DEVICE [0x00004000] 32;
+DEFINE_MEMORY_TYPE index_2_16K_3_MEM_DEVICE [0x00004000] 32;
+DEFINE_MEMORY_TYPE index_3_16K_3_MEM_DEVICE [0x00004000] 32;
+DEFINE_MEMORY_TYPE result_0_16K_3_MEM_DEVICE [0x00004000] 32;
+DEFINE_MEMORY_TYPE result_1_16K_3_MEM_DEVICE [0x00004000] 32;
+DEFINE_MEMORY_TYPE result_2_16K_3_MEM_DEVICE [0x00004000] 32;
+DEFINE_MEMORY_TYPE result_3_16K_3_MEM_DEVICE [0x00004000] 32;
 
 ADDRESS_MAP processing_system7_0 ARM 100 processing_system7_0
-   ADDRESS_SPACE index_0_16K_1_ADDR_SPACE index_0_16K_1_MEM_DEVICE  [0x40000000:0x40003FFF] axi_bram_ctrl_index_0
+   ADDRESS_SPACE index_0_16K_3_ADDR_SPACE index_0_16K_3_MEM_DEVICE  [0x40000000:0x40003FFF] axi_bram_ctrl_index_0
      BUS_BLOCK
-      index_0_16K_1_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_0.mem";
+      index_0_16K_3_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE index_1_16K_1_ADDR_SPACE index_1_16K_1_MEM_DEVICE  [0x41000000:0x41003FFF] axi_bram_ctrl_index_1
+   ADDRESS_SPACE index_1_16K_3_ADDR_SPACE index_1_16K_3_MEM_DEVICE  [0x41000000:0x41003FFF] axi_bram_ctrl_index_1
      BUS_BLOCK
-      index_1_16K_1_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_1.mem";
+      index_1_16K_3_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_1.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE index_2_16K_1_ADDR_SPACE index_2_16K_1_MEM_DEVICE  [0x42000000:0x42003FFF] axi_bram_ctrl_index_2
+   ADDRESS_SPACE index_2_16K_3_ADDR_SPACE index_2_16K_3_MEM_DEVICE  [0x42000000:0x42003FFF] axi_bram_ctrl_index_2
      BUS_BLOCK
-      index_2_16K_1_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_2.mem";
+      index_2_16K_3_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_2.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE index_3_16K_1_ADDR_SPACE index_3_16K_1_MEM_DEVICE  [0x43000000:0x43003FFF] axi_bram_ctrl_index_3
+   ADDRESS_SPACE index_3_16K_3_ADDR_SPACE index_3_16K_3_MEM_DEVICE  [0x43000000:0x43003FFF] axi_bram_ctrl_index_3
      BUS_BLOCK
-      index_3_16K_1_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_1_0.mem";
+      index_3_16K_3_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_1_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE result_0_16K_1_ADDR_SPACE result_0_16K_1_MEM_DEVICE  [0x44000000:0x44003FFF] axi_bram_ctrl_result_0
+   ADDRESS_SPACE result_0_16K_3_ADDR_SPACE result_0_16K_3_MEM_DEVICE  [0x44000000:0x44003FFF] axi_bram_ctrl_result_0
      BUS_BLOCK
-      result_0_16K_1_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_3.mem";
+      result_0_16K_3_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_0_3.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE result_1_16K_1_ADDR_SPACE result_1_16K_1_MEM_DEVICE  [0x45000000:0x45003FFF] axi_bram_ctrl_result_1
+   ADDRESS_SPACE result_1_16K_3_ADDR_SPACE result_1_16K_3_MEM_DEVICE  [0x45000000:0x45003FFF] axi_bram_ctrl_result_1
      BUS_BLOCK
-      result_1_16K_1_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_1_1.mem";
+      result_1_16K_3_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_1_1.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE result_2_16K_1_ADDR_SPACE result_2_16K_1_MEM_DEVICE  [0x46000000:0x46003FFF] axi_bram_ctrl_result_2
+   ADDRESS_SPACE result_2_16K_3_ADDR_SPACE result_2_16K_3_MEM_DEVICE  [0x46000000:0x46003FFF] axi_bram_ctrl_result_2
      BUS_BLOCK
-      result_2_16K_1_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_2_0.mem";
+      result_2_16K_3_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_2_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
-   ADDRESS_SPACE result_3_16K_1_ADDR_SPACE result_3_16K_1_MEM_DEVICE  [0x47000000:0x47003FFF] axi_bram_ctrl_result_3
+   ADDRESS_SPACE result_3_16K_3_ADDR_SPACE result_3_16K_3_MEM_DEVICE  [0x47000000:0x47003FFF] axi_bram_ctrl_result_3
      BUS_BLOCK
-      result_3_16K_1_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_3_0.mem";
+      result_3_16K_3_BUS_BLK [31:0] INPUT = "design_1_blk_mem_gen_3_0.mem";
      END_BUS_BLOCK;
    END_ADDRESS_SPACE;
 END_ADDRESS_MAP;

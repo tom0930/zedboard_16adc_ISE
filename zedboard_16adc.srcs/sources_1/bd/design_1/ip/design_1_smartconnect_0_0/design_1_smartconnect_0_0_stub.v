@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
-// Tool Version: Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-// Date        : Fri Aug 28 16:55:11 2020
-// Host        : DESKTOP-CUAMMK2 running 64-bit major release  (build 9200)
+// Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+// Date        : Wed Oct 21 18:10:30 2020
+// Host        : DESKTOP-U60VC6L running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               D:/project/zedboard_16adc/zedboard_16adc.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/design_1_smartconnect_0_0_stub.v
+//               D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_0_0/design_1_smartconnect_0_0_stub.v
 // Design      : design_1_smartconnect_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
@@ -13,7 +13,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* X_CORE_INFO = "bd_48ac,Vivado 2018.2" *)
+(* X_CORE_INFO = "bd_48ac,Vivado 2018.3" *)
 module design_1_smartconnect_0_0(aclk, aresetn, S00_AXI_awid, S00_AXI_awaddr, 
   S00_AXI_awlen, S00_AXI_awsize, S00_AXI_awburst, S00_AXI_awlock, S00_AXI_awcache, 
   S00_AXI_awprot, S00_AXI_awqos, S00_AXI_awvalid, S00_AXI_awready, S00_AXI_wid, 
@@ -89,23 +89,8 @@ module design_1_smartconnect_0_0(aclk, aresetn, S00_AXI_awid, S00_AXI_awaddr,
   M11_AXI_awready, M11_AXI_wdata, M11_AXI_wstrb, M11_AXI_wvalid, M11_AXI_wready, 
   M11_AXI_bresp, M11_AXI_bvalid, M11_AXI_bready, M11_AXI_araddr, M11_AXI_arprot, 
   M11_AXI_arvalid, M11_AXI_arready, M11_AXI_rdata, M11_AXI_rresp, M11_AXI_rvalid, 
-  M11_AXI_rready, M12_AXI_awaddr, M12_AXI_awprot, M12_AXI_awvalid, M12_AXI_awready, 
-  M12_AXI_wdata, M12_AXI_wstrb, M12_AXI_wvalid, M12_AXI_wready, M12_AXI_bresp, 
-  M12_AXI_bvalid, M12_AXI_bready, M12_AXI_araddr, M12_AXI_arprot, M12_AXI_arvalid, 
-  M12_AXI_arready, M12_AXI_rdata, M12_AXI_rresp, M12_AXI_rvalid, M12_AXI_rready, 
-  M13_AXI_awaddr, M13_AXI_awprot, M13_AXI_awvalid, M13_AXI_awready, M13_AXI_wdata, 
-  M13_AXI_wstrb, M13_AXI_wvalid, M13_AXI_wready, M13_AXI_bresp, M13_AXI_bvalid, 
-  M13_AXI_bready, M13_AXI_araddr, M13_AXI_arprot, M13_AXI_arvalid, M13_AXI_arready, 
-  M13_AXI_rdata, M13_AXI_rresp, M13_AXI_rvalid, M13_AXI_rready, M14_AXI_awaddr, 
-  M14_AXI_awprot, M14_AXI_awvalid, M14_AXI_awready, M14_AXI_wdata, M14_AXI_wstrb, 
-  M14_AXI_wvalid, M14_AXI_wready, M14_AXI_bresp, M14_AXI_bvalid, M14_AXI_bready, 
-  M14_AXI_araddr, M14_AXI_arprot, M14_AXI_arvalid, M14_AXI_arready, M14_AXI_rdata, 
-  M14_AXI_rresp, M14_AXI_rvalid, M14_AXI_rready, M15_AXI_awaddr, M15_AXI_awprot, 
-  M15_AXI_awvalid, M15_AXI_awready, M15_AXI_wdata, M15_AXI_wstrb, M15_AXI_wvalid, 
-  M15_AXI_wready, M15_AXI_bresp, M15_AXI_bvalid, M15_AXI_bready, M15_AXI_araddr, 
-  M15_AXI_arprot, M15_AXI_arvalid, M15_AXI_arready, M15_AXI_rdata, M15_AXI_rresp, 
-  M15_AXI_rvalid, M15_AXI_rready)
-/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,S00_AXI_awid[11:0],S00_AXI_awaddr[31:0],S00_AXI_awlen[3:0],S00_AXI_awsize[2:0],S00_AXI_awburst[1:0],S00_AXI_awlock[1:0],S00_AXI_awcache[3:0],S00_AXI_awprot[2:0],S00_AXI_awqos[3:0],S00_AXI_awvalid,S00_AXI_awready,S00_AXI_wid[11:0],S00_AXI_wdata[31:0],S00_AXI_wstrb[3:0],S00_AXI_wlast,S00_AXI_wvalid,S00_AXI_wready,S00_AXI_bid[11:0],S00_AXI_bresp[1:0],S00_AXI_bvalid,S00_AXI_bready,S00_AXI_arid[11:0],S00_AXI_araddr[31:0],S00_AXI_arlen[3:0],S00_AXI_arsize[2:0],S00_AXI_arburst[1:0],S00_AXI_arlock[1:0],S00_AXI_arcache[3:0],S00_AXI_arprot[2:0],S00_AXI_arqos[3:0],S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rid[11:0],S00_AXI_rdata[31:0],S00_AXI_rresp[1:0],S00_AXI_rlast,S00_AXI_rvalid,S00_AXI_rready,M00_AXI_awaddr[13:0],M00_AXI_awlen[7:0],M00_AXI_awsize[2:0],M00_AXI_awburst[1:0],M00_AXI_awlock[0:0],M00_AXI_awcache[3:0],M00_AXI_awprot[2:0],M00_AXI_awqos[3:0],M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata[31:0],M00_AXI_wstrb[3:0],M00_AXI_wlast,M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp[1:0],M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr[13:0],M00_AXI_arlen[7:0],M00_AXI_arsize[2:0],M00_AXI_arburst[1:0],M00_AXI_arlock[0:0],M00_AXI_arcache[3:0],M00_AXI_arprot[2:0],M00_AXI_arqos[3:0],M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata[31:0],M00_AXI_rresp[1:0],M00_AXI_rlast,M00_AXI_rvalid,M00_AXI_rready,M01_AXI_awaddr[13:0],M01_AXI_awlen[7:0],M01_AXI_awsize[2:0],M01_AXI_awburst[1:0],M01_AXI_awlock[0:0],M01_AXI_awcache[3:0],M01_AXI_awprot[2:0],M01_AXI_awqos[3:0],M01_AXI_awvalid,M01_AXI_awready,M01_AXI_wdata[31:0],M01_AXI_wstrb[3:0],M01_AXI_wlast,M01_AXI_wvalid,M01_AXI_wready,M01_AXI_bresp[1:0],M01_AXI_bvalid,M01_AXI_bready,M01_AXI_araddr[13:0],M01_AXI_arlen[7:0],M01_AXI_arsize[2:0],M01_AXI_arburst[1:0],M01_AXI_arlock[0:0],M01_AXI_arcache[3:0],M01_AXI_arprot[2:0],M01_AXI_arqos[3:0],M01_AXI_arvalid,M01_AXI_arready,M01_AXI_rdata[31:0],M01_AXI_rresp[1:0],M01_AXI_rlast,M01_AXI_rvalid,M01_AXI_rready,M02_AXI_awaddr[13:0],M02_AXI_awlen[7:0],M02_AXI_awsize[2:0],M02_AXI_awburst[1:0],M02_AXI_awlock[0:0],M02_AXI_awcache[3:0],M02_AXI_awprot[2:0],M02_AXI_awqos[3:0],M02_AXI_awvalid,M02_AXI_awready,M02_AXI_wdata[31:0],M02_AXI_wstrb[3:0],M02_AXI_wlast,M02_AXI_wvalid,M02_AXI_wready,M02_AXI_bresp[1:0],M02_AXI_bvalid,M02_AXI_bready,M02_AXI_araddr[13:0],M02_AXI_arlen[7:0],M02_AXI_arsize[2:0],M02_AXI_arburst[1:0],M02_AXI_arlock[0:0],M02_AXI_arcache[3:0],M02_AXI_arprot[2:0],M02_AXI_arqos[3:0],M02_AXI_arvalid,M02_AXI_arready,M02_AXI_rdata[31:0],M02_AXI_rresp[1:0],M02_AXI_rlast,M02_AXI_rvalid,M02_AXI_rready,M03_AXI_awaddr[13:0],M03_AXI_awlen[7:0],M03_AXI_awsize[2:0],M03_AXI_awburst[1:0],M03_AXI_awlock[0:0],M03_AXI_awcache[3:0],M03_AXI_awprot[2:0],M03_AXI_awqos[3:0],M03_AXI_awvalid,M03_AXI_awready,M03_AXI_wdata[31:0],M03_AXI_wstrb[3:0],M03_AXI_wlast,M03_AXI_wvalid,M03_AXI_wready,M03_AXI_bresp[1:0],M03_AXI_bvalid,M03_AXI_bready,M03_AXI_araddr[13:0],M03_AXI_arlen[7:0],M03_AXI_arsize[2:0],M03_AXI_arburst[1:0],M03_AXI_arlock[0:0],M03_AXI_arcache[3:0],M03_AXI_arprot[2:0],M03_AXI_arqos[3:0],M03_AXI_arvalid,M03_AXI_arready,M03_AXI_rdata[31:0],M03_AXI_rresp[1:0],M03_AXI_rlast,M03_AXI_rvalid,M03_AXI_rready,M04_AXI_awaddr[13:0],M04_AXI_awlen[7:0],M04_AXI_awsize[2:0],M04_AXI_awburst[1:0],M04_AXI_awlock[0:0],M04_AXI_awcache[3:0],M04_AXI_awprot[2:0],M04_AXI_awqos[3:0],M04_AXI_awvalid,M04_AXI_awready,M04_AXI_wdata[31:0],M04_AXI_wstrb[3:0],M04_AXI_wlast,M04_AXI_wvalid,M04_AXI_wready,M04_AXI_bresp[1:0],M04_AXI_bvalid,M04_AXI_bready,M04_AXI_araddr[13:0],M04_AXI_arlen[7:0],M04_AXI_arsize[2:0],M04_AXI_arburst[1:0],M04_AXI_arlock[0:0],M04_AXI_arcache[3:0],M04_AXI_arprot[2:0],M04_AXI_arqos[3:0],M04_AXI_arvalid,M04_AXI_arready,M04_AXI_rdata[31:0],M04_AXI_rresp[1:0],M04_AXI_rlast,M04_AXI_rvalid,M04_AXI_rready,M05_AXI_awaddr[13:0],M05_AXI_awlen[7:0],M05_AXI_awsize[2:0],M05_AXI_awburst[1:0],M05_AXI_awlock[0:0],M05_AXI_awcache[3:0],M05_AXI_awprot[2:0],M05_AXI_awqos[3:0],M05_AXI_awvalid,M05_AXI_awready,M05_AXI_wdata[31:0],M05_AXI_wstrb[3:0],M05_AXI_wlast,M05_AXI_wvalid,M05_AXI_wready,M05_AXI_bresp[1:0],M05_AXI_bvalid,M05_AXI_bready,M05_AXI_araddr[13:0],M05_AXI_arlen[7:0],M05_AXI_arsize[2:0],M05_AXI_arburst[1:0],M05_AXI_arlock[0:0],M05_AXI_arcache[3:0],M05_AXI_arprot[2:0],M05_AXI_arqos[3:0],M05_AXI_arvalid,M05_AXI_arready,M05_AXI_rdata[31:0],M05_AXI_rresp[1:0],M05_AXI_rlast,M05_AXI_rvalid,M05_AXI_rready,M06_AXI_awaddr[13:0],M06_AXI_awlen[7:0],M06_AXI_awsize[2:0],M06_AXI_awburst[1:0],M06_AXI_awlock[0:0],M06_AXI_awcache[3:0],M06_AXI_awprot[2:0],M06_AXI_awqos[3:0],M06_AXI_awvalid,M06_AXI_awready,M06_AXI_wdata[31:0],M06_AXI_wstrb[3:0],M06_AXI_wlast,M06_AXI_wvalid,M06_AXI_wready,M06_AXI_bresp[1:0],M06_AXI_bvalid,M06_AXI_bready,M06_AXI_araddr[13:0],M06_AXI_arlen[7:0],M06_AXI_arsize[2:0],M06_AXI_arburst[1:0],M06_AXI_arlock[0:0],M06_AXI_arcache[3:0],M06_AXI_arprot[2:0],M06_AXI_arqos[3:0],M06_AXI_arvalid,M06_AXI_arready,M06_AXI_rdata[31:0],M06_AXI_rresp[1:0],M06_AXI_rlast,M06_AXI_rvalid,M06_AXI_rready,M07_AXI_awaddr[13:0],M07_AXI_awlen[7:0],M07_AXI_awsize[2:0],M07_AXI_awburst[1:0],M07_AXI_awlock[0:0],M07_AXI_awcache[3:0],M07_AXI_awprot[2:0],M07_AXI_awqos[3:0],M07_AXI_awvalid,M07_AXI_awready,M07_AXI_wdata[31:0],M07_AXI_wstrb[3:0],M07_AXI_wlast,M07_AXI_wvalid,M07_AXI_wready,M07_AXI_bresp[1:0],M07_AXI_bvalid,M07_AXI_bready,M07_AXI_araddr[13:0],M07_AXI_arlen[7:0],M07_AXI_arsize[2:0],M07_AXI_arburst[1:0],M07_AXI_arlock[0:0],M07_AXI_arcache[3:0],M07_AXI_arprot[2:0],M07_AXI_arqos[3:0],M07_AXI_arvalid,M07_AXI_arready,M07_AXI_rdata[31:0],M07_AXI_rresp[1:0],M07_AXI_rlast,M07_AXI_rvalid,M07_AXI_rready,M08_AXI_awaddr[8:0],M08_AXI_awprot[2:0],M08_AXI_awvalid,M08_AXI_awready,M08_AXI_wdata[31:0],M08_AXI_wstrb[3:0],M08_AXI_wvalid,M08_AXI_wready,M08_AXI_bresp[1:0],M08_AXI_bvalid,M08_AXI_bready,M08_AXI_araddr[8:0],M08_AXI_arprot[2:0],M08_AXI_arvalid,M08_AXI_arready,M08_AXI_rdata[31:0],M08_AXI_rresp[1:0],M08_AXI_rvalid,M08_AXI_rready,M09_AXI_awaddr[8:0],M09_AXI_awprot[2:0],M09_AXI_awvalid,M09_AXI_awready,M09_AXI_wdata[31:0],M09_AXI_wstrb[3:0],M09_AXI_wvalid,M09_AXI_wready,M09_AXI_bresp[1:0],M09_AXI_bvalid,M09_AXI_bready,M09_AXI_araddr[8:0],M09_AXI_arprot[2:0],M09_AXI_arvalid,M09_AXI_arready,M09_AXI_rdata[31:0],M09_AXI_rresp[1:0],M09_AXI_rvalid,M09_AXI_rready,M10_AXI_awaddr[8:0],M10_AXI_awprot[2:0],M10_AXI_awvalid,M10_AXI_awready,M10_AXI_wdata[31:0],M10_AXI_wstrb[3:0],M10_AXI_wvalid,M10_AXI_wready,M10_AXI_bresp[1:0],M10_AXI_bvalid,M10_AXI_bready,M10_AXI_araddr[8:0],M10_AXI_arprot[2:0],M10_AXI_arvalid,M10_AXI_arready,M10_AXI_rdata[31:0],M10_AXI_rresp[1:0],M10_AXI_rvalid,M10_AXI_rready,M11_AXI_awaddr[8:0],M11_AXI_awprot[2:0],M11_AXI_awvalid,M11_AXI_awready,M11_AXI_wdata[31:0],M11_AXI_wstrb[3:0],M11_AXI_wvalid,M11_AXI_wready,M11_AXI_bresp[1:0],M11_AXI_bvalid,M11_AXI_bready,M11_AXI_araddr[8:0],M11_AXI_arprot[2:0],M11_AXI_arvalid,M11_AXI_arready,M11_AXI_rdata[31:0],M11_AXI_rresp[1:0],M11_AXI_rvalid,M11_AXI_rready,M12_AXI_awaddr[8:0],M12_AXI_awprot[2:0],M12_AXI_awvalid,M12_AXI_awready,M12_AXI_wdata[31:0],M12_AXI_wstrb[3:0],M12_AXI_wvalid,M12_AXI_wready,M12_AXI_bresp[1:0],M12_AXI_bvalid,M12_AXI_bready,M12_AXI_araddr[8:0],M12_AXI_arprot[2:0],M12_AXI_arvalid,M12_AXI_arready,M12_AXI_rdata[31:0],M12_AXI_rresp[1:0],M12_AXI_rvalid,M12_AXI_rready,M13_AXI_awaddr[8:0],M13_AXI_awprot[2:0],M13_AXI_awvalid,M13_AXI_awready,M13_AXI_wdata[31:0],M13_AXI_wstrb[3:0],M13_AXI_wvalid,M13_AXI_wready,M13_AXI_bresp[1:0],M13_AXI_bvalid,M13_AXI_bready,M13_AXI_araddr[8:0],M13_AXI_arprot[2:0],M13_AXI_arvalid,M13_AXI_arready,M13_AXI_rdata[31:0],M13_AXI_rresp[1:0],M13_AXI_rvalid,M13_AXI_rready,M14_AXI_awaddr[8:0],M14_AXI_awprot[2:0],M14_AXI_awvalid,M14_AXI_awready,M14_AXI_wdata[31:0],M14_AXI_wstrb[3:0],M14_AXI_wvalid,M14_AXI_wready,M14_AXI_bresp[1:0],M14_AXI_bvalid,M14_AXI_bready,M14_AXI_araddr[8:0],M14_AXI_arprot[2:0],M14_AXI_arvalid,M14_AXI_arready,M14_AXI_rdata[31:0],M14_AXI_rresp[1:0],M14_AXI_rvalid,M14_AXI_rready,M15_AXI_awaddr[8:0],M15_AXI_awprot[2:0],M15_AXI_awvalid,M15_AXI_awready,M15_AXI_wdata[31:0],M15_AXI_wstrb[3:0],M15_AXI_wvalid,M15_AXI_wready,M15_AXI_bresp[1:0],M15_AXI_bvalid,M15_AXI_bready,M15_AXI_araddr[8:0],M15_AXI_arprot[2:0],M15_AXI_arvalid,M15_AXI_arready,M15_AXI_rdata[31:0],M15_AXI_rresp[1:0],M15_AXI_rvalid,M15_AXI_rready" */;
+  M11_AXI_rready)
+/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,S00_AXI_awid[11:0],S00_AXI_awaddr[31:0],S00_AXI_awlen[3:0],S00_AXI_awsize[2:0],S00_AXI_awburst[1:0],S00_AXI_awlock[1:0],S00_AXI_awcache[3:0],S00_AXI_awprot[2:0],S00_AXI_awqos[3:0],S00_AXI_awvalid,S00_AXI_awready,S00_AXI_wid[11:0],S00_AXI_wdata[31:0],S00_AXI_wstrb[3:0],S00_AXI_wlast,S00_AXI_wvalid,S00_AXI_wready,S00_AXI_bid[11:0],S00_AXI_bresp[1:0],S00_AXI_bvalid,S00_AXI_bready,S00_AXI_arid[11:0],S00_AXI_araddr[31:0],S00_AXI_arlen[3:0],S00_AXI_arsize[2:0],S00_AXI_arburst[1:0],S00_AXI_arlock[1:0],S00_AXI_arcache[3:0],S00_AXI_arprot[2:0],S00_AXI_arqos[3:0],S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rid[11:0],S00_AXI_rdata[31:0],S00_AXI_rresp[1:0],S00_AXI_rlast,S00_AXI_rvalid,S00_AXI_rready,M00_AXI_awaddr[13:0],M00_AXI_awlen[7:0],M00_AXI_awsize[2:0],M00_AXI_awburst[1:0],M00_AXI_awlock[0:0],M00_AXI_awcache[3:0],M00_AXI_awprot[2:0],M00_AXI_awqos[3:0],M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata[31:0],M00_AXI_wstrb[3:0],M00_AXI_wlast,M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp[1:0],M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr[13:0],M00_AXI_arlen[7:0],M00_AXI_arsize[2:0],M00_AXI_arburst[1:0],M00_AXI_arlock[0:0],M00_AXI_arcache[3:0],M00_AXI_arprot[2:0],M00_AXI_arqos[3:0],M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata[31:0],M00_AXI_rresp[1:0],M00_AXI_rlast,M00_AXI_rvalid,M00_AXI_rready,M01_AXI_awaddr[13:0],M01_AXI_awlen[7:0],M01_AXI_awsize[2:0],M01_AXI_awburst[1:0],M01_AXI_awlock[0:0],M01_AXI_awcache[3:0],M01_AXI_awprot[2:0],M01_AXI_awqos[3:0],M01_AXI_awvalid,M01_AXI_awready,M01_AXI_wdata[31:0],M01_AXI_wstrb[3:0],M01_AXI_wlast,M01_AXI_wvalid,M01_AXI_wready,M01_AXI_bresp[1:0],M01_AXI_bvalid,M01_AXI_bready,M01_AXI_araddr[13:0],M01_AXI_arlen[7:0],M01_AXI_arsize[2:0],M01_AXI_arburst[1:0],M01_AXI_arlock[0:0],M01_AXI_arcache[3:0],M01_AXI_arprot[2:0],M01_AXI_arqos[3:0],M01_AXI_arvalid,M01_AXI_arready,M01_AXI_rdata[31:0],M01_AXI_rresp[1:0],M01_AXI_rlast,M01_AXI_rvalid,M01_AXI_rready,M02_AXI_awaddr[13:0],M02_AXI_awlen[7:0],M02_AXI_awsize[2:0],M02_AXI_awburst[1:0],M02_AXI_awlock[0:0],M02_AXI_awcache[3:0],M02_AXI_awprot[2:0],M02_AXI_awqos[3:0],M02_AXI_awvalid,M02_AXI_awready,M02_AXI_wdata[31:0],M02_AXI_wstrb[3:0],M02_AXI_wlast,M02_AXI_wvalid,M02_AXI_wready,M02_AXI_bresp[1:0],M02_AXI_bvalid,M02_AXI_bready,M02_AXI_araddr[13:0],M02_AXI_arlen[7:0],M02_AXI_arsize[2:0],M02_AXI_arburst[1:0],M02_AXI_arlock[0:0],M02_AXI_arcache[3:0],M02_AXI_arprot[2:0],M02_AXI_arqos[3:0],M02_AXI_arvalid,M02_AXI_arready,M02_AXI_rdata[31:0],M02_AXI_rresp[1:0],M02_AXI_rlast,M02_AXI_rvalid,M02_AXI_rready,M03_AXI_awaddr[13:0],M03_AXI_awlen[7:0],M03_AXI_awsize[2:0],M03_AXI_awburst[1:0],M03_AXI_awlock[0:0],M03_AXI_awcache[3:0],M03_AXI_awprot[2:0],M03_AXI_awqos[3:0],M03_AXI_awvalid,M03_AXI_awready,M03_AXI_wdata[31:0],M03_AXI_wstrb[3:0],M03_AXI_wlast,M03_AXI_wvalid,M03_AXI_wready,M03_AXI_bresp[1:0],M03_AXI_bvalid,M03_AXI_bready,M03_AXI_araddr[13:0],M03_AXI_arlen[7:0],M03_AXI_arsize[2:0],M03_AXI_arburst[1:0],M03_AXI_arlock[0:0],M03_AXI_arcache[3:0],M03_AXI_arprot[2:0],M03_AXI_arqos[3:0],M03_AXI_arvalid,M03_AXI_arready,M03_AXI_rdata[31:0],M03_AXI_rresp[1:0],M03_AXI_rlast,M03_AXI_rvalid,M03_AXI_rready,M04_AXI_awaddr[13:0],M04_AXI_awlen[7:0],M04_AXI_awsize[2:0],M04_AXI_awburst[1:0],M04_AXI_awlock[0:0],M04_AXI_awcache[3:0],M04_AXI_awprot[2:0],M04_AXI_awqos[3:0],M04_AXI_awvalid,M04_AXI_awready,M04_AXI_wdata[31:0],M04_AXI_wstrb[3:0],M04_AXI_wlast,M04_AXI_wvalid,M04_AXI_wready,M04_AXI_bresp[1:0],M04_AXI_bvalid,M04_AXI_bready,M04_AXI_araddr[13:0],M04_AXI_arlen[7:0],M04_AXI_arsize[2:0],M04_AXI_arburst[1:0],M04_AXI_arlock[0:0],M04_AXI_arcache[3:0],M04_AXI_arprot[2:0],M04_AXI_arqos[3:0],M04_AXI_arvalid,M04_AXI_arready,M04_AXI_rdata[31:0],M04_AXI_rresp[1:0],M04_AXI_rlast,M04_AXI_rvalid,M04_AXI_rready,M05_AXI_awaddr[13:0],M05_AXI_awlen[7:0],M05_AXI_awsize[2:0],M05_AXI_awburst[1:0],M05_AXI_awlock[0:0],M05_AXI_awcache[3:0],M05_AXI_awprot[2:0],M05_AXI_awqos[3:0],M05_AXI_awvalid,M05_AXI_awready,M05_AXI_wdata[31:0],M05_AXI_wstrb[3:0],M05_AXI_wlast,M05_AXI_wvalid,M05_AXI_wready,M05_AXI_bresp[1:0],M05_AXI_bvalid,M05_AXI_bready,M05_AXI_araddr[13:0],M05_AXI_arlen[7:0],M05_AXI_arsize[2:0],M05_AXI_arburst[1:0],M05_AXI_arlock[0:0],M05_AXI_arcache[3:0],M05_AXI_arprot[2:0],M05_AXI_arqos[3:0],M05_AXI_arvalid,M05_AXI_arready,M05_AXI_rdata[31:0],M05_AXI_rresp[1:0],M05_AXI_rlast,M05_AXI_rvalid,M05_AXI_rready,M06_AXI_awaddr[13:0],M06_AXI_awlen[7:0],M06_AXI_awsize[2:0],M06_AXI_awburst[1:0],M06_AXI_awlock[0:0],M06_AXI_awcache[3:0],M06_AXI_awprot[2:0],M06_AXI_awqos[3:0],M06_AXI_awvalid,M06_AXI_awready,M06_AXI_wdata[31:0],M06_AXI_wstrb[3:0],M06_AXI_wlast,M06_AXI_wvalid,M06_AXI_wready,M06_AXI_bresp[1:0],M06_AXI_bvalid,M06_AXI_bready,M06_AXI_araddr[13:0],M06_AXI_arlen[7:0],M06_AXI_arsize[2:0],M06_AXI_arburst[1:0],M06_AXI_arlock[0:0],M06_AXI_arcache[3:0],M06_AXI_arprot[2:0],M06_AXI_arqos[3:0],M06_AXI_arvalid,M06_AXI_arready,M06_AXI_rdata[31:0],M06_AXI_rresp[1:0],M06_AXI_rlast,M06_AXI_rvalid,M06_AXI_rready,M07_AXI_awaddr[13:0],M07_AXI_awlen[7:0],M07_AXI_awsize[2:0],M07_AXI_awburst[1:0],M07_AXI_awlock[0:0],M07_AXI_awcache[3:0],M07_AXI_awprot[2:0],M07_AXI_awqos[3:0],M07_AXI_awvalid,M07_AXI_awready,M07_AXI_wdata[31:0],M07_AXI_wstrb[3:0],M07_AXI_wlast,M07_AXI_wvalid,M07_AXI_wready,M07_AXI_bresp[1:0],M07_AXI_bvalid,M07_AXI_bready,M07_AXI_araddr[13:0],M07_AXI_arlen[7:0],M07_AXI_arsize[2:0],M07_AXI_arburst[1:0],M07_AXI_arlock[0:0],M07_AXI_arcache[3:0],M07_AXI_arprot[2:0],M07_AXI_arqos[3:0],M07_AXI_arvalid,M07_AXI_arready,M07_AXI_rdata[31:0],M07_AXI_rresp[1:0],M07_AXI_rlast,M07_AXI_rvalid,M07_AXI_rready,M08_AXI_awaddr[8:0],M08_AXI_awprot[2:0],M08_AXI_awvalid,M08_AXI_awready,M08_AXI_wdata[31:0],M08_AXI_wstrb[3:0],M08_AXI_wvalid,M08_AXI_wready,M08_AXI_bresp[1:0],M08_AXI_bvalid,M08_AXI_bready,M08_AXI_araddr[8:0],M08_AXI_arprot[2:0],M08_AXI_arvalid,M08_AXI_arready,M08_AXI_rdata[31:0],M08_AXI_rresp[1:0],M08_AXI_rvalid,M08_AXI_rready,M09_AXI_awaddr[8:0],M09_AXI_awprot[2:0],M09_AXI_awvalid,M09_AXI_awready,M09_AXI_wdata[31:0],M09_AXI_wstrb[3:0],M09_AXI_wvalid,M09_AXI_wready,M09_AXI_bresp[1:0],M09_AXI_bvalid,M09_AXI_bready,M09_AXI_araddr[8:0],M09_AXI_arprot[2:0],M09_AXI_arvalid,M09_AXI_arready,M09_AXI_rdata[31:0],M09_AXI_rresp[1:0],M09_AXI_rvalid,M09_AXI_rready,M10_AXI_awaddr[8:0],M10_AXI_awprot[2:0],M10_AXI_awvalid,M10_AXI_awready,M10_AXI_wdata[31:0],M10_AXI_wstrb[3:0],M10_AXI_wvalid,M10_AXI_wready,M10_AXI_bresp[1:0],M10_AXI_bvalid,M10_AXI_bready,M10_AXI_araddr[8:0],M10_AXI_arprot[2:0],M10_AXI_arvalid,M10_AXI_arready,M10_AXI_rdata[31:0],M10_AXI_rresp[1:0],M10_AXI_rvalid,M10_AXI_rready,M11_AXI_awaddr[8:0],M11_AXI_awprot[2:0],M11_AXI_awvalid,M11_AXI_awready,M11_AXI_wdata[31:0],M11_AXI_wstrb[3:0],M11_AXI_wvalid,M11_AXI_wready,M11_AXI_bresp[1:0],M11_AXI_bvalid,M11_AXI_bready,M11_AXI_araddr[8:0],M11_AXI_arprot[2:0],M11_AXI_arvalid,M11_AXI_arready,M11_AXI_rdata[31:0],M11_AXI_rresp[1:0],M11_AXI_rvalid,M11_AXI_rready" */;
   input aclk;
   input aresetn;
   input [11:0]S00_AXI_awid;
@@ -486,80 +471,4 @@ module design_1_smartconnect_0_0(aclk, aresetn, S00_AXI_awid, S00_AXI_awaddr,
   input [1:0]M11_AXI_rresp;
   input M11_AXI_rvalid;
   output M11_AXI_rready;
-  output [8:0]M12_AXI_awaddr;
-  output [2:0]M12_AXI_awprot;
-  output M12_AXI_awvalid;
-  input M12_AXI_awready;
-  output [31:0]M12_AXI_wdata;
-  output [3:0]M12_AXI_wstrb;
-  output M12_AXI_wvalid;
-  input M12_AXI_wready;
-  input [1:0]M12_AXI_bresp;
-  input M12_AXI_bvalid;
-  output M12_AXI_bready;
-  output [8:0]M12_AXI_araddr;
-  output [2:0]M12_AXI_arprot;
-  output M12_AXI_arvalid;
-  input M12_AXI_arready;
-  input [31:0]M12_AXI_rdata;
-  input [1:0]M12_AXI_rresp;
-  input M12_AXI_rvalid;
-  output M12_AXI_rready;
-  output [8:0]M13_AXI_awaddr;
-  output [2:0]M13_AXI_awprot;
-  output M13_AXI_awvalid;
-  input M13_AXI_awready;
-  output [31:0]M13_AXI_wdata;
-  output [3:0]M13_AXI_wstrb;
-  output M13_AXI_wvalid;
-  input M13_AXI_wready;
-  input [1:0]M13_AXI_bresp;
-  input M13_AXI_bvalid;
-  output M13_AXI_bready;
-  output [8:0]M13_AXI_araddr;
-  output [2:0]M13_AXI_arprot;
-  output M13_AXI_arvalid;
-  input M13_AXI_arready;
-  input [31:0]M13_AXI_rdata;
-  input [1:0]M13_AXI_rresp;
-  input M13_AXI_rvalid;
-  output M13_AXI_rready;
-  output [8:0]M14_AXI_awaddr;
-  output [2:0]M14_AXI_awprot;
-  output M14_AXI_awvalid;
-  input M14_AXI_awready;
-  output [31:0]M14_AXI_wdata;
-  output [3:0]M14_AXI_wstrb;
-  output M14_AXI_wvalid;
-  input M14_AXI_wready;
-  input [1:0]M14_AXI_bresp;
-  input M14_AXI_bvalid;
-  output M14_AXI_bready;
-  output [8:0]M14_AXI_araddr;
-  output [2:0]M14_AXI_arprot;
-  output M14_AXI_arvalid;
-  input M14_AXI_arready;
-  input [31:0]M14_AXI_rdata;
-  input [1:0]M14_AXI_rresp;
-  input M14_AXI_rvalid;
-  output M14_AXI_rready;
-  output [8:0]M15_AXI_awaddr;
-  output [2:0]M15_AXI_awprot;
-  output M15_AXI_awvalid;
-  input M15_AXI_awready;
-  output [31:0]M15_AXI_wdata;
-  output [3:0]M15_AXI_wstrb;
-  output M15_AXI_wvalid;
-  input M15_AXI_wready;
-  input [1:0]M15_AXI_bresp;
-  input M15_AXI_bvalid;
-  output M15_AXI_bready;
-  output [8:0]M15_AXI_araddr;
-  output [2:0]M15_AXI_arprot;
-  output M15_AXI_arvalid;
-  input M15_AXI_arready;
-  input [31:0]M15_AXI_rdata;
-  input [1:0]M15_AXI_rresp;
-  input M15_AXI_rvalid;
-  output M15_AXI_rready;
 endmodule
