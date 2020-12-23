@@ -70,17 +70,17 @@ set rc [catch {
   set_property board_part em.avnet.com:zed:part0:1.4 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir D:/zedboard_16adc/zedboard_16adc.cache/wt [current_project]
-  set_property parent.project_path D:/zedboard_16adc/zedboard_16adc.xpr [current_project]
-  set_property ip_output_repo D:/zedboard_16adc/zedboard_16adc.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/zedboard_16adc_1022/zedboard_16adc/zedboard_16adc.cache/wt [current_project]
+  set_property parent.project_path D:/zedboard_16adc_1022/zedboard_16adc/zedboard_16adc.xpr [current_project]
+  set_property ip_output_repo D:/zedboard_16adc_1022/zedboard_16adc/zedboard_16adc.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet D:/zedboard_16adc/zedboard_16adc.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet D:/zedboard_16adc_1022/zedboard_16adc/zedboard_16adc.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/bd/design_1/design_1.bd
+  add_files D:/zedboard_16adc_1022/zedboard_16adc/zedboard_16adc.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
-  read_xdc D:/zedboard_16adc/zedboard_16adc.srcs/constrs_1/imports/new/top.xdc
+  read_xdc D:/zedboard_16adc_1022/zedboard_16adc/zedboard_16adc.srcs/constrs_1/imports/new/top.xdc
   set_param project.isImplRun true
   link_design -top design_1_wrapper -part xc7z020clg484-1
   set_param project.isImplRun false
@@ -165,7 +165,6 @@ set rc [catch {
   create_msg_db write_bitstream.pb
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force design_1_wrapper.mmi }
-  catch { write_bmm -force design_1_wrapper_bd.bmm }
   write_bitstream -force design_1_wrapper.bit 
   catch { write_sysdef -hwdef design_1_wrapper.hwdef -bitfile design_1_wrapper.bit -meminfo design_1_wrapper.mmi -file design_1_wrapper.sysdef }
   catch {write_debug_probes -quiet -force design_1_wrapper}

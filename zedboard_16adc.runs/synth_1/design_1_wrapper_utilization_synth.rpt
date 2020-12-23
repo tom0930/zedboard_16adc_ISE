@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Thu Oct 22 10:12:46 2020
+| Date         : Wed Dec 23 15:45:00 2020
 | Host         : DESKTOP-U60VC6L running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -162,7 +162,6 @@ Table of Contents
 | design_1_util_vector_logic_1_0  |    1 |
 | design_1_util_vector_logic_0_0  |    1 |
 | design_1_total_link_ctrl_0_0    |    1 |
-| design_1_smartconnect_1_0       |    1 |
 | design_1_smartconnect_0_0       |    1 |
 | design_1_serial_shift_0_0       |    1 |
 | design_1_s2p_0_0                |    1 |
@@ -172,27 +171,12 @@ Table of Contents
 | design_1_proc_sys_reset_0_0     |    1 |
 | design_1_div16_0_0              |    1 |
 | design_1_clk_wiz_0_0            |    1 |
-| design_1_blk_mem_gen_3_0        |    1 |
-| design_1_blk_mem_gen_2_0        |    1 |
-| design_1_blk_mem_gen_1_1        |    1 |
-| design_1_blk_mem_gen_1_0        |    1 |
-| design_1_blk_mem_gen_0_3        |    1 |
-| design_1_blk_mem_gen_0_2        |    1 |
-| design_1_blk_mem_gen_0_1        |    1 |
-| design_1_blk_mem_gen_0_0        |    1 |
+| design_1_axi_smc_0              |    1 |
 | design_1_axi_gpio_8_0           |    1 |
-| design_1_axi_gpio_1_1           |    1 |
-| design_1_axi_gpio_1_0           |    1 |
-| design_1_axi_gpio_0_1           |    1 |
-| design_1_axi_gpio_0_0           |    1 |
-| design_1_axi_bram_ctrl_3_0      |    1 |
-| design_1_axi_bram_ctrl_2_0      |    1 |
-| design_1_axi_bram_ctrl_1_1      |    1 |
-| design_1_axi_bram_ctrl_1_0      |    1 |
-| design_1_axi_bram_ctrl_0_3      |    1 |
-| design_1_axi_bram_ctrl_0_2      |    1 |
-| design_1_axi_bram_ctrl_0_1      |    1 |
-| design_1_axi_bram_ctrl_0_0      |    1 |
+| design_1_axi_dma_2_0            |    1 |
+| design_1_axi_dma_1_0            |    1 |
+| design_1_axi_dma_0_1            |    1 |
+| design_1_axi_dma_0_0            |    1 |
 | design_1_D_flip_flops_4_0_0     |    1 |
 | design_1_Counter_4bit_0_0       |    1 |
 +---------------------------------+------+
