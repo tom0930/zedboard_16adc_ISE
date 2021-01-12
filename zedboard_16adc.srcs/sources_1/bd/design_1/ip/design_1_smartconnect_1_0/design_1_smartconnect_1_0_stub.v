@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Wed Oct 21 17:58:11 2020
-// Host        : DESKTOP-U60VC6L running 64-bit major release  (build 9200)
+// Date        : Tue Jan 12 10:29:01 2021
+// Host        : DESKTOP-CUAMMK2 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               d:/zedboard_16adc/zedboard_16adc.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_1_0/design_1_smartconnect_1_0_stub.v
+//               d:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_16/zedboard_16adc.srcs/sources_1/bd/design_1/ip/design_1_smartconnect_1_0/design_1_smartconnect_1_0_stub.v
 // Design      : design_1_smartconnect_1_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1
@@ -26,7 +26,7 @@ module design_1_smartconnect_1_0(aclk, aresetn, S00_AXI_awid, S00_AXI_awaddr,
   M00_AXI_wready, M00_AXI_bresp, M00_AXI_bvalid, M00_AXI_bready, M00_AXI_araddr, 
   M00_AXI_arprot, M00_AXI_arvalid, M00_AXI_arready, M00_AXI_rdata, M00_AXI_rresp, 
   M00_AXI_rvalid, M00_AXI_rready)
-/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,S00_AXI_awid[11:0],S00_AXI_awaddr[31:0],S00_AXI_awlen[3:0],S00_AXI_awsize[2:0],S00_AXI_awburst[1:0],S00_AXI_awlock[1:0],S00_AXI_awcache[3:0],S00_AXI_awprot[2:0],S00_AXI_awqos[3:0],S00_AXI_awvalid,S00_AXI_awready,S00_AXI_wid[11:0],S00_AXI_wdata[31:0],S00_AXI_wstrb[3:0],S00_AXI_wlast,S00_AXI_wvalid,S00_AXI_wready,S00_AXI_bid[11:0],S00_AXI_bresp[1:0],S00_AXI_bvalid,S00_AXI_bready,S00_AXI_arid[11:0],S00_AXI_araddr[31:0],S00_AXI_arlen[3:0],S00_AXI_arsize[2:0],S00_AXI_arburst[1:0],S00_AXI_arlock[1:0],S00_AXI_arcache[3:0],S00_AXI_arprot[2:0],S00_AXI_arqos[3:0],S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rid[11:0],S00_AXI_rdata[31:0],S00_AXI_rresp[1:0],S00_AXI_rlast,S00_AXI_rvalid,S00_AXI_rready,M00_AXI_awaddr[8:0],M00_AXI_awprot[2:0],M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata[31:0],M00_AXI_wstrb[3:0],M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp[1:0],M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr[8:0],M00_AXI_arprot[2:0],M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata[31:0],M00_AXI_rresp[1:0],M00_AXI_rvalid,M00_AXI_rready" */;
+/* synthesis syn_black_box black_box_pad_pin="aclk,aresetn,S00_AXI_awid[11:0],S00_AXI_awaddr[31:0],S00_AXI_awlen[3:0],S00_AXI_awsize[2:0],S00_AXI_awburst[1:0],S00_AXI_awlock[1:0],S00_AXI_awcache[3:0],S00_AXI_awprot[2:0],S00_AXI_awqos[3:0],S00_AXI_awvalid,S00_AXI_awready,S00_AXI_wid[11:0],S00_AXI_wdata[31:0],S00_AXI_wstrb[3:0],S00_AXI_wlast,S00_AXI_wvalid,S00_AXI_wready,S00_AXI_bid[11:0],S00_AXI_bresp[1:0],S00_AXI_bvalid,S00_AXI_bready,S00_AXI_arid[11:0],S00_AXI_araddr[31:0],S00_AXI_arlen[3:0],S00_AXI_arsize[2:0],S00_AXI_arburst[1:0],S00_AXI_arlock[1:0],S00_AXI_arcache[3:0],S00_AXI_arprot[2:0],S00_AXI_arqos[3:0],S00_AXI_arvalid,S00_AXI_arready,S00_AXI_rid[11:0],S00_AXI_rdata[31:0],S00_AXI_rresp[1:0],S00_AXI_rlast,S00_AXI_rvalid,S00_AXI_rready,M00_AXI_awaddr[9:0],M00_AXI_awprot[2:0],M00_AXI_awvalid,M00_AXI_awready,M00_AXI_wdata[31:0],M00_AXI_wstrb[3:0],M00_AXI_wvalid,M00_AXI_wready,M00_AXI_bresp[1:0],M00_AXI_bvalid,M00_AXI_bready,M00_AXI_araddr[9:0],M00_AXI_arprot[2:0],M00_AXI_arvalid,M00_AXI_arready,M00_AXI_rdata[31:0],M00_AXI_rresp[1:0],M00_AXI_rvalid,M00_AXI_rready" */;
   input aclk;
   input aresetn;
   input [11:0]S00_AXI_awid;
@@ -67,7 +67,7 @@ module design_1_smartconnect_1_0(aclk, aresetn, S00_AXI_awid, S00_AXI_awaddr,
   output S00_AXI_rlast;
   output S00_AXI_rvalid;
   input S00_AXI_rready;
-  output [8:0]M00_AXI_awaddr;
+  output [9:0]M00_AXI_awaddr;
   output [2:0]M00_AXI_awprot;
   output M00_AXI_awvalid;
   input M00_AXI_awready;
@@ -78,7 +78,7 @@ module design_1_smartconnect_1_0(aclk, aresetn, S00_AXI_awid, S00_AXI_awaddr,
   input [1:0]M00_AXI_bresp;
   input M00_AXI_bvalid;
   output M00_AXI_bready;
-  output [8:0]M00_AXI_araddr;
+  output [9:0]M00_AXI_araddr;
   output [2:0]M00_AXI_arprot;
   output M00_AXI_arvalid;
   input M00_AXI_arready;

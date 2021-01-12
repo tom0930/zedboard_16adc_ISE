@@ -2,52 +2,52 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port clk_100M -pg 1 -y 460 -defaultsOSRD
-preplace port data_in -pg 1 -y 140 -defaultsOSRD
-preplace port link_err -pg 1 -y 540 -defaultsOSRD
-preplace port reset_n -pg 1 -y 440 -defaultsOSRD
-preplace portBus link -pg 1 -y 610 -defaultsOSRD
-preplace portBus data_out_1 -pg 1 -y 580 -defaultsOSRD
-preplace portBus channel -pg 1 -y 560 -defaultsOSRD
-preplace portBus data_out -pg 1 -y 670 -defaultsOSRD
-preplace inst Counter_4bit_0 -pg 1 -lvl 5 -y 110 -defaultsOSRD
-preplace inst proc_sys_reset_1M -pg 1 -lvl 4 -y 410 -defaultsOSRD
-preplace inst xlconstant_0 -pg 1 -lvl 4 -y 80 -defaultsOSRD
-preplace inst D_flip_flops_4_0 -pg 1 -lvl 6 -y 350 -defaultsOSRD
-preplace inst serial_shift_0 -pg 1 -lvl 6 -y 860 -defaultsOSRD
-preplace inst div16_0 -pg 1 -lvl 3 -y 430 -defaultsOSRD
-preplace inst util_vector_logic_0 -pg 1 -lvl 7 -y 370 -defaultsOSRD
-preplace inst util_vector_logic_1 -pg 1 -lvl 8 -y 370 -defaultsOSRD
-preplace inst util_vector_logic_2 -pg 1 -lvl 7 -y 880 -defaultsOSRD
-preplace inst util_vector_logic_3 -pg 1 -lvl 8 -y 740 -defaultsOSRD
-preplace inst proc_sys_reset_16M -pg 1 -lvl 2 -y 400 -defaultsOSRD
-preplace inst s2p_0 -pg 1 -lvl 7 -y 560 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 1 -y 370 -defaultsOSRD
-preplace netloc reset_n_2 1 0 7 NJ 440 200 290 NJ 290 760 -10 NJ -10 NJ -10 1700J
-preplace netloc clk_100M_1 1 0 7 10 280 NJ 280 NJ 280 NJ 280 NJ 280 1400J 480 1680
-preplace netloc s2p_0_data_out 1 7 2 N 580 NJ
-preplace netloc proc_sys_reset_16M_peripheral_aresetn 1 2 1 N
-preplace netloc s2p_0_channel 1 7 2 NJ 560 N
-preplace netloc util_vector_logic_3_Res 1 6 3 1690 670 NJ 670 2330
-preplace netloc serial_shift_0_Q4 1 6 1 N
-preplace netloc util_vector_logic_0_Res 1 7 1 NJ
-preplace netloc serial_shift_0_Q5 1 6 1 N
-preplace netloc D_flip_flops_4_0_Q3B 1 4 3 1160 220 NJ 220 1670
-preplace netloc s2p_0_link_err 1 7 2 NJ 540 N
-preplace netloc link_1 1 0 7 NJ 610 NJ 610 NJ 610 NJ 610 NJ 610 NJ 610 N
-preplace netloc D_flip_flops_4_0_Q1 1 5 2 1430 200 1690
-preplace netloc xlconstant_0_dout 1 4 1 NJ
-preplace netloc Counter_4bit_0_out3 1 5 1 1420
-preplace netloc D_flip_flops_4_0_Q2B 1 6 1 N
-preplace netloc data_in_1 1 0 8 NJ 140 NJ 140 NJ 140 NJ 140 1140 230 1390 730 NJ 730 NJ
-preplace netloc clk_wiz_0_clk_out1 1 1 5 210 300 560 300 NJ 300 1120 300 NJ
-preplace netloc D_flip_flops_4_0_Q3 1 5 2 1440 210 1680
-preplace netloc util_vector_logic_2_Res 1 7 1 2020
-preplace netloc util_vector_logic_1_Res 1 4 5 1150 0 NJ 0 NJ 0 NJ 0 2330
-preplace netloc D_flip_flops_4_0_Q1B 1 6 1 N
-preplace netloc div16_0_clk_div 1 3 4 770 310 NJ 310 1380 510 NJ
-preplace netloc reset_n_1 1 4 3 1130 320 1410 550 NJ
-levelinfo -pg 1 -10 110 390 660 950 1280 1570 1870 2180 2350 -top -20 -bot 990
+preplace port clk_16M -pg 1 -y 390 -defaultsOSRD
+preplace port clk_100M -pg 1 -y 350 -defaultsOSRD
+preplace port data_in -pg 1 -y 210 -defaultsOSRD
+preplace port link_err -pg 1 -y 340 -defaultsOSRD
+preplace port reset_n -pg 1 -y 330 -defaultsOSRD
+preplace portBus link -pg 1 -y 540 -defaultsOSRD
+preplace portBus data_out1 -pg 1 -y 380 -defaultsOSRD
+preplace portBus address -pg 1 -y 360 -defaultsOSRD
+preplace portBus data_out -pg 1 -y 470 -defaultsOSRD
+preplace inst Counter_4bit_0 -pg 1 -lvl 4 -y 180 -defaultsOSRD
+preplace inst proc_sys_reset_1M -pg 1 -lvl 3 -y 440 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 150 -defaultsOSRD
+preplace inst D_flip_flops_4_0 -pg 1 -lvl 5 -y 180 -defaultsOSRD
+preplace inst serial_shift_0 -pg 1 -lvl 5 -y 680 -defaultsOSRD
+preplace inst div16_0 -pg 1 -lvl 2 -y 460 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 6 -y 200 -defaultsOSRD
+preplace inst util_vector_logic_1 -pg 1 -lvl 7 -y 200 -defaultsOSRD
+preplace inst util_vector_logic_2 -pg 1 -lvl 6 -y 700 -defaultsOSRD
+preplace inst util_vector_logic_3 -pg 1 -lvl 7 -y 560 -defaultsOSRD
+preplace inst proc_sys_reset_16M -pg 1 -lvl 1 -y 430 -defaultsOSRD
+preplace inst s2p_0 -pg 1 -lvl 6 -y 360 -defaultsOSRD
+preplace netloc reset_n_2 1 0 6 20J 530 NJ 530 630 340 NJ 340 NJ 340 1470J
+preplace netloc clk_100M_1 1 0 6 30 320 NJ 320 NJ 320 NJ 320 NJ 320 1480
+preplace netloc s2p_0_address 1 6 2 NJ 360 NJ
+preplace netloc s2p_0_data_out 1 6 2 NJ 380 NJ
+preplace netloc proc_sys_reset_16M_peripheral_aresetn 1 1 1 N
+preplace netloc util_vector_logic_3_Res 1 5 3 1480 470 NJ 470 2090
+preplace netloc serial_shift_0_Q4 1 5 1 N
+preplace netloc util_vector_logic_0_Res 1 6 1 NJ
+preplace netloc serial_shift_0_Q5 1 5 1 N
+preplace netloc D_flip_flops_4_0_Q3B 1 3 3 1010 310 NJ 310 1460
+preplace netloc s2p_0_link_err 1 6 2 NJ 340 N
+preplace netloc link_1 1 0 6 NJ 540 NJ 540 NJ 540 NJ 540 NJ 540 1460
+preplace netloc D_flip_flops_4_0_Q1 1 4 2 1240 40 1470
+preplace netloc xlconstant_0_dout 1 3 1 NJ
+preplace netloc Counter_4bit_0_out3 1 4 1 N
+preplace netloc D_flip_flops_4_0_Q2B 1 5 1 N
+preplace netloc data_in_1 1 0 7 30J 80 NJ 80 NJ 80 990 70 1210 550 NJ 550 NJ
+preplace netloc clk_wiz_0_clk_out1 1 0 5 40 330 420 90 NJ 90 980 60 1230J
+preplace netloc D_flip_flops_4_0_Q3 1 4 2 1250 50 1460
+preplace netloc util_vector_logic_2_Res 1 6 1 1790
+preplace netloc util_vector_logic_1_Res 1 3 5 1000 30 NJ 30 NJ 30 NJ 30 2090
+preplace netloc D_flip_flops_4_0_Q1B 1 5 1 N
+preplace netloc div16_0_clk_div 1 2 4 620 330 NJ 330 1240 330 1470J
+preplace netloc reset_n_1 1 3 3 970 50 1220 350 NJ
+levelinfo -pg 1 0 250 520 800 1110 1360 1640 1940 2110 -top 0 -bot 810
 "
 }
 0

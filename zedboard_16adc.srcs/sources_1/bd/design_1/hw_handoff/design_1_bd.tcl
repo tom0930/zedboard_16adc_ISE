@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# total_link_ctrl, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift
+# bram_rd, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift, Counter_4bit, D_flip_flops_4, div16, s2p, serial_shift
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -129,13 +129,13 @@ if { $nRet != 0 } {
 ##################################################################
 
 
-# Hierarchical cell: link7
-proc create_hier_cell_link7 { parentCell nameHier } {
+# Hierarchical cell: link22
+proc create_hier_cell_link22 { parentCell nameHier } {
 
   variable script_folder
 
   if { $parentCell eq "" || $nameHier eq "" } {
-     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link7() - Empty argument(s)!"}
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link22() - Empty argument(s)!"}
      return
   }
 
@@ -166,11 +166,12 @@ proc create_hier_cell_link7 { parentCell nameHier } {
   # Create interface pins
 
   # Create pins
-  create_bd_pin -dir O -from 4 -to 0 channel
+  create_bd_pin -dir O -from 10 -to 0 address
   create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
   create_bd_pin -dir I data_in
   create_bd_pin -dir O -from 0 -to 0 data_out
-  create_bd_pin -dir O -from 95 -to 0 data_out_1
+  create_bd_pin -dir O -from 31 -to 0 data_out1
   create_bd_pin -dir I -from 3 -to 0 link
   create_bd_pin -dir O link_err
   create_bd_pin -dir I reset_n
@@ -197,16 +198,6 @@ proc create_hier_cell_link7 { parentCell nameHier } {
      return 1
    }
   
-  # Create instance: clk_wiz_0, and set properties
-  set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
-  set_property -dict [ list \
-   CONFIG.CLKOUT1_JITTER {191.387} \
-   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {16} \
-   CONFIG.MMCM_CLKOUT0_DIVIDE_F {62.500} \
-   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
-   CONFIG.USE_RESET {false} \
- ] $clk_wiz_0
-
   # Create instance: div16_0, and set properties
   set block_name div16
   set block_cell_name div16_0
@@ -290,16 +281,2641 @@ proc create_hier_cell_link7 { parentCell nameHier } {
   connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
   connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
   connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
-  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins s2p_0/clk_100M]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
   connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
   connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
   connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
   connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
   connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
   connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
-  connect_bd_net -net s2p_0_channel [get_bd_pins channel] [get_bd_pins s2p_0/channel]
-  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out_1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link21
+proc create_hier_cell_link21 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link21() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link20
+proc create_hier_cell_link20 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link20() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link19
+proc create_hier_cell_link19 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link19() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link18
+proc create_hier_cell_link18 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link18() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link17
+proc create_hier_cell_link17 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link17() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link16
+proc create_hier_cell_link16 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link16() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link15
+proc create_hier_cell_link15 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link15() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link14
+proc create_hier_cell_link14 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link14() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link13
+proc create_hier_cell_link13 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link13() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link12
+proc create_hier_cell_link12 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link12() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link11
+proc create_hier_cell_link11 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link11() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link10
+proc create_hier_cell_link10 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link10() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link9
+proc create_hier_cell_link9 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link9() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link8
+proc create_hier_cell_link8 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link8() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
+  connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
+  connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
+  connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
+  connect_bd_net -net util_vector_logic_0_Res [get_bd_pins util_vector_logic_0/Res] [get_bd_pins util_vector_logic_1/Op1]
+  connect_bd_net -net util_vector_logic_1_Res [get_bd_pins Counter_4bit_0/loadn] [get_bd_pins util_vector_logic_1/Res]
+  connect_bd_net -net util_vector_logic_2_Res [get_bd_pins util_vector_logic_2/Res] [get_bd_pins util_vector_logic_3/Op2]
+  connect_bd_net -net util_vector_logic_3_Res [get_bd_pins data_out] [get_bd_pins s2p_0/data_in] [get_bd_pins util_vector_logic_3/Res]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins Counter_4bit_0/value] [get_bd_pins xlconstant_0/dout]
+
+  # Restore current instance
+  current_bd_instance $oldCurInst
+}
+
+# Hierarchical cell: link7
+proc create_hier_cell_link7 { parentCell nameHier } {
+
+  variable script_folder
+
+  if { $parentCell eq "" || $nameHier eq "" } {
+     catch {common::send_msg_id "BD_TCL-102" "ERROR" "create_hier_cell_link7() - Empty argument(s)!"}
+     return
+  }
+
+  # Get object for parentCell
+  set parentObj [get_bd_cells $parentCell]
+  if { $parentObj == "" } {
+     catch {common::send_msg_id "BD_TCL-100" "ERROR" "Unable to find parent cell <$parentCell>!"}
+     return
+  }
+
+  # Make sure parentObj is hier blk
+  set parentType [get_property TYPE $parentObj]
+  if { $parentType ne "hier" } {
+     catch {common::send_msg_id "BD_TCL-101" "ERROR" "Parent <$parentObj> has TYPE = <$parentType>. Expected to be <hier>."}
+     return
+  }
+
+  # Save current instance; Restore later
+  set oldCurInst [current_bd_instance .]
+
+  # Set parent object as current
+  current_bd_instance $parentObj
+
+  # Create cell and set as current instance
+  set hier_obj [create_bd_cell -type hier $nameHier]
+  current_bd_instance $hier_obj
+
+  # Create interface pins
+
+  # Create pins
+  create_bd_pin -dir O -from 10 -to 0 address
+  create_bd_pin -dir I clk_100M
+  create_bd_pin -dir I clk_16M
+  create_bd_pin -dir I data_in
+  create_bd_pin -dir O -from 0 -to 0 data_out
+  create_bd_pin -dir O -from 31 -to 0 data_out1
+  create_bd_pin -dir I -from 3 -to 0 link
+  create_bd_pin -dir O link_err
+  create_bd_pin -dir I reset_n
+
+  # Create instance: Counter_4bit_0, and set properties
+  set block_name Counter_4bit
+  set block_cell_name Counter_4bit_0
+  if { [catch {set Counter_4bit_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Counter_4bit_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: D_flip_flops_4_0, and set properties
+  set block_name D_flip_flops_4
+  set block_cell_name D_flip_flops_4_0
+  if { [catch {set D_flip_flops_4_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $D_flip_flops_4_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: div16_0, and set properties
+  set block_name div16
+  set block_cell_name div16_0
+  if { [catch {set div16_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $div16_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: proc_sys_reset_16M, and set properties
+  set proc_sys_reset_16M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_16M ]
+
+  # Create instance: proc_sys_reset_1M, and set properties
+  set proc_sys_reset_1M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_1M ]
+
+  # Create instance: s2p_0, and set properties
+  set block_name s2p
+  set block_cell_name s2p_0
+  if { [catch {set s2p_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $s2p_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: serial_shift_0, and set properties
+  set block_name serial_shift
+  set block_cell_name serial_shift_0
+  if { [catch {set serial_shift_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $serial_shift_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: util_vector_logic_0, and set properties
+  set util_vector_logic_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_0 ]
+  set_property -dict [ list \
+   CONFIG.C_SIZE {1} \
+ ] $util_vector_logic_0
+
+  # Create instance: util_vector_logic_1, and set properties
+  set util_vector_logic_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_1 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {not} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_notgate.png} \
+ ] $util_vector_logic_1
+
+  # Create instance: util_vector_logic_2, and set properties
+  set util_vector_logic_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_2 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_2
+
+  # Create instance: util_vector_logic_3, and set properties
+  set util_vector_logic_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_vector_logic:2.0 util_vector_logic_3 ]
+  set_property -dict [ list \
+   CONFIG.C_OPERATION {xor} \
+   CONFIG.C_SIZE {1} \
+   CONFIG.LOGO_FILE {data/sym_xorgate.png} \
+ ] $util_vector_logic_3
+
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {3} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_0
+
+  # Create port connections
+  connect_bd_net -net Counter_4bit_0_out3 [get_bd_pins Counter_4bit_0/out3] [get_bd_pins D_flip_flops_4_0/D3]
+  connect_bd_net -net D_flip_flops_4_0_Q1 [get_bd_pins D_flip_flops_4_0/D2] [get_bd_pins D_flip_flops_4_0/Q1]
+  connect_bd_net -net D_flip_flops_4_0_Q1B [get_bd_pins D_flip_flops_4_0/Q1B] [get_bd_pins util_vector_logic_0/Op1]
+  connect_bd_net -net D_flip_flops_4_0_Q2B [get_bd_pins D_flip_flops_4_0/Q2B] [get_bd_pins util_vector_logic_0/Op2]
+  connect_bd_net -net D_flip_flops_4_0_Q3 [get_bd_pins D_flip_flops_4_0/D4] [get_bd_pins D_flip_flops_4_0/Q3]
+  connect_bd_net -net D_flip_flops_4_0_Q3B [get_bd_pins Counter_4bit_0/ent] [get_bd_pins D_flip_flops_4_0/Q3B]
+  connect_bd_net -net clk_100M_1 [get_bd_pins clk_100M] [get_bd_pins s2p_0/clk_100M]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_16M] [get_bd_pins Counter_4bit_0/clk] [get_bd_pins D_flip_flops_4_0/clk] [get_bd_pins div16_0/clk] [get_bd_pins proc_sys_reset_16M/slowest_sync_clk]
+  connect_bd_net -net data_in_1 [get_bd_pins data_in] [get_bd_pins Counter_4bit_0/enp] [get_bd_pins D_flip_flops_4_0/D1] [get_bd_pins serial_shift_0/data_in] [get_bd_pins util_vector_logic_3/Op1]
+  connect_bd_net -net div16_0_clk_div [get_bd_pins div16_0/clk_div] [get_bd_pins proc_sys_reset_1M/slowest_sync_clk] [get_bd_pins s2p_0/clk] [get_bd_pins serial_shift_0/clk]
+  connect_bd_net -net link_1 [get_bd_pins link] [get_bd_pins s2p_0/link]
+  connect_bd_net -net proc_sys_reset_16M_peripheral_aresetn [get_bd_pins div16_0/rstn] [get_bd_pins proc_sys_reset_16M/peripheral_aresetn]
+  connect_bd_net -net reset_n_1 [get_bd_pins Counter_4bit_0/rstn] [get_bd_pins D_flip_flops_4_0/rstn] [get_bd_pins proc_sys_reset_1M/peripheral_aresetn] [get_bd_pins s2p_0/rstn] [get_bd_pins serial_shift_0/rstn]
+  connect_bd_net -net reset_n_2 [get_bd_pins reset_n] [get_bd_pins proc_sys_reset_16M/ext_reset_in] [get_bd_pins proc_sys_reset_1M/ext_reset_in] [get_bd_pins s2p_0/rstn_100M]
+  connect_bd_net -net s2p_0_address [get_bd_pins address] [get_bd_pins s2p_0/address]
+  connect_bd_net -net s2p_0_data_out [get_bd_pins data_out1] [get_bd_pins s2p_0/data_out]
   connect_bd_net -net s2p_0_link_err [get_bd_pins link_err] [get_bd_pins s2p_0/link_err]
   connect_bd_net -net serial_shift_0_Q4 [get_bd_pins serial_shift_0/Q4] [get_bd_pins util_vector_logic_2/Op1]
   connect_bd_net -net serial_shift_0_Q5 [get_bd_pins serial_shift_0/Q5] [get_bd_pins util_vector_logic_2/Op2]
@@ -358,60 +2974,792 @@ proc create_root_design { parentCell } {
   set axi_dma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0 ]
   set_property -dict [ list \
    CONFIG.c_include_sg {0} \
-   CONFIG.c_micro_dma {0} \
    CONFIG.c_sg_include_stscntrl_strm {0} \
    CONFIG.c_sg_length_width {26} \
  ] $axi_dma_0
 
-  # Create instance: axi_dma_1, and set properties
-  set axi_dma_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_1 ]
-  set_property -dict [ list \
-   CONFIG.c_include_sg {0} \
-   CONFIG.c_micro_dma {0} \
-   CONFIG.c_sg_include_stscntrl_strm {0} \
-   CONFIG.c_sg_length_width {26} \
- ] $axi_dma_1
-
-  # Create instance: axi_dma_2, and set properties
-  set axi_dma_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_2 ]
-  set_property -dict [ list \
-   CONFIG.c_include_sg {0} \
-   CONFIG.c_micro_dma {0} \
-   CONFIG.c_sg_include_stscntrl_strm {0} \
-   CONFIG.c_sg_length_width {26} \
- ] $axi_dma_2
-
-  # Create instance: axi_dma_3, and set properties
-  set axi_dma_3 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_3 ]
-  set_property -dict [ list \
-   CONFIG.c_include_sg {0} \
-   CONFIG.c_micro_dma {0} \
-   CONFIG.c_sg_include_stscntrl_strm {0} \
-   CONFIG.c_sg_length_width {26} \
- ] $axi_dma_3
-
-  # Create instance: axi_smc, and set properties
-  set axi_smc [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 axi_smc ]
-  set_property -dict [ list \
-   CONFIG.NUM_SI {8} \
- ] $axi_smc
-
   # Create instance: axis_data_fifo_0, and set properties
   set axis_data_fifo_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_data_fifo:2.0 axis_data_fifo_0 ]
   set_property -dict [ list \
+   CONFIG.FIFO_DEPTH {256} \
    CONFIG.HAS_TLAST {1} \
    CONFIG.TDATA_NUM_BYTES {4} \
  ] $axis_data_fifo_0
 
+  # Create instance: blk_mem_gen_0a, and set properties
+  set blk_mem_gen_0a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_0a
+
+  # Create instance: blk_mem_gen_0b, and set properties
+  set blk_mem_gen_0b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_0b
+
+  # Create instance: blk_mem_gen_10a, and set properties
+  set blk_mem_gen_10a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_10a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_10a
+
+  # Create instance: blk_mem_gen_10b, and set properties
+  set blk_mem_gen_10b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_10b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_10b
+
+  # Create instance: blk_mem_gen_11a, and set properties
+  set blk_mem_gen_11a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_11a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_A {WRITE_FIRST} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_11a
+
+  # Create instance: blk_mem_gen_11b, and set properties
+  set blk_mem_gen_11b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_11b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_11b
+
+  # Create instance: blk_mem_gen_12a, and set properties
+  set blk_mem_gen_12a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_12a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_12a
+
+  # Create instance: blk_mem_gen_12b, and set properties
+  set blk_mem_gen_12b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_12b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_12b
+
+  # Create instance: blk_mem_gen_13a, and set properties
+  set blk_mem_gen_13a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_13a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_13a
+
+  # Create instance: blk_mem_gen_13b, and set properties
+  set blk_mem_gen_13b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_13b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_13b
+
+  # Create instance: blk_mem_gen_14a, and set properties
+  set blk_mem_gen_14a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_14a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_14a
+
+  # Create instance: blk_mem_gen_14b, and set properties
+  set blk_mem_gen_14b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_14b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_14b
+
+  # Create instance: blk_mem_gen_15a, and set properties
+  set blk_mem_gen_15a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_15a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_15a
+
+  # Create instance: blk_mem_gen_15b, and set properties
+  set blk_mem_gen_15b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_15b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_15b
+
+  # Create instance: blk_mem_gen_1a, and set properties
+  set blk_mem_gen_1a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_1a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_1a
+
+  # Create instance: blk_mem_gen_1b, and set properties
+  set blk_mem_gen_1b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_1b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_1b
+
+  # Create instance: blk_mem_gen_2a, and set properties
+  set blk_mem_gen_2a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_2a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_2a
+
+  # Create instance: blk_mem_gen_2b, and set properties
+  set blk_mem_gen_2b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_2b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_2b
+
+  # Create instance: blk_mem_gen_3a, and set properties
+  set blk_mem_gen_3a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_3a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_3a
+
+  # Create instance: blk_mem_gen_3b, and set properties
+  set blk_mem_gen_3b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_3b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_3b
+
+  # Create instance: blk_mem_gen_4a, and set properties
+  set blk_mem_gen_4a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_4a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_4a
+
+  # Create instance: blk_mem_gen_4b, and set properties
+  set blk_mem_gen_4b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_4b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_4b
+
+  # Create instance: blk_mem_gen_5a, and set properties
+  set blk_mem_gen_5a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_5a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_5a
+
+  # Create instance: blk_mem_gen_5b, and set properties
+  set blk_mem_gen_5b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_5b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_A {WRITE_FIRST} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_5b
+
+  # Create instance: blk_mem_gen_6a, and set properties
+  set blk_mem_gen_6a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_6a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_6a
+
+  # Create instance: blk_mem_gen_6b, and set properties
+  set blk_mem_gen_6b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_6b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_6b
+
+  # Create instance: blk_mem_gen_7a, and set properties
+  set blk_mem_gen_7a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_7a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_7a
+
+  # Create instance: blk_mem_gen_7b, and set properties
+  set blk_mem_gen_7b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_7b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_7b
+
+  # Create instance: blk_mem_gen_8a, and set properties
+  set blk_mem_gen_8a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_8a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_8a
+
+  # Create instance: blk_mem_gen_8b, and set properties
+  set blk_mem_gen_8b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_8b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_8b
+
+  # Create instance: blk_mem_gen_9a, and set properties
+  set blk_mem_gen_9a [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_9a ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_9a
+
+  # Create instance: blk_mem_gen_9b, and set properties
+  set blk_mem_gen_9b [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_9b ]
+  set_property -dict [ list \
+   CONFIG.Byte_Size {9} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Enable_B {Always_Enabled} \
+   CONFIG.Memory_Type {True_Dual_Port_RAM} \
+   CONFIG.Operating_Mode_B {READ_FIRST} \
+   CONFIG.Port_B_Clock {100} \
+   CONFIG.Port_B_Enable_Rate {100} \
+   CONFIG.Port_B_Write_Rate {50} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Register_PortB_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.Use_RSTB_Pin {false} \
+   CONFIG.Write_Depth_A {2048} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_9b
+
+  # Create instance: bram_rd_0, and set properties
+  set block_name bram_rd
+  set block_cell_name bram_rd_0
+  if { [catch {set bram_rd_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $bram_rd_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: clk_wiz_0, and set properties
+  set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:6.0 clk_wiz_0 ]
+  set_property -dict [ list \
+   CONFIG.CLKOUT1_JITTER {191.387} \
+   CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {16.000} \
+   CONFIG.MMCM_CLKOUT0_DIVIDE_F {62.500} \
+   CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+   CONFIG.USE_RESET {false} \
+ ] $clk_wiz_0
+
   # Create instance: link7
   create_hier_cell_link7 [current_bd_instance .] link7
 
-  # Create instance: link_err, and set properties
-  set link_err [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 link_err ]
-  set_property -dict [ list \
-   CONFIG.C_ALL_INPUTS {1} \
-   CONFIG.C_GPIO_WIDTH {16} \
- ] $link_err
+  # Create instance: link8
+  create_hier_cell_link8 [current_bd_instance .] link8
+
+  # Create instance: link9
+  create_hier_cell_link9 [current_bd_instance .] link9
+
+  # Create instance: link10
+  create_hier_cell_link10 [current_bd_instance .] link10
+
+  # Create instance: link11
+  create_hier_cell_link11 [current_bd_instance .] link11
+
+  # Create instance: link12
+  create_hier_cell_link12 [current_bd_instance .] link12
+
+  # Create instance: link13
+  create_hier_cell_link13 [current_bd_instance .] link13
+
+  # Create instance: link14
+  create_hier_cell_link14 [current_bd_instance .] link14
+
+  # Create instance: link15
+  create_hier_cell_link15 [current_bd_instance .] link15
+
+  # Create instance: link16
+  create_hier_cell_link16 [current_bd_instance .] link16
+
+  # Create instance: link17
+  create_hier_cell_link17 [current_bd_instance .] link17
+
+  # Create instance: link18
+  create_hier_cell_link18 [current_bd_instance .] link18
+
+  # Create instance: link19
+  create_hier_cell_link19 [current_bd_instance .] link19
+
+  # Create instance: link20
+  create_hier_cell_link20 [current_bd_instance .] link20
+
+  # Create instance: link21
+  create_hier_cell_link21 [current_bd_instance .] link21
+
+  # Create instance: link22
+  create_hier_cell_link22 [current_bd_instance .] link22
 
   # Create instance: proc_sys_reset_0, and set properties
   set proc_sys_reset_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 proc_sys_reset_0 ]
@@ -505,7 +3853,6 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_I2C_RESET_ENABLE {1} \
    CONFIG.PCW_IOPLL_CTRL_FBDIV {30} \
    CONFIG.PCW_IO_IO_PLL_FREQMHZ {1000.000} \
-   CONFIG.PCW_IRQ_F2P_INTR {1} \
    CONFIG.PCW_MIO_0_DIRECTION {inout} \
    CONFIG.PCW_MIO_0_IOTYPE {LVCMOS 3.3V} \
    CONFIG.PCW_MIO_0_PULLUP {disabled} \
@@ -809,7 +4156,6 @@ proc create_root_design { parentCell } {
    CONFIG.PCW_USB1_RESET_ENABLE {0} \
    CONFIG.PCW_USB_RESET_ENABLE {1} \
    CONFIG.PCW_USB_RESET_SELECT {Share reset pin} \
-   CONFIG.PCW_USE_FABRIC_INTERRUPT {1} \
    CONFIG.PCW_USE_M_AXI_GP1 {0} \
    CONFIG.PCW_USE_S_AXI_HP0 {1} \
    CONFIG.preset {ZedBoard} \
@@ -817,151 +4163,157 @@ proc create_root_design { parentCell } {
 
   # Create instance: smartconnect_0, and set properties
   set smartconnect_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_0 ]
+
+  # Create instance: smartconnect_1, and set properties
+  set smartconnect_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:smartconnect:1.0 smartconnect_1 ]
   set_property -dict [ list \
-   CONFIG.NUM_MI {5} \
    CONFIG.NUM_SI {1} \
- ] $smartconnect_0
+ ] $smartconnect_1
 
-  # Create instance: system_ila_0, and set properties
-  set system_ila_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:system_ila:1.1 system_ila_0 ]
+  # Create instance: xlconstant_0, and set properties
+  set xlconstant_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_0 ]
   set_property -dict [ list \
-   CONFIG.C_MON_TYPE {INTERFACE} \
-   CONFIG.C_NUM_MONITOR_SLOTS {9} \
-   CONFIG.C_SLOT_0_APC_EN {0} \
-   CONFIG.C_SLOT_0_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_0_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_0_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
-   CONFIG.C_SLOT_1_APC_EN {0} \
-   CONFIG.C_SLOT_1_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_1_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_1_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
-   CONFIG.C_SLOT_2_APC_EN {0} \
-   CONFIG.C_SLOT_2_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_2_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_2_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
-   CONFIG.C_SLOT_3_APC_EN {0} \
-   CONFIG.C_SLOT_3_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_3_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_3_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
-   CONFIG.C_SLOT_4_APC_EN {0} \
-   CONFIG.C_SLOT_4_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_4_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_4_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
-   CONFIG.C_SLOT_5_APC_EN {0} \
-   CONFIG.C_SLOT_5_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_5_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_5_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
-   CONFIG.C_SLOT_6_APC_EN {0} \
-   CONFIG.C_SLOT_6_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_6_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_6_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
-   CONFIG.C_SLOT_7_APC_EN {0} \
-   CONFIG.C_SLOT_7_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_7_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_7_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
-   CONFIG.C_SLOT_8_APC_EN {0} \
-   CONFIG.C_SLOT_8_AXI_DATA_SEL {1} \
-   CONFIG.C_SLOT_8_AXI_TRIG_SEL {1} \
-   CONFIG.C_SLOT_8_INTF_TYPE {xilinx.com:interface:axis_rtl:1.0} \
- ] $system_ila_0
+   CONFIG.CONST_VAL {0} \
+   CONFIG.CONST_WIDTH {1} \
+ ] $xlconstant_0
 
-  # Create instance: total_link_ctrl_0, and set properties
-  set block_name total_link_ctrl
-  set block_cell_name total_link_ctrl_0
-  if { [catch {set total_link_ctrl_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $total_link_ctrl_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
-  # Create instance: xlconcat_0, and set properties
-  set xlconcat_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_0 ]
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
   set_property -dict [ list \
-   CONFIG.NUM_PORTS {8} \
- ] $xlconcat_0
+   CONFIG.CONST_VAL {1} \
+   CONFIG.CONST_WIDTH {1} \
+ ] $xlconstant_1
+
+  # Create instance: xlconstant_2, and set properties
+  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {7} \
+   CONFIG.CONST_WIDTH {4} \
+ ] $xlconstant_2
 
   # Create interface connections
-  connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins axis_data_fifo_0/S_AXIS] [get_bd_intf_pins total_link_ctrl_0/m00_axis]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S] [get_bd_intf_pins axis_data_fifo_0/S_AXIS] [get_bd_intf_pins system_ila_0/SLOT_1_AXIS]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S]
-  connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S1 [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S] [get_bd_intf_pins total_link_ctrl_0/s00_axis]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S1] [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S] [get_bd_intf_pins system_ila_0/SLOT_8_AXIS]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_dma_0_M_AXIS_MM2S1]
-  connect_bd_intf_net -intf_net axi_dma_0_M_AXI_MM2S [get_bd_intf_pins axi_dma_0/M_AXI_MM2S] [get_bd_intf_pins axi_smc/S00_AXI]
-  connect_bd_intf_net -intf_net axi_dma_0_M_AXI_S2MM [get_bd_intf_pins axi_dma_0/M_AXI_S2MM] [get_bd_intf_pins axi_smc/S01_AXI]
-  connect_bd_intf_net -intf_net axi_dma_1_M_AXIS_MM2S [get_bd_intf_pins axi_dma_1/M_AXIS_MM2S] [get_bd_intf_pins total_link_ctrl_0/s01_axis]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_dma_1_M_AXIS_MM2S] [get_bd_intf_pins axi_dma_1/M_AXIS_MM2S] [get_bd_intf_pins system_ila_0/SLOT_2_AXIS]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_dma_1_M_AXIS_MM2S]
-  connect_bd_intf_net -intf_net axi_dma_1_M_AXI_MM2S [get_bd_intf_pins axi_dma_1/M_AXI_MM2S] [get_bd_intf_pins axi_smc/S02_AXI]
-  connect_bd_intf_net -intf_net axi_dma_1_M_AXI_S2MM [get_bd_intf_pins axi_dma_1/M_AXI_S2MM] [get_bd_intf_pins axi_smc/S03_AXI]
-  connect_bd_intf_net -intf_net axi_dma_2_M_AXIS_MM2S [get_bd_intf_pins axi_dma_2/M_AXIS_MM2S] [get_bd_intf_pins total_link_ctrl_0/s02_axis]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_dma_2_M_AXIS_MM2S] [get_bd_intf_pins axi_dma_2/M_AXIS_MM2S] [get_bd_intf_pins system_ila_0/SLOT_0_AXIS]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_dma_2_M_AXIS_MM2S]
-  connect_bd_intf_net -intf_net axi_dma_2_M_AXI_MM2S [get_bd_intf_pins axi_dma_2/M_AXI_MM2S] [get_bd_intf_pins axi_smc/S04_AXI]
-  connect_bd_intf_net -intf_net axi_dma_2_M_AXI_S2MM [get_bd_intf_pins axi_dma_2/M_AXI_S2MM] [get_bd_intf_pins axi_smc/S05_AXI]
-  connect_bd_intf_net -intf_net axi_dma_3_M_AXIS_MM2S [get_bd_intf_pins axi_dma_3/M_AXIS_MM2S] [get_bd_intf_pins total_link_ctrl_0/s03_axis]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axi_dma_3_M_AXIS_MM2S] [get_bd_intf_pins axi_dma_3/M_AXIS_MM2S] [get_bd_intf_pins system_ila_0/SLOT_7_AXIS]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets axi_dma_3_M_AXIS_MM2S]
-  connect_bd_intf_net -intf_net axi_dma_3_M_AXI_MM2S [get_bd_intf_pins axi_dma_3/M_AXI_MM2S] [get_bd_intf_pins axi_smc/S06_AXI]
-  connect_bd_intf_net -intf_net axi_dma_3_M_AXI_S2MM [get_bd_intf_pins axi_dma_3/M_AXI_S2MM] [get_bd_intf_pins axi_smc/S07_AXI]
-  connect_bd_intf_net -intf_net axi_smc_M00_AXI [get_bd_intf_pins axi_smc/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
+  connect_bd_intf_net -intf_net axi_dma_0_M_AXIS_MM2S [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S] [get_bd_intf_pins bram_rd_0/s_axis]
+  connect_bd_intf_net -intf_net axi_dma_0_M_AXI_MM2S [get_bd_intf_pins axi_dma_0/M_AXI_MM2S] [get_bd_intf_pins smartconnect_0/S00_AXI]
+  connect_bd_intf_net -intf_net axi_dma_0_M_AXI_S2MM [get_bd_intf_pins axi_dma_0/M_AXI_S2MM] [get_bd_intf_pins smartconnect_0/S01_AXI]
   connect_bd_intf_net -intf_net axis_data_fifo_0_M_AXIS [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM] [get_bd_intf_pins axis_data_fifo_0/M_AXIS]
-connect_bd_intf_net -intf_net [get_bd_intf_nets axis_data_fifo_0_M_AXIS] [get_bd_intf_pins axis_data_fifo_0/M_AXIS] [get_bd_intf_pins system_ila_0/SLOT_3_AXIS]
+  connect_bd_intf_net -intf_net bram_rd_0_m_axis [get_bd_intf_pins axis_data_fifo_0/S_AXIS] [get_bd_intf_pins bram_rd_0/m_axis]
   connect_bd_intf_net -intf_net processing_system7_0_DDR [get_bd_intf_ports DDR] [get_bd_intf_pins processing_system7_0/DDR]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
-  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins smartconnect_0/S00_AXI]
-  connect_bd_intf_net -intf_net smartconnect_0_M00_AXI [get_bd_intf_pins axi_dma_0/S_AXI_LITE] [get_bd_intf_pins smartconnect_0/M00_AXI]
-  connect_bd_intf_net -intf_net smartconnect_0_M01_AXI [get_bd_intf_pins axi_dma_1/S_AXI_LITE] [get_bd_intf_pins smartconnect_0/M01_AXI]
-  connect_bd_intf_net -intf_net smartconnect_0_M02_AXI [get_bd_intf_pins axi_dma_2/S_AXI_LITE] [get_bd_intf_pins smartconnect_0/M02_AXI]
-  connect_bd_intf_net -intf_net smartconnect_0_M03_AXI [get_bd_intf_pins axi_dma_3/S_AXI_LITE] [get_bd_intf_pins smartconnect_0/M03_AXI]
-  connect_bd_intf_net -intf_net smartconnect_0_M04_AXI [get_bd_intf_pins link_err/S_AXI] [get_bd_intf_pins smartconnect_0/M04_AXI]
-  connect_bd_intf_net -intf_net total_link_ctrl_0_m01_axis [get_bd_intf_pins axi_dma_1/S_AXIS_S2MM] [get_bd_intf_pins total_link_ctrl_0/m01_axis]
-connect_bd_intf_net -intf_net [get_bd_intf_nets total_link_ctrl_0_m01_axis] [get_bd_intf_pins axi_dma_1/S_AXIS_S2MM] [get_bd_intf_pins system_ila_0/SLOT_4_AXIS]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets total_link_ctrl_0_m01_axis]
-  connect_bd_intf_net -intf_net total_link_ctrl_0_m02_axis [get_bd_intf_pins axi_dma_2/S_AXIS_S2MM] [get_bd_intf_pins total_link_ctrl_0/m02_axis]
-connect_bd_intf_net -intf_net [get_bd_intf_nets total_link_ctrl_0_m02_axis] [get_bd_intf_pins axi_dma_2/S_AXIS_S2MM] [get_bd_intf_pins system_ila_0/SLOT_5_AXIS]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets total_link_ctrl_0_m02_axis]
-  connect_bd_intf_net -intf_net total_link_ctrl_0_m03_axis [get_bd_intf_pins axi_dma_3/S_AXIS_S2MM] [get_bd_intf_pins total_link_ctrl_0/m03_axis]
-connect_bd_intf_net -intf_net [get_bd_intf_nets total_link_ctrl_0_m03_axis] [get_bd_intf_pins axi_dma_3/S_AXIS_S2MM] [get_bd_intf_pins system_ila_0/SLOT_6_AXIS]
-set_property HDL_ATTRIBUTE.DEBUG {true} [get_bd_intf_nets total_link_ctrl_0_m03_axis]
+  connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins smartconnect_1/S00_AXI]
+  connect_bd_intf_net -intf_net smartconnect_0_M00_AXI [get_bd_intf_pins processing_system7_0/S_AXI_HP0] [get_bd_intf_pins smartconnect_0/M00_AXI]
+  connect_bd_intf_net -intf_net smartconnect_1_M00_AXI [get_bd_intf_pins axi_dma_0/S_AXI_LITE] [get_bd_intf_pins smartconnect_1/M00_AXI]
 
   # Create port connections
-  connect_bd_net -net axi_dma_0_mm2s_introut [get_bd_pins axi_dma_0/mm2s_introut] [get_bd_pins xlconcat_0/In0]
-  connect_bd_net -net axi_dma_0_s2mm_introut [get_bd_pins axi_dma_0/s2mm_introut] [get_bd_pins xlconcat_0/In1]
-  connect_bd_net -net axi_dma_1_mm2s_introut [get_bd_pins axi_dma_1/mm2s_introut] [get_bd_pins xlconcat_0/In2]
-  connect_bd_net -net axi_dma_1_s2mm_introut [get_bd_pins axi_dma_1/s2mm_introut] [get_bd_pins xlconcat_0/In3]
-  connect_bd_net -net axi_dma_2_mm2s_introut [get_bd_pins axi_dma_2/mm2s_introut] [get_bd_pins xlconcat_0/In4]
-  connect_bd_net -net axi_dma_2_s2mm_introut [get_bd_pins axi_dma_2/s2mm_introut] [get_bd_pins xlconcat_0/In5]
-  connect_bd_net -net axi_dma_3_mm2s_introut [get_bd_pins axi_dma_3/mm2s_introut] [get_bd_pins xlconcat_0/In6]
-  connect_bd_net -net axi_dma_3_s2mm_introut [get_bd_pins axi_dma_3/s2mm_introut] [get_bd_pins xlconcat_0/In7]
-  connect_bd_net -net data_in_1 [get_bd_ports link0_data_in] [get_bd_pins link7/data_in]
-  connect_bd_net -net link0_channel [get_bd_pins link7/channel] [get_bd_pins total_link_ctrl_0/link7_channel]
+  connect_bd_net -net blk_mem_gen_0a_doutb [get_bd_pins blk_mem_gen_0a/doutb] [get_bd_pins bram_rd_0/data0a]
+  connect_bd_net -net blk_mem_gen_0b_doutb [get_bd_pins blk_mem_gen_0b/doutb] [get_bd_pins bram_rd_0/data0b]
+  connect_bd_net -net blk_mem_gen_10a_doutb [get_bd_pins blk_mem_gen_10a/doutb] [get_bd_pins bram_rd_0/data10a]
+  connect_bd_net -net blk_mem_gen_10b_doutb [get_bd_pins blk_mem_gen_10b/doutb] [get_bd_pins bram_rd_0/data10b]
+  connect_bd_net -net blk_mem_gen_11a_doutb [get_bd_pins blk_mem_gen_11a/doutb] [get_bd_pins bram_rd_0/data11a]
+  connect_bd_net -net blk_mem_gen_11b_doutb [get_bd_pins blk_mem_gen_11b/doutb] [get_bd_pins bram_rd_0/data11b]
+  connect_bd_net -net blk_mem_gen_12a_doutb [get_bd_pins blk_mem_gen_12a/doutb] [get_bd_pins bram_rd_0/data12a]
+  connect_bd_net -net blk_mem_gen_12b_doutb [get_bd_pins blk_mem_gen_12b/doutb] [get_bd_pins bram_rd_0/data12b]
+  connect_bd_net -net blk_mem_gen_13a_doutb [get_bd_pins blk_mem_gen_13a/doutb] [get_bd_pins bram_rd_0/data13a]
+  connect_bd_net -net blk_mem_gen_13b_doutb [get_bd_pins blk_mem_gen_13b/doutb] [get_bd_pins bram_rd_0/data13b]
+  connect_bd_net -net blk_mem_gen_14a_doutb [get_bd_pins blk_mem_gen_14a/doutb] [get_bd_pins bram_rd_0/data14a]
+  connect_bd_net -net blk_mem_gen_14b_doutb [get_bd_pins blk_mem_gen_14b/doutb] [get_bd_pins bram_rd_0/data14b]
+  connect_bd_net -net blk_mem_gen_15a_doutb [get_bd_pins blk_mem_gen_15a/doutb] [get_bd_pins bram_rd_0/data15a]
+  connect_bd_net -net blk_mem_gen_15b_doutb [get_bd_pins blk_mem_gen_15b/doutb] [get_bd_pins bram_rd_0/data15b]
+  connect_bd_net -net blk_mem_gen_1a_doutb [get_bd_pins blk_mem_gen_1a/doutb] [get_bd_pins bram_rd_0/data1a]
+  connect_bd_net -net blk_mem_gen_1b_doutb [get_bd_pins blk_mem_gen_1b/doutb] [get_bd_pins bram_rd_0/data1b]
+  connect_bd_net -net blk_mem_gen_2a_doutb [get_bd_pins blk_mem_gen_2a/doutb] [get_bd_pins bram_rd_0/data2a]
+  connect_bd_net -net blk_mem_gen_2b_doutb [get_bd_pins blk_mem_gen_2b/doutb] [get_bd_pins bram_rd_0/data2b]
+  connect_bd_net -net blk_mem_gen_3a_doutb [get_bd_pins blk_mem_gen_3a/doutb] [get_bd_pins bram_rd_0/data3a]
+  connect_bd_net -net blk_mem_gen_3b_doutb [get_bd_pins blk_mem_gen_3b/doutb] [get_bd_pins bram_rd_0/data3b]
+  connect_bd_net -net blk_mem_gen_4a_doutb [get_bd_pins blk_mem_gen_4a/doutb] [get_bd_pins bram_rd_0/data4a]
+  connect_bd_net -net blk_mem_gen_4b_doutb [get_bd_pins blk_mem_gen_4b/doutb] [get_bd_pins bram_rd_0/data4b]
+  connect_bd_net -net blk_mem_gen_5a_doutb [get_bd_pins blk_mem_gen_5a/doutb] [get_bd_pins bram_rd_0/data5a]
+  connect_bd_net -net blk_mem_gen_5b_doutb [get_bd_pins blk_mem_gen_5b/doutb] [get_bd_pins bram_rd_0/data5b]
+  connect_bd_net -net blk_mem_gen_6a_doutb [get_bd_pins blk_mem_gen_6a/doutb] [get_bd_pins bram_rd_0/data6a]
+  connect_bd_net -net blk_mem_gen_6b_doutb [get_bd_pins blk_mem_gen_6b/doutb] [get_bd_pins bram_rd_0/data6b]
+  connect_bd_net -net blk_mem_gen_7a_doutb [get_bd_pins blk_mem_gen_7a/doutb] [get_bd_pins bram_rd_0/data7a]
+  connect_bd_net -net blk_mem_gen_7b_doutb [get_bd_pins blk_mem_gen_7b/doutb] [get_bd_pins bram_rd_0/data7b]
+  connect_bd_net -net blk_mem_gen_8a_doutb [get_bd_pins blk_mem_gen_8a/doutb] [get_bd_pins bram_rd_0/data8a]
+  connect_bd_net -net blk_mem_gen_8b_doutb [get_bd_pins blk_mem_gen_8b/doutb] [get_bd_pins bram_rd_0/data8b]
+  connect_bd_net -net blk_mem_gen_9a_doutb [get_bd_pins blk_mem_gen_9a/doutb] [get_bd_pins bram_rd_0/data9a]
+  connect_bd_net -net blk_mem_gen_9b_doutb [get_bd_pins blk_mem_gen_9b/doutb] [get_bd_pins bram_rd_0/data9b]
+  connect_bd_net -net bram_rd_0_addr0a [get_bd_pins blk_mem_gen_0a/addrb] [get_bd_pins bram_rd_0/addr0a]
+  connect_bd_net -net bram_rd_0_addr0b [get_bd_pins blk_mem_gen_0b/addrb] [get_bd_pins bram_rd_0/addr0b]
+  connect_bd_net -net bram_rd_0_addr10a [get_bd_pins blk_mem_gen_10a/addrb] [get_bd_pins bram_rd_0/addr10a]
+  connect_bd_net -net bram_rd_0_addr10b [get_bd_pins blk_mem_gen_10b/addrb] [get_bd_pins bram_rd_0/addr10b]
+  connect_bd_net -net bram_rd_0_addr11a [get_bd_pins blk_mem_gen_11a/addrb] [get_bd_pins bram_rd_0/addr11a]
+  connect_bd_net -net bram_rd_0_addr11b [get_bd_pins blk_mem_gen_11b/addrb] [get_bd_pins bram_rd_0/addr11b]
+  connect_bd_net -net bram_rd_0_addr12a [get_bd_pins blk_mem_gen_12a/addrb] [get_bd_pins bram_rd_0/addr12a]
+  connect_bd_net -net bram_rd_0_addr12b [get_bd_pins blk_mem_gen_12b/addrb] [get_bd_pins bram_rd_0/addr12b]
+  connect_bd_net -net bram_rd_0_addr13a [get_bd_pins blk_mem_gen_13a/addrb] [get_bd_pins bram_rd_0/addr13a]
+  connect_bd_net -net bram_rd_0_addr13b [get_bd_pins blk_mem_gen_13b/addrb] [get_bd_pins bram_rd_0/addr13b]
+  connect_bd_net -net bram_rd_0_addr14a [get_bd_pins blk_mem_gen_14a/addrb] [get_bd_pins bram_rd_0/addr14a]
+  connect_bd_net -net bram_rd_0_addr14b [get_bd_pins blk_mem_gen_14b/addrb] [get_bd_pins bram_rd_0/addr14b]
+  connect_bd_net -net bram_rd_0_addr15a [get_bd_pins blk_mem_gen_15a/addrb] [get_bd_pins bram_rd_0/addr15a]
+  connect_bd_net -net bram_rd_0_addr15b [get_bd_pins blk_mem_gen_15b/addrb] [get_bd_pins bram_rd_0/addr15b]
+  connect_bd_net -net bram_rd_0_addr1a [get_bd_pins blk_mem_gen_1a/addrb] [get_bd_pins bram_rd_0/addr1a]
+  connect_bd_net -net bram_rd_0_addr1b [get_bd_pins blk_mem_gen_1b/addrb] [get_bd_pins bram_rd_0/addr1b]
+  connect_bd_net -net bram_rd_0_addr2a [get_bd_pins blk_mem_gen_2a/addrb] [get_bd_pins bram_rd_0/addr2a]
+  connect_bd_net -net bram_rd_0_addr2b [get_bd_pins blk_mem_gen_2b/addrb] [get_bd_pins bram_rd_0/addr2b]
+  connect_bd_net -net bram_rd_0_addr3a [get_bd_pins blk_mem_gen_3a/addrb] [get_bd_pins bram_rd_0/addr3a]
+  connect_bd_net -net bram_rd_0_addr3b [get_bd_pins blk_mem_gen_3b/addrb] [get_bd_pins bram_rd_0/addr3b]
+  connect_bd_net -net bram_rd_0_addr4a [get_bd_pins blk_mem_gen_4a/addrb] [get_bd_pins bram_rd_0/addr4a]
+  connect_bd_net -net bram_rd_0_addr4b [get_bd_pins blk_mem_gen_4b/addrb] [get_bd_pins bram_rd_0/addr4b]
+  connect_bd_net -net bram_rd_0_addr5a [get_bd_pins blk_mem_gen_5a/addrb] [get_bd_pins bram_rd_0/addr5a]
+  connect_bd_net -net bram_rd_0_addr5b [get_bd_pins blk_mem_gen_5b/addrb] [get_bd_pins bram_rd_0/addr5b]
+  connect_bd_net -net bram_rd_0_addr6a [get_bd_pins blk_mem_gen_6a/addrb] [get_bd_pins bram_rd_0/addr6a]
+  connect_bd_net -net bram_rd_0_addr6b [get_bd_pins blk_mem_gen_6b/addrb] [get_bd_pins bram_rd_0/addr6b]
+  connect_bd_net -net bram_rd_0_addr7a [get_bd_pins blk_mem_gen_7a/addrb] [get_bd_pins bram_rd_0/addr7a]
+  connect_bd_net -net bram_rd_0_addr7b [get_bd_pins blk_mem_gen_7b/addrb] [get_bd_pins bram_rd_0/addr7b]
+  connect_bd_net -net bram_rd_0_addr8a [get_bd_pins blk_mem_gen_8a/addrb] [get_bd_pins bram_rd_0/addr8a]
+  connect_bd_net -net bram_rd_0_addr8b [get_bd_pins blk_mem_gen_8b/addrb] [get_bd_pins bram_rd_0/addr8b]
+  connect_bd_net -net bram_rd_0_addr9a [get_bd_pins blk_mem_gen_9a/addrb] [get_bd_pins bram_rd_0/addr9a]
+  connect_bd_net -net bram_rd_0_addr9b [get_bd_pins blk_mem_gen_9b/addrb] [get_bd_pins bram_rd_0/addr9b]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins link10/clk_16M] [get_bd_pins link11/clk_16M] [get_bd_pins link12/clk_16M] [get_bd_pins link13/clk_16M] [get_bd_pins link14/clk_16M] [get_bd_pins link15/clk_16M] [get_bd_pins link16/clk_16M] [get_bd_pins link17/clk_16M] [get_bd_pins link18/clk_16M] [get_bd_pins link19/clk_16M] [get_bd_pins link20/clk_16M] [get_bd_pins link21/clk_16M] [get_bd_pins link22/clk_16M] [get_bd_pins link7/clk_16M] [get_bd_pins link8/clk_16M] [get_bd_pins link9/clk_16M]
+  connect_bd_net -net data_in_1 [get_bd_ports link0_data_in] [get_bd_pins link10/data_in] [get_bd_pins link11/data_in] [get_bd_pins link12/data_in] [get_bd_pins link13/data_in] [get_bd_pins link14/data_in] [get_bd_pins link15/data_in] [get_bd_pins link16/data_in] [get_bd_pins link17/data_in] [get_bd_pins link18/data_in] [get_bd_pins link19/data_in] [get_bd_pins link20/data_in] [get_bd_pins link21/data_in] [get_bd_pins link22/data_in] [get_bd_pins link7/data_in] [get_bd_pins link8/data_in] [get_bd_pins link9/data_in]
   connect_bd_net -net link0_data_out1 [get_bd_ports link0_data_out] [get_bd_pins link7/data_out]
-  connect_bd_net -net link0_data_out_1 [get_bd_pins link7/data_out_1] [get_bd_pins total_link_ctrl_0/link7_data]
-  connect_bd_net -net link0_link_err [get_bd_pins link7/link_err] [get_bd_pins total_link_ctrl_0/link7_err]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_dma_1/m_axi_mm2s_aclk] [get_bd_pins axi_dma_1/m_axi_s2mm_aclk] [get_bd_pins axi_dma_1/s_axi_lite_aclk] [get_bd_pins axi_dma_2/m_axi_mm2s_aclk] [get_bd_pins axi_dma_2/m_axi_s2mm_aclk] [get_bd_pins axi_dma_2/s_axi_lite_aclk] [get_bd_pins axi_dma_3/m_axi_mm2s_aclk] [get_bd_pins axi_dma_3/m_axi_s2mm_aclk] [get_bd_pins axi_dma_3/s_axi_lite_aclk] [get_bd_pins axi_smc/aclk] [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins link7/clk_100M] [get_bd_pins link_err/s_axi_aclk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins smartconnect_0/aclk] [get_bd_pins system_ila_0/clk] [get_bd_pins total_link_ctrl_0/clk]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axi_dma_1/axi_resetn] [get_bd_pins axi_dma_2/axi_resetn] [get_bd_pins axi_dma_3/axi_resetn] [get_bd_pins axi_smc/aresetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins link_err/s_axi_aresetn] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins smartconnect_0/aresetn] [get_bd_pins system_ila_0/resetn] [get_bd_pins total_link_ctrl_0/rstn]
-  connect_bd_net -net processing_system7_0_FCLK_RESET0_N1 [get_bd_pins link7/reset_n] [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
-  connect_bd_net -net total_link_ctrl_0_link7 [get_bd_pins link7/link] [get_bd_pins total_link_ctrl_0/link7]
-  connect_bd_net -net total_link_ctrl_0_link_err [get_bd_pins link_err/gpio_io_i] [get_bd_pins total_link_ctrl_0/link_err]
-  connect_bd_net -net xlconcat_0_dout [get_bd_pins processing_system7_0/IRQ_F2P] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net link10_address [get_bd_pins blk_mem_gen_3a/addra] [get_bd_pins blk_mem_gen_3b/addra] [get_bd_pins link10/address]
+  connect_bd_net -net link10_data_out1 [get_bd_pins blk_mem_gen_3a/dina] [get_bd_pins blk_mem_gen_3b/dina] [get_bd_pins link10/data_out1]
+  connect_bd_net -net link11_address [get_bd_pins blk_mem_gen_4a/addra] [get_bd_pins blk_mem_gen_4b/addra] [get_bd_pins link11/address]
+  connect_bd_net -net link11_data_out1 [get_bd_pins blk_mem_gen_4a/dina] [get_bd_pins blk_mem_gen_4b/dina] [get_bd_pins link11/data_out1]
+  connect_bd_net -net link12_address [get_bd_pins blk_mem_gen_5a/addra] [get_bd_pins blk_mem_gen_5b/addra] [get_bd_pins link12/address]
+  connect_bd_net -net link12_data_out1 [get_bd_pins blk_mem_gen_5a/dina] [get_bd_pins blk_mem_gen_5b/dina] [get_bd_pins link12/data_out1]
+  connect_bd_net -net link13_address [get_bd_pins blk_mem_gen_6a/addra] [get_bd_pins blk_mem_gen_6b/addra] [get_bd_pins link13/address]
+  connect_bd_net -net link13_data_out1 [get_bd_pins blk_mem_gen_6a/dina] [get_bd_pins blk_mem_gen_6b/dina] [get_bd_pins link13/data_out1]
+  connect_bd_net -net link14_address [get_bd_pins blk_mem_gen_7a/addra] [get_bd_pins blk_mem_gen_7b/addra] [get_bd_pins link14/address]
+  connect_bd_net -net link14_data_out1 [get_bd_pins blk_mem_gen_7a/dina] [get_bd_pins blk_mem_gen_7b/dina] [get_bd_pins link14/data_out1]
+  connect_bd_net -net link15_address [get_bd_pins blk_mem_gen_8a/addra] [get_bd_pins blk_mem_gen_8b/addra] [get_bd_pins link15/address]
+  connect_bd_net -net link15_data_out1 [get_bd_pins blk_mem_gen_8a/dina] [get_bd_pins blk_mem_gen_8b/dina] [get_bd_pins link15/data_out1]
+  connect_bd_net -net link16_address [get_bd_pins blk_mem_gen_9a/addra] [get_bd_pins blk_mem_gen_9b/addra] [get_bd_pins link16/address]
+  connect_bd_net -net link16_data_out1 [get_bd_pins blk_mem_gen_9a/dina] [get_bd_pins blk_mem_gen_9b/dina] [get_bd_pins link16/data_out1]
+  connect_bd_net -net link17_address [get_bd_pins blk_mem_gen_10a/addra] [get_bd_pins blk_mem_gen_10b/addra] [get_bd_pins link17/address]
+  connect_bd_net -net link17_data_out1 [get_bd_pins blk_mem_gen_10a/dina] [get_bd_pins blk_mem_gen_10b/dina] [get_bd_pins link17/data_out1]
+  connect_bd_net -net link18_address [get_bd_pins blk_mem_gen_11a/addra] [get_bd_pins blk_mem_gen_11b/addra] [get_bd_pins link18/address]
+  connect_bd_net -net link18_data_out1 [get_bd_pins blk_mem_gen_11a/dina] [get_bd_pins blk_mem_gen_11b/dina] [get_bd_pins link18/data_out1]
+  connect_bd_net -net link19_address [get_bd_pins blk_mem_gen_12a/addra] [get_bd_pins blk_mem_gen_12b/addra] [get_bd_pins link19/address]
+  connect_bd_net -net link19_data_out1 [get_bd_pins blk_mem_gen_12a/dina] [get_bd_pins blk_mem_gen_12b/dina] [get_bd_pins link19/data_out1]
+  connect_bd_net -net link20_address [get_bd_pins blk_mem_gen_13a/addra] [get_bd_pins blk_mem_gen_13b/addra] [get_bd_pins link20/address]
+  connect_bd_net -net link20_data_out1 [get_bd_pins blk_mem_gen_13a/dina] [get_bd_pins blk_mem_gen_13b/dina] [get_bd_pins link20/data_out1]
+  connect_bd_net -net link21_address [get_bd_pins blk_mem_gen_14a/addra] [get_bd_pins blk_mem_gen_14b/addra] [get_bd_pins link21/address]
+  connect_bd_net -net link21_data_out1 [get_bd_pins blk_mem_gen_14a/dina] [get_bd_pins blk_mem_gen_14b/dina] [get_bd_pins link21/data_out1]
+  connect_bd_net -net link22_address [get_bd_pins blk_mem_gen_15a/addra] [get_bd_pins blk_mem_gen_15b/addra] [get_bd_pins link22/address]
+  connect_bd_net -net link22_data_out1 [get_bd_pins blk_mem_gen_15a/dina] [get_bd_pins blk_mem_gen_15b/dina] [get_bd_pins link22/data_out1]
+  connect_bd_net -net link7_address [get_bd_pins blk_mem_gen_0a/addra] [get_bd_pins blk_mem_gen_0b/addra] [get_bd_pins link7/address]
+  connect_bd_net -net link7_data_out1 [get_bd_pins blk_mem_gen_0a/dina] [get_bd_pins blk_mem_gen_0b/dina] [get_bd_pins link7/data_out1]
+  connect_bd_net -net link8_address [get_bd_pins blk_mem_gen_1a/addra] [get_bd_pins blk_mem_gen_1b/addra] [get_bd_pins link8/address]
+  connect_bd_net -net link8_data_out1 [get_bd_pins blk_mem_gen_1a/dina] [get_bd_pins blk_mem_gen_1b/dina] [get_bd_pins link8/data_out1]
+  connect_bd_net -net link9_address [get_bd_pins blk_mem_gen_2a/addra] [get_bd_pins blk_mem_gen_2b/addra] [get_bd_pins link9/address]
+  connect_bd_net -net link9_data_out1 [get_bd_pins blk_mem_gen_2a/dina] [get_bd_pins blk_mem_gen_2b/dina] [get_bd_pins link9/data_out1]
+  connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins axi_dma_0/axi_resetn] [get_bd_pins axis_data_fifo_0/s_axis_aresetn] [get_bd_pins bram_rd_0/rstn] [get_bd_pins proc_sys_reset_0/peripheral_aresetn] [get_bd_pins smartconnect_0/aresetn] [get_bd_pins smartconnect_1/aresetn]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axis_data_fifo_0/s_axis_aclk] [get_bd_pins blk_mem_gen_0a/clka] [get_bd_pins blk_mem_gen_0a/clkb] [get_bd_pins blk_mem_gen_0b/clka] [get_bd_pins blk_mem_gen_0b/clkb] [get_bd_pins blk_mem_gen_10a/clka] [get_bd_pins blk_mem_gen_10a/clkb] [get_bd_pins blk_mem_gen_10b/clka] [get_bd_pins blk_mem_gen_10b/clkb] [get_bd_pins blk_mem_gen_11a/clka] [get_bd_pins blk_mem_gen_11a/clkb] [get_bd_pins blk_mem_gen_11b/clka] [get_bd_pins blk_mem_gen_11b/clkb] [get_bd_pins blk_mem_gen_12a/clka] [get_bd_pins blk_mem_gen_12a/clkb] [get_bd_pins blk_mem_gen_12b/clka] [get_bd_pins blk_mem_gen_12b/clkb] [get_bd_pins blk_mem_gen_13a/clka] [get_bd_pins blk_mem_gen_13a/clkb] [get_bd_pins blk_mem_gen_13b/clka] [get_bd_pins blk_mem_gen_13b/clkb] [get_bd_pins blk_mem_gen_14a/clka] [get_bd_pins blk_mem_gen_14a/clkb] [get_bd_pins blk_mem_gen_14b/clka] [get_bd_pins blk_mem_gen_14b/clkb] [get_bd_pins blk_mem_gen_15a/clka] [get_bd_pins blk_mem_gen_15a/clkb] [get_bd_pins blk_mem_gen_15b/clka] [get_bd_pins blk_mem_gen_15b/clkb] [get_bd_pins blk_mem_gen_1a/clka] [get_bd_pins blk_mem_gen_1a/clkb] [get_bd_pins blk_mem_gen_1b/clka] [get_bd_pins blk_mem_gen_1b/clkb] [get_bd_pins blk_mem_gen_2a/clka] [get_bd_pins blk_mem_gen_2a/clkb] [get_bd_pins blk_mem_gen_2b/clka] [get_bd_pins blk_mem_gen_2b/clkb] [get_bd_pins blk_mem_gen_3a/clka] [get_bd_pins blk_mem_gen_3a/clkb] [get_bd_pins blk_mem_gen_3b/clka] [get_bd_pins blk_mem_gen_3b/clkb] [get_bd_pins blk_mem_gen_4a/clka] [get_bd_pins blk_mem_gen_4a/clkb] [get_bd_pins blk_mem_gen_4b/clka] [get_bd_pins blk_mem_gen_4b/clkb] [get_bd_pins blk_mem_gen_5a/clka] [get_bd_pins blk_mem_gen_5a/clkb] [get_bd_pins blk_mem_gen_5b/clka] [get_bd_pins blk_mem_gen_5b/clkb] [get_bd_pins blk_mem_gen_6a/clka] [get_bd_pins blk_mem_gen_6a/clkb] [get_bd_pins blk_mem_gen_6b/clka] [get_bd_pins blk_mem_gen_6b/clkb] [get_bd_pins blk_mem_gen_7a/clka] [get_bd_pins blk_mem_gen_7a/clkb] [get_bd_pins blk_mem_gen_7b/clka] [get_bd_pins blk_mem_gen_7b/clkb] [get_bd_pins blk_mem_gen_8a/clka] [get_bd_pins blk_mem_gen_8a/clkb] [get_bd_pins blk_mem_gen_8b/clka] [get_bd_pins blk_mem_gen_8b/clkb] [get_bd_pins blk_mem_gen_9a/clka] [get_bd_pins blk_mem_gen_9a/clkb] [get_bd_pins blk_mem_gen_9b/clka] [get_bd_pins blk_mem_gen_9b/clkb] [get_bd_pins bram_rd_0/clk] [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins link10/clk_100M] [get_bd_pins link11/clk_100M] [get_bd_pins link12/clk_100M] [get_bd_pins link13/clk_100M] [get_bd_pins link14/clk_100M] [get_bd_pins link15/clk_100M] [get_bd_pins link16/clk_100M] [get_bd_pins link17/clk_100M] [get_bd_pins link18/clk_100M] [get_bd_pins link19/clk_100M] [get_bd_pins link20/clk_100M] [get_bd_pins link21/clk_100M] [get_bd_pins link22/clk_100M] [get_bd_pins link7/clk_100M] [get_bd_pins link8/clk_100M] [get_bd_pins link9/clk_100M] [get_bd_pins proc_sys_reset_0/slowest_sync_clk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins smartconnect_0/aclk] [get_bd_pins smartconnect_1/aclk]
+  connect_bd_net -net processing_system7_0_FCLK_RESET0_N1 [get_bd_pins link10/reset_n] [get_bd_pins link11/reset_n] [get_bd_pins link12/reset_n] [get_bd_pins link13/reset_n] [get_bd_pins link14/reset_n] [get_bd_pins link15/reset_n] [get_bd_pins link16/reset_n] [get_bd_pins link17/reset_n] [get_bd_pins link18/reset_n] [get_bd_pins link19/reset_n] [get_bd_pins link20/reset_n] [get_bd_pins link21/reset_n] [get_bd_pins link22/reset_n] [get_bd_pins link7/reset_n] [get_bd_pins link8/reset_n] [get_bd_pins link9/reset_n] [get_bd_pins proc_sys_reset_0/ext_reset_in] [get_bd_pins processing_system7_0/FCLK_RESET0_N]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins blk_mem_gen_0a/web] [get_bd_pins blk_mem_gen_0b/web] [get_bd_pins blk_mem_gen_10a/web] [get_bd_pins blk_mem_gen_10b/web] [get_bd_pins blk_mem_gen_11a/web] [get_bd_pins blk_mem_gen_11b/web] [get_bd_pins blk_mem_gen_12a/web] [get_bd_pins blk_mem_gen_12b/web] [get_bd_pins blk_mem_gen_13a/web] [get_bd_pins blk_mem_gen_13b/web] [get_bd_pins blk_mem_gen_14a/web] [get_bd_pins blk_mem_gen_14b/web] [get_bd_pins blk_mem_gen_15a/web] [get_bd_pins blk_mem_gen_15b/web] [get_bd_pins blk_mem_gen_1a/web] [get_bd_pins blk_mem_gen_1b/web] [get_bd_pins blk_mem_gen_2a/web] [get_bd_pins blk_mem_gen_2b/web] [get_bd_pins blk_mem_gen_3a/web] [get_bd_pins blk_mem_gen_3b/web] [get_bd_pins blk_mem_gen_4a/web] [get_bd_pins blk_mem_gen_4b/web] [get_bd_pins blk_mem_gen_5a/web] [get_bd_pins blk_mem_gen_5b/web] [get_bd_pins blk_mem_gen_6a/web] [get_bd_pins blk_mem_gen_6b/web] [get_bd_pins blk_mem_gen_7a/web] [get_bd_pins blk_mem_gen_7b/web] [get_bd_pins blk_mem_gen_8a/web] [get_bd_pins blk_mem_gen_8b/web] [get_bd_pins blk_mem_gen_9a/web] [get_bd_pins blk_mem_gen_9b/web] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_1_dout [get_bd_pins blk_mem_gen_0a/wea] [get_bd_pins blk_mem_gen_0b/wea] [get_bd_pins blk_mem_gen_10a/wea] [get_bd_pins blk_mem_gen_10b/wea] [get_bd_pins blk_mem_gen_11a/wea] [get_bd_pins blk_mem_gen_11b/wea] [get_bd_pins blk_mem_gen_12a/wea] [get_bd_pins blk_mem_gen_12b/wea] [get_bd_pins blk_mem_gen_13a/wea] [get_bd_pins blk_mem_gen_13b/wea] [get_bd_pins blk_mem_gen_14a/wea] [get_bd_pins blk_mem_gen_14b/wea] [get_bd_pins blk_mem_gen_15a/wea] [get_bd_pins blk_mem_gen_15b/wea] [get_bd_pins blk_mem_gen_1a/wea] [get_bd_pins blk_mem_gen_1b/wea] [get_bd_pins blk_mem_gen_2a/wea] [get_bd_pins blk_mem_gen_2b/wea] [get_bd_pins blk_mem_gen_3a/wea] [get_bd_pins blk_mem_gen_3b/wea] [get_bd_pins blk_mem_gen_4a/wea] [get_bd_pins blk_mem_gen_4b/wea] [get_bd_pins blk_mem_gen_5a/wea] [get_bd_pins blk_mem_gen_5b/wea] [get_bd_pins blk_mem_gen_6a/wea] [get_bd_pins blk_mem_gen_6b/wea] [get_bd_pins blk_mem_gen_7a/wea] [get_bd_pins blk_mem_gen_7b/wea] [get_bd_pins blk_mem_gen_8a/wea] [get_bd_pins blk_mem_gen_8b/wea] [get_bd_pins blk_mem_gen_9a/wea] [get_bd_pins blk_mem_gen_9b/wea] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_pins link10/link] [get_bd_pins link11/link] [get_bd_pins link12/link] [get_bd_pins link13/link] [get_bd_pins link14/link] [get_bd_pins link15/link] [get_bd_pins link16/link] [get_bd_pins link17/link] [get_bd_pins link18/link] [get_bd_pins link19/link] [get_bd_pins link20/link] [get_bd_pins link21/link] [get_bd_pins link22/link] [get_bd_pins link7/link] [get_bd_pins link8/link] [get_bd_pins link9/link] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_dma_0/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
   create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_dma_0/Data_S2MM] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
-  create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_dma_1/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
-  create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_dma_1/Data_S2MM] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
-  create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_dma_2/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
-  create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_dma_2/Data_S2MM] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
-  create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_dma_3/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
-  create_bd_addr_seg -range 0x20000000 -offset 0x00000000 [get_bd_addr_spaces axi_dma_3/Data_S2MM] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
   create_bd_addr_seg -range 0x00010000 -offset 0x40400000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_dma_0/S_AXI_LITE/Reg] SEG_axi_dma_0_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x40410000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_dma_1/S_AXI_LITE/Reg] SEG_axi_dma_1_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x40420000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_dma_2/S_AXI_LITE/Reg] SEG_axi_dma_2_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x40430000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_dma_3/S_AXI_LITE/Reg] SEG_axi_dma_3_Reg
-  create_bd_addr_seg -range 0x00010000 -offset 0x41200000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs link_err/S_AXI/Reg] SEG_axi_gpio_8_Reg
 
 
   # Restore current instance

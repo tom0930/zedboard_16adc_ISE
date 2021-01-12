@@ -1,74 +1,189 @@
 {
    "ExpandedHierarchyInLayout":"",
-   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
 #  -string -flagsOSRD
-preplace port link0_data_in -pg 1 -y 590 -defaultsOSRD
-preplace port DDR -pg 1 -y 760 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 780 -defaultsOSRD
-preplace portBus link0_data_out -pg 1 -y 400 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 5 -y 830 -defaultsOSRD
-preplace inst smartconnect_0 -pg 1 -lvl 2 -y 730 -defaultsOSRD
-preplace inst axi_dma_1 -pg 1 -lvl 3 -y 120 -defaultsOSRD
-preplace inst axi_dma_2 -pg 1 -lvl 3 -y 340 -defaultsOSRD
-preplace inst axi_smc -pg 1 -lvl 6 -y 550 -defaultsOSRD
-preplace inst axi_dma_3 -pg 1 -lvl 3 -y 1020 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 6 -y 1010 -defaultsOSRD
-preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -y 710 -defaultsOSRD
-preplace inst total_link_ctrl_0 -pg 1 -lvl 4 -y 610 -defaultsOSRD
-preplace inst link_err -pg 1 -lvl 3 -y 740 -defaultsOSRD
-preplace inst link7 -pg 1 -lvl 3 -y 580 -defaultsOSRD
-preplace inst system_ila_0 -pg 1 -lvl 8 -y 620 -defaultsOSRD
-preplace inst axis_data_fifo_0 -pg 1 -lvl 5 -y 580 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 7 -y 840 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 7 2 3370J 780 3590
-preplace netloc smartconnect_0_M02_AXI 1 2 1 800
-preplace netloc smartconnect_0_M01_AXI 1 2 1 780
-preplace netloc link0_link_err 1 3 1 1330
-preplace netloc link0_data_out_1 1 3 1 1290
-preplace netloc axi_dma_1_M_AXI_S2MM 1 3 3 NJ 80 NJ 80 2430
-preplace netloc axi_dma_3_s2mm_introut 1 3 3 N 1080 NJ 1080 NJ
-preplace netloc axi_dma_2_s2mm_introut 1 3 3 1280 410 NJ 410 2300J
-preplace netloc link0_channel 1 3 1 1310
-preplace netloc processing_system7_0_FCLK_RESET0_N1 1 0 8 30J 610 NJ 610 840 900 1270J 950 NJ 950 2430J 880 2780J 990 3350
-preplace netloc link0_data_out1 1 3 6 1310J 420 NJ 420 2330J 400 NJ 400 NJ 400 N
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 7 500 470 NJ 470 1320J 760 1790J 710 2290J 750 2860J 700 3350
-preplace netloc axi_dma_1_M_AXI_MM2S 1 3 3 NJ 60 NJ 60 2440
-preplace netloc total_link_ctrl_0_m03_axis 1 2 6 860 660 1270J 750 1760 680 2310 760 2840 640 N
-preplace netloc axi_dma_1_M_AXIS_MM2S 1 3 5 1380 440 N 440 2400 710 2790 630 3380
-preplace netloc smartconnect_0_M03_AXI 1 2 1 790
-preplace netloc axi_smc_M00_AXI 1 6 1 2850
-preplace netloc smartconnect_0_M04_AXI 1 2 1 830
-preplace netloc axi_dma_1_s2mm_introut 1 3 3 1390 270 NJ 270 2340J
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 1 7 490 630 820 840 1380 810 1800 670 2440 800 2880 690 3370
-preplace netloc total_link_ctrl_0_m02_axis 1 2 6 850 820 NJ 820 1770 690 2280 780 2830 620 N
-preplace netloc axi_dma_2_M_AXI_S2MM 1 3 3 NJ 300 NJ 300 2410
-preplace netloc axi_dma_3_M_AXI_S2MM 1 3 3 NJ 980 1780J 500 2370
-preplace netloc smartconnect_0_M00_AXI 1 2 3 790 490 1280J 780 NJ
-preplace netloc axi_dma_0_s2mm_introut 1 5 1 2260
-preplace netloc axi_dma_0_M_AXI_MM2S 1 5 1 2230
-preplace netloc xlconcat_0_dout 1 6 1 2870
-preplace netloc axi_dma_3_mm2s_introut 1 3 3 N 1060 NJ 1060 NJ
-preplace netloc axi_dma_0_M_AXIS_MM2S1 1 3 5 1400 430 NJ 430 2270 790 2870 680 N
-preplace netloc processing_system7_0_FIXED_IO 1 7 2 3360J 790 3600
-preplace netloc axi_dma_3_M_AXI_MM2S 1 3 3 NJ 960 NJ 960 2240
-preplace netloc axi_dma_3_M_AXIS_MM2S 1 3 5 1350 470 N 470 2360 730 2820 660 N
-preplace netloc axi_dma_2_mm2s_introut 1 3 3 1370 400 NJ 400 2320J
-preplace netloc axi_dma_0_mm2s_introut 1 5 1 2270
-preplace netloc data_in_1 1 0 3 NJ 590 NJ 590 NJ
-preplace netloc axi_dma_0_M_AXI_S2MM 1 5 1 2260
-preplace netloc total_link_ctrl_0_link_err 1 3 2 1260J 790 1740
-preplace netloc axis_data_fifo_0_M_AXIS 1 4 4 1820 700 2220 740 2780 580 N
-preplace netloc axi_dma_2_M_AXI_MM2S 1 3 3 NJ 280 NJ 280 2420
-preplace netloc total_link_ctrl_0_link7 1 2 3 860 480 1300J 770 1750
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 8 20 600 480 600 810 830 1340 800 1810 660 2430 840 2820 980 3380
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 4 4 1750 490 2380 700 2800J 670 3350J
-preplace netloc total_link_ctrl_0_m01_axis 1 2 6 860 460 NJ 460 1740 480 2250 770 2810 600 N
-preplace netloc axi_dma_2_M_AXIS_MM2S 1 3 5 1360 450 N 450 2390 720 2770 520 N
-preplace netloc axi_dma_1_mm2s_introut 1 3 3 1400 260 NJ 260 2350J
-levelinfo -pg 1 0 303 640 1070 1570 2032 2624 3112 3489 3620 -top -330 -bot 1190
+preplace port link0_data_in -pg 1 -y 1120 -defaultsOSRD
+preplace port DDR -pg 1 -y 20 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 40 -defaultsOSRD
+preplace portBus link0_data_out -pg 1 -y 60 -defaultsOSRD
+preplace inst blk_mem_gen_4a -pg 1 -lvl 4 -y 1710 -defaultsOSRD
+preplace inst link19 -pg 1 -lvl 6 -y 1440 -defaultsOSRD
+preplace inst blk_mem_gen_10b -pg 1 -lvl 8 -y 760 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 10 -y 1540 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 9 -y 1570 -defaultsOSRD
+preplace inst blk_mem_gen_4b -pg 1 -lvl 5 -y 1390 -defaultsOSRD
+preplace inst smartconnect_1 -pg 1 -lvl 3 -y 1550 -defaultsOSRD
+preplace inst bram_rd_0 -pg 1 -lvl 9 -y 2550 -defaultsOSRD
+preplace inst blk_mem_gen_3a -pg 1 -lvl 4 -y 1390 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 2 -y 130 -defaultsOSRD
+preplace inst link20 -pg 1 -lvl 6 -y 1790 -defaultsOSRD
+preplace inst blk_mem_gen_11a -pg 1 -lvl 7 -y 1370 -defaultsOSRD
+preplace inst blk_mem_gen_8a -pg 1 -lvl 7 -y 420 -defaultsOSRD
+preplace inst link21 -pg 1 -lvl 6 -y 2290 -defaultsOSRD
+preplace inst blk_mem_gen_3b -pg 1 -lvl 5 -y 1110 -defaultsOSRD
+preplace inst xlconstant_1 -pg 1 -lvl 2 -y 920 -defaultsOSRD
+preplace inst blk_mem_gen_14a -pg 1 -lvl 7 -y 2360 -defaultsOSRD
+preplace inst blk_mem_gen_9a -pg 1 -lvl 7 -y 750 -defaultsOSRD
+preplace inst link22 -pg 1 -lvl 6 -y 2460 -defaultsOSRD
+preplace inst blk_mem_gen_11b -pg 1 -lvl 8 -y 1280 -defaultsOSRD
+preplace inst blk_mem_gen_8b -pg 1 -lvl 8 -y 200 -defaultsOSRD
+preplace inst link10 -pg 1 -lvl 3 -y 1020 -defaultsOSRD
+preplace inst xlconstant_2 -pg 1 -lvl 2 -y 1180 -defaultsOSRD
+preplace inst blk_mem_gen_7a -pg 1 -lvl 4 -y 2730 -defaultsOSRD
+preplace inst blk_mem_gen_2a -pg 1 -lvl 4 -y 1080 -defaultsOSRD
+preplace inst blk_mem_gen_14b -pg 1 -lvl 8 -y 2260 -defaultsOSRD
+preplace inst blk_mem_gen_9b -pg 1 -lvl 8 -y 480 -defaultsOSRD
+preplace inst link11 -pg 1 -lvl 3 -y 1220 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -y 940 -defaultsOSRD
+preplace inst link12 -pg 1 -lvl 3 -y 1740 -defaultsOSRD
+preplace inst blk_mem_gen_7b -pg 1 -lvl 5 -y 2350 -defaultsOSRD
+preplace inst blk_mem_gen_2b -pg 1 -lvl 5 -y 760 -defaultsOSRD
+preplace inst blk_mem_gen_12a -pg 1 -lvl 7 -y 1700 -defaultsOSRD
+preplace inst blk_mem_gen_1a -pg 1 -lvl 4 -y 730 -defaultsOSRD
+preplace inst blk_mem_gen_0a -pg 1 -lvl 4 -y 370 -defaultsOSRD
+preplace inst link13 -pg 1 -lvl 3 -y 1910 -defaultsOSRD
+preplace inst link7 -pg 1 -lvl 3 -y 140 -defaultsOSRD
+preplace inst blk_mem_gen_15a -pg 1 -lvl 7 -y 2710 -defaultsOSRD
+preplace inst blk_mem_gen_6a -pg 1 -lvl 4 -y 2380 -defaultsOSRD
+preplace inst blk_mem_gen_12b -pg 1 -lvl 8 -y 1620 -defaultsOSRD
+preplace inst link14 -pg 1 -lvl 3 -y 2080 -defaultsOSRD
+preplace inst link8 -pg 1 -lvl 3 -y 610 -defaultsOSRD
+preplace inst blk_mem_gen_1b -pg 1 -lvl 5 -y 480 -defaultsOSRD
+preplace inst blk_mem_gen_0b -pg 1 -lvl 5 -y 200 -defaultsOSRD
+preplace inst link15 -pg 1 -lvl 6 -y 460 -defaultsOSRD
+preplace inst blk_mem_gen_15b -pg 1 -lvl 8 -y 2580 -defaultsOSRD
+preplace inst link9 -pg 1 -lvl 3 -y 780 -defaultsOSRD
+preplace inst blk_mem_gen_6b -pg 1 -lvl 5 -y 2030 -defaultsOSRD
+preplace inst blk_mem_gen_5a -pg 1 -lvl 4 -y 2040 -defaultsOSRD
+preplace inst link16 -pg 1 -lvl 6 -y 650 -defaultsOSRD
+preplace inst clk_wiz_0 -pg 1 -lvl 2 -y 1050 -defaultsOSRD
+preplace inst blk_mem_gen_13a -pg 1 -lvl 7 -y 2040 -defaultsOSRD
+preplace inst link17 -pg 1 -lvl 6 -y 820 -defaultsOSRD
+preplace inst blk_mem_gen_5b -pg 1 -lvl 5 -y 1720 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 10 -y 1690 -defaultsOSRD
+preplace inst blk_mem_gen_10a -pg 1 -lvl 7 -y 1050 -defaultsOSRD
+preplace inst link18 -pg 1 -lvl 6 -y 1240 -defaultsOSRD
+preplace inst blk_mem_gen_13b -pg 1 -lvl 8 -y 1940 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y 210 -defaultsOSRD
+preplace netloc bram_rd_0_addr13b 1 7 3 3180 2090 NJ 2090 4140
+preplace netloc link12_address 1 3 2 1180 1860 1530
+preplace netloc link13_address 1 3 2 1200 1890 1530
+preplace netloc blk_mem_gen_15a_doutb 1 6 3 2670J 3040 NJ 3040 3610J
+preplace netloc blk_mem_gen_10a_doutb 1 6 3 2610J 2540 2970J 2740 3490
+preplace netloc processing_system7_0_FIXED_IO 1 1 10 510J 30 NJ 30 1160J 40 NJ 40 NJ 40 NJ 40 NJ 40 NJ 40 N 40 N
+preplace netloc link20_address 1 6 2 2460 1870 N
+preplace netloc blk_mem_gen_11a_doutb 1 6 3 2620J 2860 3120J 2840 3510
+preplace netloc blk_mem_gen_4b_doutb 1 4 5 1680J 2990 NJ 2990 NJ 2990 NJ 2990 3620
+preplace netloc bram_rd_0_addr12a 1 6 4 2580J 3080 NJ 3080 NJ 3080 4160
+preplace netloc bram_rd_0_addr12b 1 7 3 3170 2100 NJ 2100 4090
+preplace netloc link9_data_out1 1 3 2 1210 570 1530
+preplace netloc bram_rd_0_addr6a 1 3 7 1290J 3060 NJ 3060 NJ 3060 NJ 3060 NJ 3060 3630J 3040 4130
+preplace netloc smartconnect_1_M00_AXI 1 3 6 1170J 1560 NJ 1560 NJ 1560 2550J 1200 2960J 1130 3560
+preplace netloc bram_rd_0_addr6b 1 4 6 1640J 3130 NJ 3130 NJ 3130 NJ 3130 NJ 3130 4110
+preplace netloc link14_address 1 3 2 1090 2230 1530
+preplace netloc blk_mem_gen_8b_doutb 1 7 2 3100 2750 N
+preplace netloc bram_rd_0_addr5a 1 3 7 1260J 3110 NJ 3110 NJ 3110 NJ 3110 NJ 3110 NJ 3110 4250
+preplace netloc bram_rd_0_addr0a 1 3 7 1240J -40 NJ -40 NJ -40 2440J -50 NJ -50 NJ -50 4160
+preplace netloc blk_mem_gen_7b_doutb 1 4 5 1730J 2560 NJ 2560 NJ 2560 2960J 2730 NJ
+preplace netloc bram_rd_0_addr5b 1 4 6 1630J 3120 NJ 3120 NJ 3120 NJ 3120 NJ 3120 4120
+preplace netloc bram_rd_0_addr0b 1 4 6 1650J -30 NJ -30 2470J -40 NJ -40 NJ -40 4270
+preplace netloc blk_mem_gen_4a_doutb 1 3 6 1300J 2190 NJ 2190 NJ 2190 NJ 2190 2960J 2420 3460J
+preplace netloc processing_system7_0_DDR 1 1 10 500J 10 NJ 10 NJ 10 NJ 10 2020J 30 NJ 30 NJ 30 NJ 30 N 30 4630
+preplace netloc bram_rd_0_addr15a 1 6 4 2680J 2970 NJ 2970 NJ 2970 4030
+preplace netloc blk_mem_gen_5a_doutb 1 3 6 1310J 2200 1580J 1880 NJ 1880 2440J 1860 2960J 1780 3520J
+preplace netloc link16_address 1 6 2 2540 570 2960
+preplace netloc link15_data_out1 1 6 2 2450 170 N
+preplace netloc bram_rd_0_addr15b 1 7 3 3160 2940 3480J 2950 4010
+preplace netloc link13_data_out1 1 3 2 1140 2220 1600
+preplace netloc blk_mem_gen_14a_doutb 1 6 3 2640J 3030 NJ 3030 3590J
+preplace netloc link10_data_out1 1 3 2 1200 930 1580
+preplace netloc xlconstant_1_dout 1 2 6 710 910 1130 880 1590 2180 N 2180 2500 240 3030
+preplace netloc bram_rd_0_addr14a 1 6 4 2660J 2960 NJ 2960 NJ 2960 4040
+preplace netloc bram_rd_0_addr8a 1 6 4 2590J 260 3060J 950 NJ 950 4030
+preplace netloc link21_data_out1 1 6 2 2570 2210 2970
+preplace netloc link21_address 1 6 2 2550 2200 3010
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 8 2 3630 1450 4010
+preplace netloc smartconnect_0_M00_AXI 1 0 11 20 20 NJ 20 NJ 20 NJ 20 NJ 20 2070J 10 2520J 50 NJ 50 3510J 60 NJ 60 4610
+preplace netloc bram_rd_0_addr14b 1 7 3 3180 2110 NJ 2110 4100
+preplace netloc bram_rd_0_addr8b 1 7 3 3130 930 NJ 930 4220
+preplace netloc blk_mem_gen_9a_doutb 1 6 3 2600J 2520 2980J 2760 3480
+preplace netloc link20_data_out1 1 6 2 2450 1880 2990
+preplace netloc link8_address 1 3 2 1220 530 1530
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 9 NJ 980 770J 920 NJ 920 NJ 920 NJ 920 2510J 900 3040J 910 3550 1400 4300
+preplace netloc blk_mem_gen_10b_doutb 1 7 2 3120 2790 N
+preplace netloc blk_mem_gen_12a_doutb 1 6 3 2630J 2870 NJ 2870 3460J
+preplace netloc blk_mem_gen_1a_doutb 1 3 6 1250J 2910 NJ 2910 NJ 2910 NJ 2910 NJ 2910 3500
+preplace netloc link15_address 1 6 2 2440 130 N
+preplace netloc axi_dma_0_M_AXI_MM2S 1 9 1 N
+preplace netloc link19_data_out1 1 6 2 2450 1540 2960
+preplace netloc blk_mem_gen_14b_doutb 1 7 2 3170 2860 3480J
+preplace netloc bram_rd_0_addr2a 1 3 7 1290J 0 NJ 0 NJ 0 2530J -10 NJ -10 3560J 20 4080
+preplace netloc link10_address 1 3 2 1150 910 1540
+preplace netloc bram_rd_0_addr7a 1 3 7 1280J 3140 NJ 3140 NJ 3140 NJ 3140 NJ 3140 NJ 3140 4300
+preplace netloc link17_address 1 6 2 2550 590 3080
+preplace netloc axi_dma_0_M_AXI_S2MM 1 9 1 N
+preplace netloc bram_rd_0_addr7b 1 4 6 1710J 3070 NJ 3070 NJ 3070 NJ 3070 NJ 3070 4020
+preplace netloc bram_rd_0_addr2b 1 4 6 1620J 3050 NJ 3050 NJ 3050 NJ 3050 NJ 3050 4050
+preplace netloc blk_mem_gen_7a_doutb 1 3 6 1310J 3020 NJ 3020 NJ 3020 NJ 3020 NJ 3020 3560J
+preplace netloc blk_mem_gen_0a_doutb 1 3 6 1240J 2890 NJ 2890 NJ 2890 NJ 2890 NJ 2890 3470
+preplace netloc xlconstant_2_dout 1 2 4 760 2180 1110 2530 1530 2520 2050
+preplace netloc link12_data_out1 1 3 2 1150 1880 1560
+preplace netloc link11_address 1 3 2 1180 1230 1560
+preplace netloc link0_data_out1 1 3 8 1230J 30 NJ 30 2080J 20 NJ 20 NJ 20 3550J 50 N 50 4630
+preplace netloc axis_data_fifo_0_M_AXIS 1 8 3 3620 -10 NJ -10 4620
+preplace netloc link7_data_out1 1 3 2 1220 170 N
+preplace netloc bram_rd_0_addr1a 1 3 7 1250J -20 NJ -20 NJ -20 2500J -30 NJ -30 NJ -30 4130
+preplace netloc blk_mem_gen_6b_doutb 1 4 5 1720J 2980 NJ 2980 NJ 2980 3130J 2820 3570J
+preplace netloc bram_rd_0_addr1b 1 4 6 1660J -10 NJ -10 2520J -20 NJ -20 NJ -20 4240
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 10 20 350 510 270 780 230 1160 210 1570 910 2070 550 2520 2530 3020 1770 3610 1420 4280
+preplace netloc blk_mem_gen_8a_doutb 1 6 3 2590J 1850 2980J 1790 3510
+preplace netloc link14_data_out1 1 3 2 1100 2560 1610
+preplace netloc blk_mem_gen_6a_doutb 1 3 6 1300J 3010 NJ 3010 NJ 3010 NJ 3010 NJ 3010 3550J
+preplace netloc blk_mem_gen_5b_doutb 1 4 5 1700J 3000 NJ 3000 NJ 3000 NJ 3000 3630
+preplace netloc link17_data_out1 1 6 2 2560 600 3070
+preplace netloc blk_mem_gen_3b_doutb 1 4 5 1690J 2950 NJ 2950 NJ 2950 NJ 2950 3450
+preplace netloc link11_data_out1 1 3 2 1190 1240 1530
+preplace netloc bram_rd_0_addr11a 1 6 4 2580J 10 NJ 10 NJ 10 4200
+preplace netloc blk_mem_gen_12b_doutb 1 7 2 3140 2830 NJ
+preplace netloc bram_rd_0_addr11b 1 7 3 3170 1430 NJ 1430 4170
+preplace netloc blk_mem_gen_2b_doutb 1 4 5 1670J 2930 NJ 2930 NJ 2930 NJ 2930 3580
+preplace netloc link18_address 1 6 2 2560 1210 N
+preplace netloc link7_address 1 3 2 1230 130 N
+preplace netloc blk_mem_gen_3a_doutb 1 3 6 1270J 2940 NJ 2940 NJ 2940 NJ 2940 3060J 2430 3450J
+preplace netloc bram_rd_0_addr9a 1 6 4 2600J 270 3050J 940 NJ 940 4070
+preplace netloc processing_system7_0_FCLK_RESET0_N1 1 0 6 30 360 500 290 720 2200 1070 2540 N 2540 2040
+preplace netloc bram_rd_0_addr9b 1 7 3 3140 960 NJ 960 4190
+preplace netloc blk_mem_gen_13a_doutb 1 6 3 2650J 2880 NJ 2880 3540J
+preplace netloc bram_rd_0_addr10a 1 6 4 2570J 0 NJ 0 NJ 0 4210
+preplace netloc blk_mem_gen_15b_doutb 1 7 2 3180 2900 3600J
+preplace netloc bram_rd_0_addr10b 1 7 3 3170 970 NJ 970 4180
+preplace netloc bram_rd_0_addr4a 1 3 7 1220J 3100 NJ 3100 NJ 3100 NJ 3100 NJ 3100 NJ 3100 4260
+preplace netloc blk_mem_gen_11b_doutb 1 7 2 3130 2810 NJ
+preplace netloc blk_mem_gen_9b_doutb 1 7 2 3110 2770 N
+preplace netloc bram_rd_0_addr4b 1 4 6 1680J 50 NJ 50 2470J 60 3090J 920 NJ 920 4230
+preplace netloc blk_mem_gen_1b_doutb 1 4 5 1660J 2920 NJ 2920 NJ 2920 3100J 2780 3530
+preplace netloc blk_mem_gen_0b_doutb 1 4 5 1650J 2900 NJ 2900 NJ 2900 3110J 2800 3520
+preplace netloc link19_address 1 6 2 2460 1550 N
+preplace netloc clk_wiz_0_clk_out1 1 2 4 740 2190 1080 2550 N 2550 2020
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 2 NJ 190 750
+preplace netloc blk_mem_gen_2a_doutb 1 3 6 1290J 1870 NJ 1870 2030J 1890 NJ 1890 2980J 2410 3440
+preplace netloc link8_data_out1 1 3 2 1200 520 1540
+preplace netloc link9_address 1 3 2 1230 580 1620
+preplace netloc link16_data_out1 1 6 2 2530 580 2980
+preplace netloc blk_mem_gen_13b_doutb 1 7 2 3150 2850 NJ
+preplace netloc xlconstant_0_dout 1 2 6 710 40 1120J 220 1550 2530 2030 2550 2470 250 3000
+preplace netloc bram_rd_0_m_axis 1 9 1 4290
+preplace netloc link22_address 1 6 2 2490 2510 N
+preplace netloc link22_data_out1 1 6 2 2480 2550 N
+preplace netloc bram_rd_0_addr3a 1 3 7 1300J 1550 NJ 1550 2060J 1530 NJ 1530 2980J 1450 3510J 1410 4020
+preplace netloc bram_rd_0_addr3b 1 4 6 1700J 1540 NJ 1540 2440J 1520 2960J 1440 NJ 1440 4060
+preplace netloc data_in_1 1 0 6 NJ 1120 NJ 1120 730 2210 N 2210 1610 2200 2080
+preplace netloc link18_data_out1 1 6 2 2570 1220 3010
+preplace netloc bram_rd_0_addr13a 1 6 4 2590J 3090 NJ 3090 NJ 3090 4150
+levelinfo -pg 1 0 270 620 930 1430 1920 2320 2860 3340 3840 4470 4660 -top -60 -bot 3310
 "
 }
 {
-   "da_axi4_cnt":"18",
+   "da_axi4_cnt":"3",
    "da_ps7_cnt":"1"
 }

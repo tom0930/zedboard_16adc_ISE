@@ -397,7 +397,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>PROTOCOL</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.PROTOCOL">AXI3</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.PROTOCOL">AXI4</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -415,7 +415,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ID_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.ID_WIDTH">12</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.ID_WIDTH">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -478,7 +478,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.READ_WRITE_MODE">READ_WRITE</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.READ_WRITE_MODE">READ_ONLY</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -487,7 +487,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_BURST</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_BURST">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_BURST">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -496,7 +496,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_LOCK</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_LOCK">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_LOCK">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -505,7 +505,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_PROT</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_PROT">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_PROT">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -514,7 +514,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_CACHE</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_CACHE">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_CACHE">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -523,7 +523,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_QOS</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_QOS">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_QOS">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -541,7 +541,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_WSTRB</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_WSTRB">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_WSTRB">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -550,7 +550,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_BRESP</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_BRESP">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.HAS_BRESP">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -577,7 +577,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_READ_OUTSTANDING">8</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_READ_OUTSTANDING">16</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -586,7 +586,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_OUTSTANDING">8</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_OUTSTANDING">2</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -622,7 +622,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_READ_THREADS</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_READ_THREADS">4</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_READ_THREADS">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -631,7 +631,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>NUM_WRITE_THREADS</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_THREADS">4</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_THREADS">1</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1041,7 +1041,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>ID_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.ID_WIDTH">12</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.ID_WIDTH">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1059,7 +1059,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>AWUSER_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.AWUSER_WIDTH">1024</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.AWUSER_WIDTH">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1077,7 +1077,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>WUSER_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.WUSER_WIDTH">1024</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.WUSER_WIDTH">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1095,7 +1095,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>BUSER_WIDTH</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.BUSER_WIDTH">1024</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.BUSER_WIDTH">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1104,7 +1104,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
-          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.READ_WRITE_MODE">READ_WRITE</spirit:value>
+          <spirit:value spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.READ_WRITE_MODE">READ_ONLY</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1113,7 +1113,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_BURST</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_BURST">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_BURST">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1122,7 +1122,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_LOCK</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_LOCK">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_LOCK">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1131,7 +1131,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_PROT</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_PROT">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_PROT">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1140,7 +1140,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_CACHE</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_CACHE">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_CACHE">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1149,7 +1149,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_QOS</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_QOS">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_QOS">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1167,7 +1167,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_WSTRB</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_WSTRB">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_WSTRB">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1176,7 +1176,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_BRESP</spirit:name>
-          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_BRESP">1</spirit:value>
+          <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="BUSIFPARAM_VALUE.M_AXI.HAS_BRESP">0</spirit:value>
           <spirit:vendorExtensions>
             <xilinx:parameterInfo>
               <xilinx:parameterUsage>none</xilinx:parameterUsage>
@@ -1427,11 +1427,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Oct 22 01:59:46 UTC 2020</spirit:value>
+            <spirit:value>Tue Jan 12 06:07:20 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a8f2f686</spirit:value>
+            <spirit:value>9:c97b5e4a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1442,7 +1442,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a8f2f686</spirit:value>
+            <spirit:value>9:c97b5e4a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1458,11 +1458,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Oct 22 01:59:46 UTC 2020</spirit:value>
+            <spirit:value>Tue Jan 12 06:07:20 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:a8f2f686</spirit:value>
+            <spirit:value>9:c97b5e4a</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1481,11 +1481,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Oct 22 01:59:46 UTC 2020</spirit:value>
+            <spirit:value>Tue Jan 12 06:07:20 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:80b91c26</spirit:value>
+            <spirit:value>9:b4e30f9f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1501,11 +1501,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Thu Oct 22 01:59:46 UTC 2020</spirit:value>
+            <spirit:value>Tue Jan 12 06:07:20 UTC 2021</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>9:80b91c26</spirit:value>
+            <spirit:value>9:b4e30f9f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1568,7 +1568,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1579,13 +1579,13 @@
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
-            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x000</spirit:defaultValue>
+            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x0</spirit:defaultValue>
           </spirit:driver>
         </spirit:wire>
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1612,7 +1612,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awaddr" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awaddr" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1622,7 +1622,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 4 : 8) - 1)">3</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 4 : 8) - 1)">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1633,13 +1633,13 @@
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
-            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 4 : 8)){0}}" spirit:bitStringLength="8">0x0</spirit:defaultValue>
+            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 4 : 8)){0}}" spirit:bitStringLength="8">0x00</spirit:defaultValue>
           </spirit:driver>
         </spirit:wire>
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awlen" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awlen" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1666,7 +1666,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awsize" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awsize" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1693,7 +1693,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awburst" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awburst" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1703,7 +1703,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 2 : 1) - 1)">1</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 2 : 1) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1720,7 +1720,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awlock" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awlock" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1747,7 +1747,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awcache" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awcache" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1774,7 +1774,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awprot" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awprot" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1801,7 +1801,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awqos" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awqos" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1851,7 +1851,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1871,7 +1871,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_awready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1881,7 +1881,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -1892,13 +1892,13 @@
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
-            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x000</spirit:defaultValue>
+            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x0</spirit:defaultValue>
           </spirit:driver>
         </spirit:wire>
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) = &quot;AXI3&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) = &quot;AXI3&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1925,7 +1925,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wdata" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wdata" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1952,7 +1952,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wstrb" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wstrb" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -1975,7 +1975,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wlast" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wlast" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2025,7 +2025,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2045,7 +2045,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_wready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2055,7 +2055,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2069,7 +2069,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_bid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_bid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2093,7 +2093,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_bresp" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_bresp" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2137,7 +2137,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_bvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_bvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2160,7 +2160,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_bready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_bready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2170,7 +2170,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2181,13 +2181,13 @@
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
-            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x000</spirit:defaultValue>
+            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x0</spirit:defaultValue>
           </spirit:driver>
         </spirit:wire>
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_arid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;WRITE_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_arid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;WRITE_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2224,7 +2224,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 4 : 8) - 1)">3</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 4 : 8) - 1)">7</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2235,7 +2235,7 @@
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
-            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 4 : 8)){0}}" spirit:bitStringLength="8">0x0</spirit:defaultValue>
+            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 4 : 8)){0}}" spirit:bitStringLength="8">0x00</spirit:defaultValue>
           </spirit:driver>
         </spirit:wire>
         <spirit:vendorExtensions>
@@ -2305,7 +2305,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 2 : 1) - 1)">1</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_S_PROTOCOL&apos;)) = 1) ? 2 : 1) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2483,7 +2483,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2497,7 +2497,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_rid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;WRITE_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.s_axi_rid" xilinx:dependency="( ( (spirit:decode(id(&apos;PARAM_VALUE.S_PROTOCOL&apos;)) != &quot;AXI4LITE&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;WRITE_ONLY&quot;) ) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2642,7 +2642,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -2656,7 +2656,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awid" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awid" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2680,7 +2680,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awaddr" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awaddr" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2704,7 +2704,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awlen" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awlen" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2728,7 +2728,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awsize" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awsize" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2752,7 +2752,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awburst" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awburst" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2776,7 +2776,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awlock" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awlock" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2800,7 +2800,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awcache" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awcache" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2824,7 +2824,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awprot" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awprot" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2848,7 +2848,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awqos" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awqos" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2872,7 +2872,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awuser" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awuser" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2892,7 +2892,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2915,7 +2915,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_awready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2939,7 +2939,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wdata" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wdata" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2963,7 +2963,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wstrb" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wstrb" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -2983,7 +2983,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wlast" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wlast" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3007,7 +3007,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wuser" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wuser" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3027,7 +3027,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3050,7 +3050,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_wready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3060,7 +3060,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3071,13 +3071,13 @@
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
-            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x000</spirit:defaultValue>
+            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x0</spirit:defaultValue>
           </spirit:driver>
         </spirit:wire>
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_bid" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_bid" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3104,7 +3104,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_bresp" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_bresp" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3131,7 +3131,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_buser" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_buser" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3154,7 +3154,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_bvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_bvalid" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3174,7 +3174,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_bready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_bready" xilinx:dependency="(spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;READ_ONLY&quot;)">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3184,7 +3184,7 @@
         <spirit:wire>
           <spirit:direction>out</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3198,7 +3198,7 @@
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_arid" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;WRITE_ONLY&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_arid" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;WRITE_ONLY&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3467,7 +3467,7 @@
         <spirit:wire>
           <spirit:direction>in</spirit:direction>
           <spirit:vector>
-            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">11</spirit:left>
+            <spirit:left spirit:format="long" spirit:resolve="dependent" spirit:dependency="(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;))) - 1)">0</spirit:left>
             <spirit:right spirit:format="long">0</spirit:right>
           </spirit:vector>
           <spirit:wireTypeDefs>
@@ -3478,13 +3478,13 @@
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
           <spirit:driver>
-            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x000</spirit:defaultValue>
+            <spirit:defaultValue spirit:format="bitString" spirit:resolve="dependent" spirit:dependency="{(((spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)) = 0) ? 1 : spirit:decode(id(&apos;MODELPARAM_VALUE.C_ID_WIDTH&apos;)))){0}}" spirit:bitStringLength="1">0x0</spirit:defaultValue>
           </spirit:driver>
         </spirit:wire>
         <spirit:vendorExtensions>
           <xilinx:portInfo>
             <xilinx:enablement>
-              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_rid" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;WRITE_ONLY&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">true</xilinx:isEnabled>
+              <xilinx:isEnabled xilinx:resolve="dependent" xilinx:id="PORT_ENABLEMENT.m_axi_rid" xilinx:dependency="( (spirit:decode(id(&apos;PARAM_VALUE.READ_WRITE_MODE&apos;)) != &quot;WRITE_ONLY&quot;) and (spirit:decode(id(&apos;PARAM_VALUE.ID_WIDTH&apos;)) != 0) )">false</xilinx:isEnabled>
             </xilinx:enablement>
           </xilinx:portInfo>
         </spirit:vendorExtensions>
@@ -3655,57 +3655,57 @@
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_NUM_SEG</spirit:name>
         <spirit:displayName>C_NUM_SEG</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_SEG" spirit:minimum="1" spirit:maximum="256" spirit:rangeType="long">12</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_SEG" spirit:minimum="1" spirit:maximum="256" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_BASE_ADDR_ARRAY</spirit:name>
         <spirit:displayName>C_SEG_BASE_ADDR_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_BASE_ADDR_ARRAY" spirit:bitStringLength="768">0x000000004b000000000000004a0000000000000049000000000000004800000000000000470000000000000046000000000000004500000000000000440000000000000043000000000000004200000000000000410000000000000040000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_BASE_ADDR_ARRAY" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_SIZE_ARRAY</spirit:name>
         <spirit:displayName>C_SEG_SIZE_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SIZE_ARRAY" spirit:bitStringLength="384">0x0000000e0000000e0000000e0000000e0000000e0000000e0000000e0000000e0000000e0000000e0000000e0000000e</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SIZE_ARRAY" spirit:bitStringLength="32">0x0000001d</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_SEP_ROUTE_ARRAY</spirit:name>
         <spirit:displayName>C_SEG_SEP_ROUTE_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SEP_ROUTE_ARRAY" spirit:bitStringLength="768">0x000000000000000b000000000000000a0000000000000009000000000000000800000000000000070000000000000006000000000000000500000000000000040000000000000003000000000000000200000000000000010000000000000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SEP_ROUTE_ARRAY" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_SUPPORTS_READ_ARRAY</spirit:name>
         <spirit:displayName>C_SEG_SUPPORTS_READ_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SUPPORTS_READ_ARRAY" spirit:bitStringLength="12">0b111111111111</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SUPPORTS_READ_ARRAY" spirit:bitStringLength="1">0x1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_SUPPORTS_WRITE_ARRAY</spirit:name>
         <spirit:displayName>C_SEG_SUPPORTS_WRITE_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SUPPORTS_WRITE_ARRAY" spirit:bitStringLength="12">0b111111111111</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SUPPORTS_WRITE_ARRAY" spirit:bitStringLength="1">0x1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_SECURE_READ_ARRAY</spirit:name>
         <spirit:displayName>C_SEG_SECURE_READ_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SECURE_READ_ARRAY" spirit:bitStringLength="12">0b000000000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SECURE_READ_ARRAY" spirit:bitStringLength="1">0b0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_SEG_SECURE_WRITE_ARRAY</spirit:name>
         <spirit:displayName>C_SEG_SECURE_WRITE_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SECURE_WRITE_ARRAY" spirit:bitStringLength="12">0b000000000000</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_SEG_SECURE_WRITE_ARRAY" spirit:bitStringLength="1">0b0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_NUM_MSC</spirit:name>
         <spirit:displayName>C_NUM_MSC</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_MSC" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">12</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_MSC" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_MSC_ROUTE_WIDTH</spirit:name>
         <spirit:displayName>C_MSC_ROUTE_WIDTH</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MSC_ROUTE_WIDTH" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">12</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MSC_ROUTE_WIDTH" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="bitstring">
         <spirit:name>C_MSC_ROUTE_ARRAY</spirit:name>
         <spirit:displayName>C_MSC_ROUTE_ARRAY</spirit:displayName>
-        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MSC_ROUTE_ARRAY" spirit:bitStringLength="144">0b100000000000010000000000001000000000000100000000000010000000000001000000000000100000000000010000000000001000000000000100000000000010000000000001</spirit:value>
+        <spirit:value spirit:format="bitString" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_MSC_ROUTE_ARRAY" spirit:bitStringLength="1">0b1</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_ADDR_WIDTH</spirit:name>
@@ -3715,7 +3715,7 @@
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_ID_WIDTH</spirit:name>
         <spirit:displayName>C_ID_WIDTH</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">12</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ID_WIDTH" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_RDATA_WIDTH</spirit:name>
@@ -3755,7 +3755,7 @@
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_S_PROTOCOL</spirit:name>
         <spirit:displayName>C_S_PROTOCOL</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_PROTOCOL">1</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_S_PROTOCOL">0</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_READ_ACCEPTANCE</spirit:name>
@@ -3770,12 +3770,12 @@
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_NUM_READ_OUTSTANDING</spirit:name>
         <spirit:displayName>C_NUM_READ_OUTSTANDING</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_READ_OUTSTANDING" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">8</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_READ_OUTSTANDING" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">16</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_NUM_WRITE_OUTSTANDING</spirit:name>
         <spirit:displayName>C_NUM_WRITE_OUTSTANDING</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_WRITE_OUTSTANDING" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">8</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_NUM_WRITE_OUTSTANDING" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">2</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="long">
         <spirit:name>C_SINGLE_ISSUING</spirit:name>
@@ -3954,17 +3954,17 @@
     <spirit:parameter>
       <spirit:name>NUM_SEG</spirit:name>
       <spirit:displayName>NUM_SEG</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_SEG" spirit:order="7" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">12</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_SEG" spirit:order="7" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC_ROUTE_WIDTH</spirit:name>
       <spirit:displayName>MSC_ROUTE_WIDTH</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC_ROUTE_WIDTH" spirit:order="8" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">12</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC_ROUTE_WIDTH" spirit:order="8" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>NUM_MSC</spirit:name>
       <spirit:displayName>NUM_MSC</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_MSC" spirit:order="9" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">12</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_MSC" spirit:order="9" spirit:minimum="1" spirit:maximum="64" spirit:rangeType="long">1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>ADDR_WIDTH</spirit:name>
@@ -3974,7 +3974,7 @@
     <spirit:parameter>
       <spirit:name>ID_WIDTH</spirit:name>
       <spirit:displayName>ID_WIDTH</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ID_WIDTH" spirit:order="11" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">12</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.ID_WIDTH" spirit:order="11" spirit:minimum="0" spirit:maximum="32" spirit:rangeType="long">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>RDATA_WIDTH</spirit:name>
@@ -3989,7 +3989,7 @@
     <spirit:parameter>
       <spirit:name>S_ARUSER_WIDTH</spirit:name>
       <spirit:displayName>S_ARUSER_WIDTH</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.S_ARUSER_WIDTH" spirit:order="14" spirit:minimum="0" spirit:maximum="1024" spirit:rangeType="long">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.S_ARUSER_WIDTH" spirit:order="14" spirit:minimum="0" spirit:maximum="512" spirit:rangeType="long">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>S_AWUSER_WIDTH</spirit:name>
@@ -4009,17 +4009,17 @@
     <spirit:parameter>
       <spirit:name>S_BUSER_WIDTH</spirit:name>
       <spirit:displayName>S_BUSER_WIDTH</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.S_BUSER_WIDTH" spirit:order="18" spirit:minimum="0" spirit:maximum="1024" spirit:rangeType="long">0</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.S_BUSER_WIDTH" spirit:order="18" spirit:minimum="0" spirit:maximum="512" spirit:rangeType="long">0</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>S_PROTOCOL</spirit:name>
       <spirit:displayName>PROTOCOL</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.S_PROTOCOL" spirit:choiceRef="choice_list_7235ff92" spirit:order="19">AXI3</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.S_PROTOCOL" spirit:choiceRef="choice_list_7235ff92" spirit:order="19">AXI4</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>READ_WRITE_MODE</spirit:name>
       <spirit:displayName>READ_WRITE_MODE</spirit:displayName>
-      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.READ_WRITE_MODE" spirit:choiceRef="choice_list_0e867c35" spirit:order="20">READ_WRITE</spirit:value>
+      <spirit:value spirit:resolve="user" spirit:id="PARAM_VALUE.READ_WRITE_MODE" spirit:choiceRef="choice_list_0e867c35" spirit:order="20">READ_ONLY</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>HAS_ACLKEN</spirit:name>
@@ -4039,12 +4039,12 @@
     <spirit:parameter>
       <spirit:name>NUM_WRITE_OUTSTANDING</spirit:name>
       <spirit:displayName>NUM_WRITE_OUTSTANDING</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_WRITE_OUTSTANDING" spirit:order="24" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_WRITE_OUTSTANDING" spirit:order="24" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">2</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>NUM_READ_OUTSTANDING</spirit:name>
       <spirit:displayName>NUM_READ_OUTSTANDING</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_READ_OUTSTANDING" spirit:order="25" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">8</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.NUM_READ_OUTSTANDING" spirit:order="25" spirit:minimum="0" spirit:maximum="256" spirit:rangeType="long">16</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SINGLE_ISSUING</spirit:name>
@@ -4059,12 +4059,12 @@
     <spirit:parameter>
       <spirit:name>SEG000_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG000_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG000_BASE_ADDR" spirit:bitStringLength="64">0x0000000040000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG000_BASE_ADDR" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG000_SIZE</spirit:name>
       <spirit:displayName>SEG000_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG000_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG000_SIZE">29</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG000_SEP_ROUTE</spirit:name>
@@ -4094,17 +4094,17 @@
     <spirit:parameter>
       <spirit:name>SEG001_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG001_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG001_BASE_ADDR" spirit:bitStringLength="64">0x0000000041000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG001_BASE_ADDR" spirit:bitStringLength="64">0x0000000000100000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG001_SIZE</spirit:name>
       <spirit:displayName>SEG001_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG001_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG001_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG001_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG001_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG001_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000000001</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG001_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG001_SUPPORTS_READ</spirit:name>
@@ -4129,17 +4129,17 @@
     <spirit:parameter>
       <spirit:name>SEG002_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG002_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG002_BASE_ADDR" spirit:bitStringLength="64">0x0000000042000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG002_BASE_ADDR" spirit:bitStringLength="64">0x0000000000200000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG002_SIZE</spirit:name>
       <spirit:displayName>SEG002_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG002_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG002_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG002_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG002_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG002_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000000010</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG002_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG002_SUPPORTS_READ</spirit:name>
@@ -4164,17 +4164,17 @@
     <spirit:parameter>
       <spirit:name>SEG003_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG003_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG003_BASE_ADDR" spirit:bitStringLength="64">0x0000000043000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG003_BASE_ADDR" spirit:bitStringLength="64">0x0000000000300000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG003_SIZE</spirit:name>
       <spirit:displayName>SEG003_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG003_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG003_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG003_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG003_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG003_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000000011</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG003_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG003_SUPPORTS_READ</spirit:name>
@@ -4199,17 +4199,17 @@
     <spirit:parameter>
       <spirit:name>SEG004_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG004_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG004_BASE_ADDR" spirit:bitStringLength="64">0x0000000044000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG004_BASE_ADDR" spirit:bitStringLength="64">0x0000000000400000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG004_SIZE</spirit:name>
       <spirit:displayName>SEG004_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG004_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG004_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG004_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG004_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG004_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000000100</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG004_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG004_SUPPORTS_READ</spirit:name>
@@ -4234,17 +4234,17 @@
     <spirit:parameter>
       <spirit:name>SEG005_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG005_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG005_BASE_ADDR" spirit:bitStringLength="64">0x0000000045000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG005_BASE_ADDR" spirit:bitStringLength="64">0x0000000000500000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG005_SIZE</spirit:name>
       <spirit:displayName>SEG005_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG005_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG005_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG005_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG005_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG005_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000000101</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG005_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG005_SUPPORTS_READ</spirit:name>
@@ -4269,17 +4269,17 @@
     <spirit:parameter>
       <spirit:name>SEG006_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG006_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG006_BASE_ADDR" spirit:bitStringLength="64">0x0000000046000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG006_BASE_ADDR" spirit:bitStringLength="64">0x0000000000600000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG006_SIZE</spirit:name>
       <spirit:displayName>SEG006_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG006_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG006_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG006_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG006_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG006_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000000110</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG006_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG006_SUPPORTS_READ</spirit:name>
@@ -4304,17 +4304,17 @@
     <spirit:parameter>
       <spirit:name>SEG007_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG007_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG007_BASE_ADDR" spirit:bitStringLength="64">0x0000000047000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG007_BASE_ADDR" spirit:bitStringLength="64">0x0000000000700000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG007_SIZE</spirit:name>
       <spirit:displayName>SEG007_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG007_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG007_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG007_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG007_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG007_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000000111</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG007_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG007_SUPPORTS_READ</spirit:name>
@@ -4339,17 +4339,17 @@
     <spirit:parameter>
       <spirit:name>SEG008_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG008_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG008_BASE_ADDR" spirit:bitStringLength="64">0x0000000048000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG008_BASE_ADDR" spirit:bitStringLength="64">0x0000000000800000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG008_SIZE</spirit:name>
       <spirit:displayName>SEG008_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG008_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG008_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG008_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG008_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG008_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000001000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG008_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG008_SUPPORTS_READ</spirit:name>
@@ -4374,17 +4374,17 @@
     <spirit:parameter>
       <spirit:name>SEG009_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG009_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG009_BASE_ADDR" spirit:bitStringLength="64">0x0000000049000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG009_BASE_ADDR" spirit:bitStringLength="64">0x0000000000900000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG009_SIZE</spirit:name>
       <spirit:displayName>SEG009_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG009_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG009_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG009_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG009_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG009_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000001001</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG009_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG009_SUPPORTS_READ</spirit:name>
@@ -4409,17 +4409,17 @@
     <spirit:parameter>
       <spirit:name>SEG010_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG010_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG010_BASE_ADDR" spirit:bitStringLength="64">0x000000004A000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG010_BASE_ADDR" spirit:bitStringLength="64">0x0000000000a00000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG010_SIZE</spirit:name>
       <spirit:displayName>SEG010_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG010_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG010_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG010_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG010_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG010_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000001010</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG010_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG010_SUPPORTS_READ</spirit:name>
@@ -4444,17 +4444,17 @@
     <spirit:parameter>
       <spirit:name>SEG011_BASE_ADDR</spirit:name>
       <spirit:displayName>SEG011_BASE_ADDR</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG011_BASE_ADDR" spirit:bitStringLength="64">0x000000004B000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG011_BASE_ADDR" spirit:bitStringLength="64">0x0000000000b00000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG011_SIZE</spirit:name>
       <spirit:displayName>SEG011_SIZE</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG011_SIZE">14</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG011_SIZE">12</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG011_SEP_ROUTE</spirit:name>
       <spirit:displayName>SEG011_SEP_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG011_SEP_ROUTE" spirit:bitStringLength="64">0b0000000000000000000000000000000000000000000000000000000000001011</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.SEG011_SEP_ROUTE" spirit:bitStringLength="64">0x0000000000000000</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>SEG011_SUPPORTS_READ</spirit:name>
@@ -13019,322 +13019,322 @@
     <spirit:parameter>
       <spirit:name>MSC000_ROUTE</spirit:name>
       <spirit:displayName>MSC000_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC000_ROUTE" spirit:bitStringLength="12">0b000000000001</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC000_ROUTE" spirit:bitStringLength="1">0b1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC001_ROUTE</spirit:name>
       <spirit:displayName>MSC001_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC001_ROUTE" spirit:bitStringLength="12">0b000000000010</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC001_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC002_ROUTE</spirit:name>
       <spirit:displayName>MSC002_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC002_ROUTE" spirit:bitStringLength="12">0b000000000100</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC002_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC003_ROUTE</spirit:name>
       <spirit:displayName>MSC003_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC003_ROUTE" spirit:bitStringLength="12">0b000000001000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC003_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC004_ROUTE</spirit:name>
       <spirit:displayName>MSC004_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC004_ROUTE" spirit:bitStringLength="12">0b000000010000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC004_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC005_ROUTE</spirit:name>
       <spirit:displayName>MSC005_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC005_ROUTE" spirit:bitStringLength="12">0b000000100000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC005_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC006_ROUTE</spirit:name>
       <spirit:displayName>MSC006_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC006_ROUTE" spirit:bitStringLength="12">0b000001000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC006_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC007_ROUTE</spirit:name>
       <spirit:displayName>MSC007_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC007_ROUTE" spirit:bitStringLength="12">0b000010000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC007_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC008_ROUTE</spirit:name>
       <spirit:displayName>MSC008_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC008_ROUTE" spirit:bitStringLength="12">0b000100000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC008_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC009_ROUTE</spirit:name>
       <spirit:displayName>MSC009_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC009_ROUTE" spirit:bitStringLength="12">0b001000000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC009_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC010_ROUTE</spirit:name>
       <spirit:displayName>MSC010_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC010_ROUTE" spirit:bitStringLength="12">0b010000000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC010_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC011_ROUTE</spirit:name>
       <spirit:displayName>MSC011_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC011_ROUTE" spirit:bitStringLength="12">0b100000000000</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC011_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC012_ROUTE</spirit:name>
       <spirit:displayName>MSC012_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC012_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC012_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC013_ROUTE</spirit:name>
       <spirit:displayName>MSC013_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC013_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC013_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC014_ROUTE</spirit:name>
       <spirit:displayName>MSC014_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC014_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC014_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC015_ROUTE</spirit:name>
       <spirit:displayName>MSC015_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC015_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC015_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC016_ROUTE</spirit:name>
       <spirit:displayName>MSC016_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC016_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC016_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC017_ROUTE</spirit:name>
       <spirit:displayName>MSC017_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC017_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC017_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC018_ROUTE</spirit:name>
       <spirit:displayName>MSC018_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC018_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC018_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC019_ROUTE</spirit:name>
       <spirit:displayName>MSC019_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC019_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC019_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC020_ROUTE</spirit:name>
       <spirit:displayName>MSC020_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC020_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC020_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC021_ROUTE</spirit:name>
       <spirit:displayName>MSC021_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC021_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC021_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC022_ROUTE</spirit:name>
       <spirit:displayName>MSC022_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC022_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC022_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC023_ROUTE</spirit:name>
       <spirit:displayName>MSC023_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC023_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC023_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC024_ROUTE</spirit:name>
       <spirit:displayName>MSC024_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC024_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC024_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC025_ROUTE</spirit:name>
       <spirit:displayName>MSC025_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC025_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC025_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC026_ROUTE</spirit:name>
       <spirit:displayName>MSC026_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC026_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC026_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC027_ROUTE</spirit:name>
       <spirit:displayName>MSC027_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC027_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC027_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC028_ROUTE</spirit:name>
       <spirit:displayName>MSC028_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC028_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC028_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC029_ROUTE</spirit:name>
       <spirit:displayName>MSC029_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC029_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC029_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC030_ROUTE</spirit:name>
       <spirit:displayName>MSC030_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC030_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC030_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC031_ROUTE</spirit:name>
       <spirit:displayName>MSC031_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC031_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC031_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC032_ROUTE</spirit:name>
       <spirit:displayName>MSC032_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC032_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC032_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC033_ROUTE</spirit:name>
       <spirit:displayName>MSC033_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC033_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC033_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC034_ROUTE</spirit:name>
       <spirit:displayName>MSC034_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC034_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC034_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC035_ROUTE</spirit:name>
       <spirit:displayName>MSC035_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC035_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC035_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC036_ROUTE</spirit:name>
       <spirit:displayName>MSC036_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC036_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC036_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC037_ROUTE</spirit:name>
       <spirit:displayName>MSC037_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC037_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC037_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC038_ROUTE</spirit:name>
       <spirit:displayName>MSC038_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC038_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC038_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC039_ROUTE</spirit:name>
       <spirit:displayName>MSC039_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC039_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC039_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC040_ROUTE</spirit:name>
       <spirit:displayName>MSC040_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC040_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC040_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC041_ROUTE</spirit:name>
       <spirit:displayName>MSC041_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC041_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC041_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC042_ROUTE</spirit:name>
       <spirit:displayName>MSC042_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC042_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC042_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC043_ROUTE</spirit:name>
       <spirit:displayName>MSC043_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC043_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC043_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC044_ROUTE</spirit:name>
       <spirit:displayName>MSC044_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC044_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC044_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC045_ROUTE</spirit:name>
       <spirit:displayName>MSC045_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC045_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC045_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC046_ROUTE</spirit:name>
       <spirit:displayName>MSC046_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC046_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC046_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC047_ROUTE</spirit:name>
       <spirit:displayName>MSC047_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC047_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC047_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC048_ROUTE</spirit:name>
       <spirit:displayName>MSC048_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC048_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC048_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC049_ROUTE</spirit:name>
       <spirit:displayName>MSC049_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC049_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC049_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC050_ROUTE</spirit:name>
       <spirit:displayName>MSC050_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC050_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC050_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC051_ROUTE</spirit:name>
       <spirit:displayName>MSC051_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC051_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC051_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC052_ROUTE</spirit:name>
       <spirit:displayName>MSC052_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC052_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC052_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC053_ROUTE</spirit:name>
       <spirit:displayName>MSC053_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC053_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC053_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC054_ROUTE</spirit:name>
       <spirit:displayName>MSC054_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC054_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC054_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC055_ROUTE</spirit:name>
       <spirit:displayName>MSC055_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC055_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC055_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC056_ROUTE</spirit:name>
       <spirit:displayName>MSC056_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC056_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC056_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC057_ROUTE</spirit:name>
       <spirit:displayName>MSC057_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC057_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC057_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC058_ROUTE</spirit:name>
       <spirit:displayName>MSC058_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC058_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC058_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC059_ROUTE</spirit:name>
       <spirit:displayName>MSC059_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC059_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC059_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC060_ROUTE</spirit:name>
       <spirit:displayName>MSC060_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC060_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC060_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC061_ROUTE</spirit:name>
       <spirit:displayName>MSC061_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC061_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC061_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC062_ROUTE</spirit:name>
       <spirit:displayName>MSC062_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC062_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC062_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>MSC063_ROUTE</spirit:name>
       <spirit:displayName>MSC063_ROUTE</spirit:displayName>
-      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC063_ROUTE" spirit:bitStringLength="12">0x1</spirit:value>
+      <spirit:value spirit:format="bitString" spirit:resolve="user" spirit:id="PARAM_VALUE.MSC063_ROUTE" spirit:bitStringLength="1">0x1</spirit:value>
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>Component_Name</spirit:name>
@@ -13357,75 +13357,64 @@
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.CLK.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.ADDR_WIDTH" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.ARUSER_WIDTH" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.AWUSER_WIDTH" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.BUSER_WIDTH" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.AWUSER_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.BUSER_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.DATA_WIDTH" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_BRESP" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_BURST" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_CACHE" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_LOCK" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_PROT" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_QOS" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_BRESP" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_BURST" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_CACHE" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_LOCK" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_PROT" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_QOS" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_REGION" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_RRESP" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_WSTRB" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.ID_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.HAS_WSTRB" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.ID_WIDTH" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.MAX_BURST_LENGTH" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.NUM_READ_OUTSTANDING" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.NUM_WRITE_OUTSTANDING" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.PROTOCOL" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.READ_WRITE_MODE" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.READ_WRITE_MODE" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.RUSER_WIDTH" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.SUPPORTS_NARROW_BURST" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.WUSER_WIDTH" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.M_AXI.WUSER_WIDTH" xilinx:valueSource="propagated" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.RST.POLARITY" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.ADDR_WIDTH" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.ARUSER_WIDTH" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.ARUSER_WIDTH" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.AWUSER_WIDTH" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.BUSER_WIDTH" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.CLK_DOMAIN" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.DATA_WIDTH" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.FREQ_HZ" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_BRESP" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_BURST" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_BRESP" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_BURST" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_CACHE" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_LOCK" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_LOCK" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_PROT" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_QOS" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_QOS" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_REGION" xilinx:valueSource="constant" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_RRESP" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_WSTRB" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.ID_WIDTH" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.MAX_BURST_LENGTH" xilinx:valueSource="default_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.HAS_WSTRB" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.ID_WIDTH" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.MAX_BURST_LENGTH" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_READ_OUTSTANDING" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_READ_THREADS" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_READ_THREADS" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_OUTSTANDING" xilinx:valueSource="user" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_THREADS" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.NUM_WRITE_THREADS" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.PHASE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.PROTOCOL" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.READ_WRITE_MODE" xilinx:valueSource="auto_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.RUSER_BITS_PER_BYTE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.RUSER_WIDTH" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
-        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.SUPPORTS_NARROW_BURST" xilinx:valueSource="user_prop" xilinx:valuePermission="bd"/>
+        <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.SUPPORTS_NARROW_BURST" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.WUSER_BITS_PER_BYTE" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="BUSIFPARAM_VALUE.S_AXI.WUSER_WIDTH" xilinx:valueSource="constant_prop" xilinx:valuePermission="bd"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.ADDR_WIDTH" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.ID_WIDTH" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.IS_CASCADED" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC000_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC001_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC002_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC003_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC004_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC005_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC006_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC007_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC008_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC009_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC010_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC011_ROUTE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.MSC_ROUTE_WIDTH" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.NUM_MSC" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.NUM_READ_OUTSTANDING" xilinx:valueSource="user"/>
@@ -13440,87 +13429,9 @@
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG000_SIZE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG000_SUPPORTS_READ" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG000_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG001_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG001_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG001_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG001_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG001_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG001_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG001_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG002_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG002_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG002_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG002_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG002_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG002_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG002_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG003_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG003_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG003_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG003_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG003_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG003_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG003_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG004_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG004_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG004_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG004_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG004_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG004_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG004_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG005_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG005_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG005_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG005_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG005_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG005_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG005_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG006_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG006_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG006_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG006_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG006_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG006_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG006_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG007_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG007_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG007_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG007_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG007_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG007_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG007_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG008_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG008_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG008_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG008_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG008_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG008_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG008_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG009_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG009_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG009_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG009_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG009_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG009_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG009_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG010_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG010_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG010_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG010_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG010_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG010_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG010_SUPPORTS_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG011_BASE_ADDR" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG011_SECURE_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG011_SECURE_WRITE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG011_SEP_ROUTE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG011_SIZE" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG011_SUPPORTS_READ" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SEG011_SUPPORTS_WRITE" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SUPPORTS_NARROW" xilinx:valueSource="user"/>
+        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.SUPPORTS_READ_DECERR" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.S_ARUSER_WIDTH" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.S_AWUSER_WIDTH" xilinx:valueSource="user"/>
-        <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.S_BUSER_WIDTH" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.S_PROTOCOL" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.S_RUSER_WIDTH" xilinx:valueSource="user"/>
         <xilinx:configElementInfo xilinx:referenceId="PARAM_VALUE.S_WUSER_WIDTH" xilinx:valueSource="user"/>

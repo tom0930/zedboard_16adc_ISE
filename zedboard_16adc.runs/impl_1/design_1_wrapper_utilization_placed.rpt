@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Mon Jan 11 17:27:09 2021
+| Date         : Tue Jan 12 14:28:33 2021
 | Host         : DESKTOP-CUAMMK2 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_placed.rpt -pb design_1_wrapper_utilization_placed.pb
 | Design       : design_1_wrapper
@@ -31,16 +31,16 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs                 | 16778 |     0 |     53200 | 31.54 |
-|   LUT as Logic             | 14436 |     0 |     53200 | 27.14 |
-|   LUT as Memory            |  2342 |     0 |     17400 | 13.46 |
-|     LUT as Distributed RAM |  1160 |     0 |           |       |
-|     LUT as Shift Register  |  1182 |     0 |           |       |
-| Slice Registers            | 21946 |     0 |    106400 | 20.63 |
-|   Register as Flip Flop    | 21946 |     0 |    106400 | 20.63 |
+| Slice LUTs                 | 25551 |     0 |     53200 | 48.03 |
+|   LUT as Logic             | 24668 |     0 |     53200 | 46.37 |
+|   LUT as Memory            |   883 |     0 |     17400 |  5.07 |
+|     LUT as Distributed RAM |   562 |     0 |           |       |
+|     LUT as Shift Register  |   321 |     0 |           |       |
+| Slice Registers            | 59212 |     0 |    106400 | 55.65 |
+|   Register as Flip Flop    | 59212 |     0 |    106400 | 55.65 |
 |   Register as Latch        |     0 |     0 |    106400 |  0.00 |
-| F7 Muxes                   |   136 |     0 |     26600 |  0.51 |
-| F8 Muxes                   |    45 |     0 |     13300 |  0.34 |
+| F7 Muxes                   |  6657 |     0 |     26600 | 25.03 |
+| F8 Muxes                   |  3072 |     0 |     13300 | 23.10 |
 +----------------------------+-------+-------+-----------+-------+
 
 
@@ -56,10 +56,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 40    |          Yes |           - |          Set |
-| 171   |          Yes |           - |        Reset |
-| 773   |          Yes |         Set |            - |
-| 20962 |          Yes |       Reset |            - |
+| 0     |          Yes |           - |          Set |
+| 0     |          Yes |           - |        Reset |
+| 435   |          Yes |         Set |            - |
+| 58777 |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -69,28 +69,28 @@ Table of Contents
 +--------------------------------------------+-------+-------+-----------+-------+
 |                  Site Type                 |  Used | Fixed | Available | Util% |
 +--------------------------------------------+-------+-------+-----------+-------+
-| Slice                                      |  6646 |     0 |     13300 | 49.97 |
-|   SLICEL                                   |  4413 |     0 |           |       |
-|   SLICEM                                   |  2233 |     0 |           |       |
-| LUT as Logic                               | 14436 |     0 |     53200 | 27.14 |
+| Slice                                      | 13299 |     0 |     13300 | 99.99 |
+|   SLICEL                                   |  8949 |     0 |           |       |
+|   SLICEM                                   |  4350 |     0 |           |       |
+| LUT as Logic                               | 24668 |     0 |     53200 | 46.37 |
 |   using O5 output only                     |     0 |       |           |       |
-|   using O6 output only                     | 11505 |       |           |       |
-|   using O5 and O6                          |  2931 |       |           |       |
-| LUT as Memory                              |  2342 |     0 |     17400 | 13.46 |
-|   LUT as Distributed RAM                   |  1160 |     0 |           |       |
+|   using O6 output only                     | 22946 |       |           |       |
+|   using O5 and O6                          |  1722 |       |           |       |
+| LUT as Memory                              |   883 |     0 |     17400 |  5.07 |
+|   LUT as Distributed RAM                   |   562 |     0 |           |       |
 |     using O5 output only                   |     0 |       |           |       |
-|     using O6 output only                   |     8 |       |           |       |
-|     using O5 and O6                        |  1152 |       |           |       |
-|   LUT as Shift Register                    |  1182 |     0 |           |       |
-|     using O5 output only                   |     3 |       |           |       |
-|     using O6 output only                   |   318 |       |           |       |
-|     using O5 and O6                        |   861 |       |           |       |
-| Slice Registers                            | 21946 |     0 |    106400 | 20.63 |
-|   Register driven from within the Slice    | 13104 |       |           |       |
-|   Register driven from outside the Slice   |  8842 |       |           |       |
-|     LUT in front of the register is unused |  6608 |       |           |       |
-|     LUT in front of the register is used   |  2234 |       |           |       |
-| Unique Control Sets                        |  1141 |       |     13300 |  8.58 |
+|     using O6 output only                   |     2 |       |           |       |
+|     using O5 and O6                        |   560 |       |           |       |
+|   LUT as Shift Register                    |   321 |     0 |           |       |
+|     using O5 output only                   |     0 |       |           |       |
+|     using O6 output only                   |   224 |       |           |       |
+|     using O5 and O6                        |    97 |       |           |       |
+| Slice Registers                            | 59212 |     0 |    106400 | 55.65 |
+|   Register driven from within the Slice    |  6201 |       |           |       |
+|   Register driven from outside the Slice   | 53011 |       |           |       |
+|     LUT in front of the register is unused | 42250 |       |           |       |
+|     LUT in front of the register is used   | 10761 |       |           |       |
+| Unique Control Sets                        |  4735 |       |     13300 | 35.60 |
 +--------------------------------------------+-------+-------+-----------+-------+
 * Note: Available Control Sets calculated as Slice Registers / 8, Review the Control Sets Report for more information regarding control sets.
 
@@ -101,11 +101,10 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |   19 |     0 |       140 | 13.57 |
-|   RAMB36/FIFO*    |   18 |     0 |       140 | 12.86 |
-|     RAMB36E1 only |   18 |       |           |       |
-|   RAMB18          |    2 |     0 |       280 |  0.71 |
-|     RAMB18E1 only |    2 |       |           |       |
+| Block RAM Tile    |   67 |     0 |       140 | 47.86 |
+|   RAMB36/FIFO*    |   67 |     0 |       140 | 47.86 |
+|     RAMB36E1 only |   67 |       |           |       |
+|   RAMB18          |    0 |     0 |       280 |  0.00 |
 +-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
 
@@ -151,7 +150,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    4 |     0 |        32 | 12.50 |
+| BUFGCTRL   |    3 |     0 |        32 |  9.38 |
 | BUFIO      |    0 |     0 |        16 |  0.00 |
 | MMCME2_ADV |    1 |     0 |         4 | 25.00 |
 | PLLE2_ADV  |    0 |     0 |         4 |  0.00 |
@@ -167,7 +166,7 @@ Table of Contents
 +-------------+------+-------+-----------+-------+
 |  Site Type  | Used | Fixed | Available | Util% |
 +-------------+------+-------+-----------+-------+
-| BSCANE2     |    1 |     0 |         4 | 25.00 |
+| BSCANE2     |    0 |     0 |         4 |  0.00 |
 | CAPTUREE2   |    0 |     0 |         1 |  0.00 |
 | DNA_PORT    |    0 |     0 |         1 |  0.00 |
 | EFUSE_USR   |    0 |     0 |         1 |  0.00 |
@@ -184,33 +183,28 @@ Table of Contents
 +------------+-------+----------------------+
 |  Ref Name  |  Used |  Functional Category |
 +------------+-------+----------------------+
-| FDRE       | 20962 |         Flop & Latch |
-| LUT6       |  5141 |                  LUT |
-| LUT3       |  4222 |                  LUT |
-| LUT4       |  3121 |                  LUT |
-| LUT5       |  2452 |                  LUT |
-| LUT2       |  1779 |                  LUT |
-| RAMD32     |  1736 |   Distributed Memory |
-| SRL16E     |  1595 |   Distributed Memory |
-| FDSE       |   773 |         Flop & Latch |
-| LUT1       |   652 |                  LUT |
-| RAMS32     |   576 |   Distributed Memory |
-| CARRY4     |   451 |           CarryLogic |
-| SRLC32E    |   446 |   Distributed Memory |
-| FDCE       |   171 |         Flop & Latch |
-| MUXF7      |   136 |                MuxFx |
+| FDRE       | 58777 |         Flop & Latch |
+| LUT6       | 17403 |                  LUT |
+| MUXF7      |  6657 |                MuxFx |
+| LUT5       |  3239 |                  LUT |
+| MUXF8      |  3072 |                MuxFx |
+| LUT3       |  2051 |                  LUT |
+| LUT4       |  1463 |                  LUT |
+| LUT1       |  1319 |                  LUT |
+| LUT2       |   915 |                  LUT |
+| RAMD32     |   842 |   Distributed Memory |
+| FDSE       |   435 |         Flop & Latch |
+| SRL16E     |   348 |   Distributed Memory |
+| RAMS32     |   280 |   Distributed Memory |
 | BIBUF      |   130 |                   IO |
-| MUXF8      |    45 |                MuxFx |
-| FDPE       |    40 |         Flop & Latch |
-| RAMB36E1   |    18 |         Block Memory |
-| BUFG       |     4 |                Clock |
-| SRLC16E    |     2 |   Distributed Memory |
-| RAMB18E1   |     2 |         Block Memory |
+| CARRY4     |    99 |           CarryLogic |
+| SRLC32E    |    70 |   Distributed Memory |
+| RAMB36E1   |    67 |         Block Memory |
+| BUFG       |     3 |                Clock |
 | PS7        |     1 | Specialized Resource |
 | OBUF       |     1 |                   IO |
 | MMCME2_ADV |     1 |                Clock |
 | IBUF       |     1 |                   IO |
-| BSCANE2    |     1 |               Others |
 +------------+-------+----------------------+
 
 
@@ -228,27 +222,158 @@ Table of Contents
 +---------------------------------+------+
 |             Ref Name            | Used |
 +---------------------------------+------+
+| design_1_util_vector_logic_3_9  |    1 |
+| design_1_util_vector_logic_3_8  |    1 |
+| design_1_util_vector_logic_3_7  |    1 |
+| design_1_util_vector_logic_3_6  |    1 |
+| design_1_util_vector_logic_3_5  |    1 |
+| design_1_util_vector_logic_3_4  |    1 |
+| design_1_util_vector_logic_3_3  |    1 |
+| design_1_util_vector_logic_3_2  |    1 |
+| design_1_util_vector_logic_3_14 |    1 |
+| design_1_util_vector_logic_3_13 |    1 |
+| design_1_util_vector_logic_3_12 |    1 |
+| design_1_util_vector_logic_3_11 |    1 |
+| design_1_util_vector_logic_3_10 |    1 |
+| design_1_util_vector_logic_3_1  |    1 |
+| design_1_util_vector_logic_3_0  |    1 |
+| design_1_util_vector_logic_2_9  |    1 |
+| design_1_util_vector_logic_2_8  |    1 |
+| design_1_util_vector_logic_2_7  |    1 |
+| design_1_util_vector_logic_2_6  |    1 |
+| design_1_util_vector_logic_2_5  |    1 |
+| design_1_util_vector_logic_2_4  |    1 |
+| design_1_util_vector_logic_2_3  |    1 |
+| design_1_util_vector_logic_2_2  |    1 |
+| design_1_util_vector_logic_2_16 |    1 |
+| design_1_util_vector_logic_2_15 |    1 |
+| design_1_util_vector_logic_2_14 |    1 |
+| design_1_util_vector_logic_2_13 |    1 |
+| design_1_util_vector_logic_2_12 |    1 |
+| design_1_util_vector_logic_2_11 |    1 |
+| design_1_util_vector_logic_2_10 |    1 |
 | design_1_util_vector_logic_2_1  |    1 |
 | design_1_util_vector_logic_2_0  |    1 |
-| design_1_total_link_ctrl_0_0    |    1 |
-| design_1_system_ila_0_0         |    1 |
+| design_1_smartconnect_1_0       |    1 |
 | design_1_smartconnect_0_0       |    1 |
+| design_1_serial_shift_0_9       |    1 |
+| design_1_serial_shift_0_8       |    1 |
+| design_1_serial_shift_0_7       |    1 |
+| design_1_serial_shift_0_6       |    1 |
+| design_1_serial_shift_0_5       |    1 |
+| design_1_serial_shift_0_4       |    1 |
+| design_1_serial_shift_0_3       |    1 |
+| design_1_serial_shift_0_2       |    1 |
+| design_1_serial_shift_0_15      |    1 |
+| design_1_serial_shift_0_14      |    1 |
+| design_1_serial_shift_0_13      |    1 |
+| design_1_serial_shift_0_12      |    1 |
+| design_1_serial_shift_0_11      |    1 |
+| design_1_serial_shift_0_10      |    1 |
+| design_1_serial_shift_0_1       |    1 |
 | design_1_serial_shift_0_0       |    1 |
+| design_1_s2p_0_9                |    1 |
+| design_1_s2p_0_8                |    1 |
+| design_1_s2p_0_7                |    1 |
+| design_1_s2p_0_6                |    1 |
+| design_1_s2p_0_5                |    1 |
+| design_1_s2p_0_4                |    1 |
+| design_1_s2p_0_3                |    1 |
+| design_1_s2p_0_2                |    1 |
+| design_1_s2p_0_15               |    1 |
+| design_1_s2p_0_14               |    1 |
+| design_1_s2p_0_13               |    1 |
+| design_1_s2p_0_12               |    1 |
+| design_1_s2p_0_11               |    1 |
+| design_1_s2p_0_10               |    1 |
+| design_1_s2p_0_1                |    1 |
 | design_1_s2p_0_0                |    1 |
 | design_1_processing_system7_0_0 |    1 |
+| design_1_proc_sys_reset_1M_9    |    1 |
+| design_1_proc_sys_reset_1M_8    |    1 |
+| design_1_proc_sys_reset_1M_7    |    1 |
+| design_1_proc_sys_reset_1M_6    |    1 |
+| design_1_proc_sys_reset_1M_5    |    1 |
+| design_1_proc_sys_reset_1M_4    |    1 |
+| design_1_proc_sys_reset_1M_3    |    1 |
+| design_1_proc_sys_reset_1M_2    |    1 |
+| design_1_proc_sys_reset_1M_14   |    1 |
+| design_1_proc_sys_reset_1M_13   |    1 |
+| design_1_proc_sys_reset_1M_12   |    1 |
+| design_1_proc_sys_reset_1M_11   |    1 |
+| design_1_proc_sys_reset_1M_10   |    1 |
+| design_1_proc_sys_reset_1M_1    |    1 |
+| design_1_proc_sys_reset_1M_0    |    1 |
+| design_1_proc_sys_reset_16M_9   |    1 |
+| design_1_proc_sys_reset_16M_8   |    1 |
+| design_1_proc_sys_reset_16M_7   |    1 |
+| design_1_proc_sys_reset_16M_6   |    1 |
+| design_1_proc_sys_reset_16M_5   |    1 |
+| design_1_proc_sys_reset_16M_4   |    1 |
+| design_1_proc_sys_reset_16M_3   |    1 |
+| design_1_proc_sys_reset_16M_2   |    1 |
+| design_1_proc_sys_reset_16M_14  |    1 |
+| design_1_proc_sys_reset_16M_13  |    1 |
+| design_1_proc_sys_reset_16M_12  |    1 |
+| design_1_proc_sys_reset_16M_11  |    1 |
+| design_1_proc_sys_reset_16M_10  |    1 |
+| design_1_proc_sys_reset_16M_1   |    1 |
+| design_1_proc_sys_reset_16M_0   |    1 |
 | design_1_proc_sys_reset_0_2     |    1 |
 | design_1_proc_sys_reset_0_1     |    1 |
 | design_1_proc_sys_reset_0_0     |    1 |
+| design_1_div16_0_9              |    1 |
+| design_1_div16_0_8              |    1 |
+| design_1_div16_0_7              |    1 |
+| design_1_div16_0_6              |    1 |
+| design_1_div16_0_5              |    1 |
+| design_1_div16_0_4              |    1 |
+| design_1_div16_0_3              |    1 |
+| design_1_div16_0_2              |    1 |
+| design_1_div16_0_15             |    1 |
+| design_1_div16_0_14             |    1 |
+| design_1_div16_0_13             |    1 |
+| design_1_div16_0_12             |    1 |
+| design_1_div16_0_11             |    1 |
+| design_1_div16_0_10             |    1 |
+| design_1_div16_0_1              |    1 |
 | design_1_div16_0_0              |    1 |
-| design_1_clk_wiz_0_0            |    1 |
+| design_1_clk_wiz_0_8            |    1 |
+| design_1_bram_rd_0_0            |    1 |
+| design_1_blk_mem_gen_9_1        |    1 |
+| design_1_blk_mem_gen_7_2        |    1 |
+| design_1_blk_mem_gen_7_0        |    1 |
+| design_1_blk_mem_gen_6_2        |    1 |
+| design_1_blk_mem_gen_6_0        |    1 |
+| design_1_blk_mem_gen_5_2        |    1 |
+| design_1_blk_mem_gen_5_0        |    1 |
+| design_1_blk_mem_gen_4_2        |    1 |
+| design_1_blk_mem_gen_4_0        |    1 |
+| design_1_blk_mem_gen_3_3        |    1 |
+| design_1_blk_mem_gen_3_1        |    1 |
+| design_1_blk_mem_gen_3_0        |    1 |
+| design_1_blk_mem_gen_30_0       |    1 |
+| design_1_blk_mem_gen_2_3        |    1 |
+| design_1_blk_mem_gen_2_1        |    1 |
+| design_1_blk_mem_gen_2_0        |    1 |
+| design_1_blk_mem_gen_1_3        |    1 |
+| design_1_blk_mem_gen_1_2        |    1 |
+| design_1_blk_mem_gen_1_0        |    1 |
+| design_1_blk_mem_gen_15_1       |    1 |
+| design_1_blk_mem_gen_14_1       |    1 |
+| design_1_blk_mem_gen_13_1       |    1 |
+| design_1_blk_mem_gen_12_1       |    1 |
+| design_1_blk_mem_gen_11_1       |    1 |
+| design_1_blk_mem_gen_10_1       |    1 |
+| design_1_blk_mem_gen_0_8        |    1 |
+| design_1_blk_mem_gen_0_7        |    1 |
+| design_1_blk_mem_gen_0_6        |    1 |
+| design_1_blk_mem_gen_0_5        |    1 |
+| design_1_blk_mem_gen_0_4        |    1 |
+| design_1_blk_mem_gen_0_2        |    1 |
+| design_1_blk_mem_gen_0_0        |    1 |
 | design_1_axis_data_fifo_0_0     |    1 |
-| design_1_axi_smc_0              |    1 |
-| design_1_axi_gpio_8_0           |    1 |
-| design_1_axi_dma_2_0            |    1 |
-| design_1_axi_dma_1_0            |    1 |
-| design_1_axi_dma_0_1            |    1 |
 | design_1_axi_dma_0_0            |    1 |
-| dbg_hub                         |    1 |
 +---------------------------------+------+
 
 

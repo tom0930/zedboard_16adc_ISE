@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -63,7 +63,7 @@ module design_1_s2p_0_0 (
   data_in,
   link,
   link_err,
-  channel,
+  address,
   data_out
 );
 
@@ -78,8 +78,8 @@ input wire rstn_100M;
 input wire data_in;
 input wire [3 : 0] link;
 output wire link_err;
-output wire [4 : 0] channel;
-output wire [95 : 0] data_out;
+output wire [10 : 0] address;
+output wire [31 : 0] data_out;
 
   s2p #(
     .init(4'B0000),
@@ -95,7 +95,7 @@ output wire [95 : 0] data_out;
     .data_in(data_in),
     .link(link),
     .link_err(link_err),
-    .channel(channel),
+    .address(address),
     .data_out(data_out)
   );
 endmodule

@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -56,36 +56,45 @@
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_s2p_0_0 (
   clk,
+  clk_100M,
   rstn,
+  rstn_100M,
   data_in,
   link,
-  sublink,
-  channel,
-  data_out_ch,
+  link_err,
+  address,
   data_out
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rstn, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
 input wire clk;
+input wire clk_100M;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rstn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rstn RST" *)
 input wire rstn;
+input wire rstn_100M;
 input wire data_in;
-output wire [3 : 0] link;
-output wire [2 : 0] sublink;
-output wire [4 : 0] channel;
-output wire [4 : 0] data_out_ch;
-output wire [11 : 0] data_out;
+input wire [3 : 0] link;
+output wire link_err;
+output wire [31 : 0] address;
+output wire [31 : 0] data_out;
 
-  s2p inst (
+  s2p #(
+    .init(4'B0000),
+    .sysn(4'B0001),
+    .msb(4'B0010),
+    .data(4'B0011),
+    .lsb(4'B0100)
+  ) inst (
     .clk(clk),
+    .clk_100M(clk_100M),
     .rstn(rstn),
+    .rstn_100M(rstn_100M),
     .data_in(data_in),
     .link(link),
-    .sublink(sublink),
-    .channel(channel),
-    .data_out_ch(data_out_ch),
+    .link_err(link_err),
+    .address(address),
     .data_out(data_out)
   );
 endmodule

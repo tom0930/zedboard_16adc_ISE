@@ -1,0 +1,53 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port clk_16M -pg 1 -y 500 -defaultsOSRD
+preplace port clk_100M -pg 1 -y 370 -defaultsOSRD
+preplace port data_in -pg 1 -y 190 -defaultsOSRD
+preplace port link_err -pg 1 -y 380 -defaultsOSRD
+preplace port reset_n -pg 1 -y 590 -defaultsOSRD
+preplace portBus link -pg 1 -y 450 -defaultsOSRD
+preplace portBus data_out1 -pg 1 -y 420 -defaultsOSRD
+preplace portBus address -pg 1 -y 400 -defaultsOSRD
+preplace portBus data_out -pg 1 -y 510 -defaultsOSRD
+preplace inst Counter_4bit_0 -pg 1 -lvl 4 -y 160 -defaultsOSRD
+preplace inst proc_sys_reset_1M -pg 1 -lvl 3 -y 610 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 3 -y 130 -defaultsOSRD
+preplace inst D_flip_flops_4_0 -pg 1 -lvl 5 -y 160 -defaultsOSRD
+preplace inst serial_shift_0 -pg 1 -lvl 4 -y 580 -defaultsOSRD
+preplace inst div16_0 -pg 1 -lvl 2 -y 590 -defaultsOSRD
+preplace inst util_vector_logic_0 -pg 1 -lvl 6 -y 180 -defaultsOSRD
+preplace inst util_vector_logic_1 -pg 1 -lvl 7 -y 180 -defaultsOSRD
+preplace inst util_vector_logic_2 -pg 1 -lvl 5 -y 600 -defaultsOSRD
+preplace inst util_vector_logic_3 -pg 1 -lvl 6 -y 520 -defaultsOSRD
+preplace inst proc_sys_reset_16M -pg 1 -lvl 1 -y 560 -defaultsOSRD
+preplace inst s2p_0 -pg 1 -lvl 7 -y 400 -defaultsOSRD
+preplace netloc reset_n_2 1 0 7 20J 660 NJ 660 770 410 NJ 410 NJ 410 NJ 410 N
+preplace netloc clk_100M_1 1 0 7 N 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ 370 NJ
+preplace netloc s2p_0_address 1 7 1 NJ
+preplace netloc s2p_0_data_out 1 7 1 NJ
+preplace netloc proc_sys_reset_16M_peripheral_aresetn 1 1 1 N
+preplace netloc util_vector_logic_3_Res 1 6 2 2010 510 NJ
+preplace netloc serial_shift_0_Q4 1 4 1 N
+preplace netloc util_vector_logic_0_Res 1 6 1 NJ
+preplace netloc serial_shift_0_Q5 1 4 1 N
+preplace netloc D_flip_flops_4_0_Q3B 1 3 3 1130 290 NJ 290 1690
+preplace netloc s2p_0_link_err 1 7 1 NJ
+preplace netloc link_1 1 0 7 NJ 450 NJ 450 NJ 450 NJ 450 NJ 450 NJ 450 NJ
+preplace netloc D_flip_flops_4_0_Q1 1 4 2 1380 30 1690
+preplace netloc xlconstant_0_dout 1 3 1 NJ
+preplace netloc Counter_4bit_0_out3 1 4 1 N
+preplace netloc D_flip_flops_4_0_Q2B 1 5 1 N
+preplace netloc data_in_1 1 0 6 NJ 190 NJ 190 NJ 190 1120 270 1350 340 1690J
+preplace netloc clk_wiz_0_clk_out1 1 0 5 20 460 560 70 NJ 70 1140 50 1350J
+preplace netloc D_flip_flops_4_0_Q3 1 4 2 1370 20 1700
+preplace netloc util_vector_logic_2_Res 1 5 1 1700
+preplace netloc util_vector_logic_1_Res 1 3 5 1140 300 NJ 300 1700J 290 NJ 290 2310
+preplace netloc D_flip_flops_4_0_Q1B 1 5 1 N
+preplace netloc div16_0_clk_div 1 2 5 760 710 1140 350 NJ 350 NJ 350 NJ
+preplace netloc reset_n_1 1 3 4 1110 40 1360 10 NJ 10 2010J
+levelinfo -pg 1 0 390 660 940 1250 1540 1860 2160 2330 -top -20 -bot 720
+"
+}
+

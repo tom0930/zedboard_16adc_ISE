@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="design_1_div16_0_10_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_div16_0_10_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_Counter_4bit_0_11_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_Counter_4bit_0_11_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_serial_shift_0_10_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_serial_shift_0_10_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_Counter_4bit_0_10_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_Counter_4bit_0_10_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_D_flip_flops_4_0_10_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_D_flip_flops_4_0_10_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_s2p_0_9_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_s2p_0_9_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_s2p_0_10_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_s2p_0_10_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_div16_0_11_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_div16_0_11_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_Counter_4bit_0_12_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_Counter_4bit_0_12_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_D_flip_flops_4_0_12_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_D_flip_flops_4_0_12_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_serial_shift_0_12_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_serial_shift_0_12_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_D_flip_flops_4_0_11_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_D_flip_flops_4_0_11_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_s2p_0_11_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_s2p_0_11_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_div16_0_12_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_div16_0_12_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_serial_shift_0_11_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_serial_shift_0_11_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_div16_0_8_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_div16_0_8_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_D_flip_flops_4_0_8_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_D_flip_flops_4_0_8_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_serial_shift_0_8_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_serial_shift_0_8_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_s2p_0_8_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_s2p_0_8_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_Counter_4bit_0_9_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_Counter_4bit_0_9_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_D_flip_flops_4_0_9_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_D_flip_flops_4_0_9_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_div16_0_9_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_div16_0_9_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_serial_shift_0_9_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_serial_shift_0_9_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_Counter_4bit_0_8_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_Counter_4bit_0_8_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_clk_wiz_0_8_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_clk_wiz_0_8_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_serial_shift_0_13_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_serial_shift_0_13_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_div16_0_13_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_div16_0_13_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_s2p_0_13_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_s2p_0_13_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_s2p_0_12_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_s2p_0_12_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_D_flip_flops_4_0_13_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_D_flip_flops_4_0_13_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="design_1_Counter_4bit_0_13_synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/design_1_Counter_4bit_0_13_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="design_1_div16_0_10_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_11_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_10_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_10_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_10_synth_1"/>
+		<Parent Id="design_1_s2p_0_9_synth_1"/>
+		<Parent Id="design_1_s2p_0_10_synth_1"/>
+		<Parent Id="design_1_div16_0_11_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_12_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_12_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_12_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_11_synth_1"/>
+		<Parent Id="design_1_s2p_0_11_synth_1"/>
+		<Parent Id="design_1_div16_0_12_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_11_synth_1"/>
+		<Parent Id="design_1_div16_0_8_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_8_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_8_synth_1"/>
+		<Parent Id="design_1_s2p_0_8_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_9_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_9_synth_1"/>
+		<Parent Id="design_1_div16_0_9_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_9_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_8_synth_1"/>
+		<Parent Id="design_1_clk_wiz_0_8_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_13_synth_1"/>
+		<Parent Id="design_1_div16_0_13_synth_1"/>
+		<Parent Id="design_1_s2p_0_13_synth_1"/>
+		<Parent Id="design_1_s2p_0_12_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_13_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_13_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="D:/project/zedboard_16adc/zedboard_16adc_0104/zedboard_16adc_8/zedboard_16adc.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="design_1_div16_0_10_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_11_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_10_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_10_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_10_synth_1"/>
+		<Parent Id="design_1_s2p_0_9_synth_1"/>
+		<Parent Id="design_1_s2p_0_10_synth_1"/>
+		<Parent Id="design_1_div16_0_11_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_12_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_12_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_12_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_11_synth_1"/>
+		<Parent Id="design_1_s2p_0_11_synth_1"/>
+		<Parent Id="design_1_div16_0_12_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_11_synth_1"/>
+		<Parent Id="design_1_div16_0_8_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_8_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_8_synth_1"/>
+		<Parent Id="design_1_s2p_0_8_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_9_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_9_synth_1"/>
+		<Parent Id="design_1_div16_0_9_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_9_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_8_synth_1"/>
+		<Parent Id="design_1_clk_wiz_0_8_synth_1"/>
+		<Parent Id="design_1_serial_shift_0_13_synth_1"/>
+		<Parent Id="design_1_div16_0_13_synth_1"/>
+		<Parent Id="design_1_s2p_0_13_synth_1"/>
+		<Parent Id="design_1_s2p_0_12_synth_1"/>
+		<Parent Id="design_1_D_flip_flops_4_0_13_synth_1"/>
+		<Parent Id="design_1_Counter_4bit_0_13_synth_1"/>
+	</Run>
+	<Parameters>
+		<Parameter Name="runs.monitorLSFJobs" Val="true" Type="bool"/>
+	</Parameters>
+</Runs>
+

@@ -26,8 +26,8 @@ module s2p(
     input data_in,
     input [3:0] link,
     output reg link_err,
-    output reg [4:0] channel, 
-    output reg [95:0] data_out
+    output reg [10:0] address, 
+    output reg [31:0] data_out
     );
     
     reg        addr_flag;
@@ -40,7 +40,8 @@ module s2p(
     reg [11:0] data_mem [31:0][7:0]; 
     reg [13:0] data_buffer;
     
-    wire [4:0] index_ch;
+    reg [4:0] index_ch;
+    reg [2:0] index_sl;
     
     parameter  init  = 4'b0000,
                sysn  = 4'b0001,
@@ -135,16 +136,30 @@ module s2p(
         end
     end
     
-    assign index_ch =  channel + 1'b1;
     
     always @ (posedge clk_100M) begin          
         if(~rstn) begin
             data_out <= 0;
-            channel <= 5'd0;
+            index_ch <= 0;
+            index_sl <= 0;
         end else begin 
-            data_out <= {data_mem[index_ch][7], data_mem[index_ch][6], data_mem[index_ch][5], data_mem[index_ch][4],
-                         data_mem[index_ch][3], data_mem[index_ch][2], data_mem[index_ch][1], data_mem[index_ch][0]};
-            channel <= channel + 1'b1;  
+            if(index_ch == 5'd30)begin
+                if(index_sl == 3'd7)begin
+                    data_out <= {4'd0,data_mem[index_ch+1][index_sl],4'd0,data_mem[index_ch][index_sl]};
+                    address <= {link,index_sl,index_ch[4:1]};
+                    index_ch <= 5'd0;
+                    index_sl <= 3'd0;
+                end else begin
+                    data_out <= {4'd0,data_mem[index_ch+1][index_sl],4'd0,data_mem[index_ch][index_sl]};
+                    address <= {link,index_sl,index_ch[4:1]};
+                    index_ch <= 5'd0;
+                    index_sl <= index_sl + 1;
+                end
+            end else begin
+                data_out <= {4'd0,data_mem[index_ch+1][index_sl],4'd0,data_mem[index_ch][index_sl]};
+                address <= {link,index_sl,index_ch[4:1]};
+                index_ch <= index_ch + 2;
+            end
         end
     end
     

@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Tue Oct 13 16:09:12 2020
+// Date        : Tue Oct 13 16:09:11 2020
 // Host        : DESKTOP-U60VC6L running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim
-//               D:/zedboard_16adc/zedboard_16adc.srcs/sources_1/bd/design_1/ip/design_1_util_vector_logic_2_1/design_1_util_vector_logic_2_1_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top design_1_util_vector_logic_2_1 -prefix
+//               design_1_util_vector_logic_2_1_ design_1_util_vector_logic_2_1_sim_netlist.v
 // Design      : design_1_util_vector_logic_2_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
