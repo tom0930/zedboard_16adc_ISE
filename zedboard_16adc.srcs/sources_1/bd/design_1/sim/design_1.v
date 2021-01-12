@@ -1,15 +1,15 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Wed Dec 23 15:28:20 2020
-//Host        : DESKTOP-U60VC6L running 64-bit major release  (build 9200)
+//Date        : Mon Jan 11 17:06:04 2021
+//Host        : DESKTOP-CUAMMK2 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
 //Purpose     : IP block netlist
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=25,numReposBlks=24,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=18,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=27,numReposBlks=26,numNonXlnxBlks=0,numHierBlks=1,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=6,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=18,da_ps7_cnt=1,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (DDR_addr,
     DDR_ba,
@@ -58,10 +58,15 @@ module design_1
   input link0_data_in;
   output [0:0]link0_data_out;
 
-  wire [31:0]axi_dma_0_M_AXIS_MM2S_TDATA;
-  wire axi_dma_0_M_AXIS_MM2S_TLAST;
-  wire axi_dma_0_M_AXIS_MM2S_TREADY;
-  wire axi_dma_0_M_AXIS_MM2S_TVALID;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S1 xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]axi_dma_0_M_AXIS_MM2S1_TDATA;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S1 xilinx.com:interface:axis:1.0 None TKEEP" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [3:0]axi_dma_0_M_AXIS_MM2S1_TKEEP;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S1 xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S1_TLAST;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S1 xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S1_TREADY;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S1 xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S1_TVALID;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]axi_dma_0_M_AXIS_MM2S_TDATA;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TLAST;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TREADY;
+  (* CONN_BUS_INFO = "axi_dma_0_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_0_M_AXIS_MM2S_TVALID;
   wire [31:0]axi_dma_0_M_AXI_MM2S_ARADDR;
   wire [1:0]axi_dma_0_M_AXI_MM2S_ARBURST;
   wire [3:0]axi_dma_0_M_AXI_MM2S_ARCACHE;
@@ -93,10 +98,11 @@ module design_1
   wire axi_dma_0_M_AXI_S2MM_WVALID;
   wire axi_dma_0_mm2s_introut;
   wire axi_dma_0_s2mm_introut;
-  wire [31:0]axi_dma_1_M_AXIS_MM2S_TDATA;
-  wire axi_dma_1_M_AXIS_MM2S_TLAST;
-  wire axi_dma_1_M_AXIS_MM2S_TREADY;
-  wire axi_dma_1_M_AXIS_MM2S_TVALID;
+  (* CONN_BUS_INFO = "axi_dma_1_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]axi_dma_1_M_AXIS_MM2S_TDATA;
+  (* CONN_BUS_INFO = "axi_dma_1_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TKEEP" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [3:0]axi_dma_1_M_AXIS_MM2S_TKEEP;
+  (* CONN_BUS_INFO = "axi_dma_1_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_1_M_AXIS_MM2S_TLAST;
+  (* CONN_BUS_INFO = "axi_dma_1_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_1_M_AXIS_MM2S_TREADY;
+  (* CONN_BUS_INFO = "axi_dma_1_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_1_M_AXIS_MM2S_TVALID;
   wire [31:0]axi_dma_1_M_AXI_MM2S_ARADDR;
   wire [1:0]axi_dma_1_M_AXI_MM2S_ARBURST;
   wire [3:0]axi_dma_1_M_AXI_MM2S_ARCACHE;
@@ -128,10 +134,11 @@ module design_1
   wire axi_dma_1_M_AXI_S2MM_WVALID;
   wire axi_dma_1_mm2s_introut;
   wire axi_dma_1_s2mm_introut;
-  wire [31:0]axi_dma_2_M_AXIS_MM2S_TDATA;
-  wire axi_dma_2_M_AXIS_MM2S_TLAST;
-  wire axi_dma_2_M_AXIS_MM2S_TREADY;
-  wire axi_dma_2_M_AXIS_MM2S_TVALID;
+  (* CONN_BUS_INFO = "axi_dma_2_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]axi_dma_2_M_AXIS_MM2S_TDATA;
+  (* CONN_BUS_INFO = "axi_dma_2_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TKEEP" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [3:0]axi_dma_2_M_AXIS_MM2S_TKEEP;
+  (* CONN_BUS_INFO = "axi_dma_2_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_2_M_AXIS_MM2S_TLAST;
+  (* CONN_BUS_INFO = "axi_dma_2_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_2_M_AXIS_MM2S_TREADY;
+  (* CONN_BUS_INFO = "axi_dma_2_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_2_M_AXIS_MM2S_TVALID;
   wire [31:0]axi_dma_2_M_AXI_MM2S_ARADDR;
   wire [1:0]axi_dma_2_M_AXI_MM2S_ARBURST;
   wire [3:0]axi_dma_2_M_AXI_MM2S_ARCACHE;
@@ -163,10 +170,11 @@ module design_1
   wire axi_dma_2_M_AXI_S2MM_WVALID;
   wire axi_dma_2_mm2s_introut;
   wire axi_dma_2_s2mm_introut;
-  wire [31:0]axi_dma_3_M_AXIS_MM2S_TDATA;
-  wire axi_dma_3_M_AXIS_MM2S_TLAST;
-  wire axi_dma_3_M_AXIS_MM2S_TREADY;
-  wire axi_dma_3_M_AXIS_MM2S_TVALID;
+  (* CONN_BUS_INFO = "axi_dma_3_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]axi_dma_3_M_AXIS_MM2S_TDATA;
+  (* CONN_BUS_INFO = "axi_dma_3_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TKEEP" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [3:0]axi_dma_3_M_AXIS_MM2S_TKEEP;
+  (* CONN_BUS_INFO = "axi_dma_3_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_3_M_AXIS_MM2S_TLAST;
+  (* CONN_BUS_INFO = "axi_dma_3_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_3_M_AXIS_MM2S_TREADY;
+  (* CONN_BUS_INFO = "axi_dma_3_M_AXIS_MM2S xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire axi_dma_3_M_AXIS_MM2S_TVALID;
   wire [31:0]axi_dma_3_M_AXI_MM2S_ARADDR;
   wire [1:0]axi_dma_3_M_AXI_MM2S_ARBURST;
   wire [3:0]axi_dma_3_M_AXI_MM2S_ARCACHE;
@@ -231,6 +239,10 @@ module design_1
   wire axi_smc_M00_AXI_WREADY;
   wire [7:0]axi_smc_M00_AXI_WSTRB;
   wire axi_smc_M00_AXI_WVALID;
+  (* CONN_BUS_INFO = "axis_data_fifo_0_M_AXIS xilinx.com:interface:axis:1.0 None TDATA" *) (* DONT_TOUCH *) wire [31:0]axis_data_fifo_0_M_AXIS_TDATA;
+  (* CONN_BUS_INFO = "axis_data_fifo_0_M_AXIS xilinx.com:interface:axis:1.0 None TLAST" *) (* DONT_TOUCH *) wire axis_data_fifo_0_M_AXIS_TLAST;
+  (* CONN_BUS_INFO = "axis_data_fifo_0_M_AXIS xilinx.com:interface:axis:1.0 None TREADY" *) (* DONT_TOUCH *) wire axis_data_fifo_0_M_AXIS_TREADY;
+  (* CONN_BUS_INFO = "axis_data_fifo_0_M_AXIS xilinx.com:interface:axis:1.0 None TVALID" *) (* DONT_TOUCH *) wire axis_data_fifo_0_M_AXIS_TVALID;
   wire data_in_1;
   wire [4:0]link0_channel;
   wire [0:0]link0_data_out1;
@@ -381,22 +393,18 @@ module design_1
   wire smartconnect_0_M04_AXI_WVALID;
   wire [3:0]total_link_ctrl_0_link7;
   wire [15:0]total_link_ctrl_0_link_err;
-  wire [31:0]total_link_ctrl_0_m00_axis_TDATA;
-  wire total_link_ctrl_0_m00_axis_TLAST;
-  wire total_link_ctrl_0_m00_axis_TREADY;
-  wire total_link_ctrl_0_m00_axis_TVALID;
-  wire [31:0]total_link_ctrl_0_m01_axis_TDATA;
-  wire total_link_ctrl_0_m01_axis_TLAST;
-  wire total_link_ctrl_0_m01_axis_TREADY;
-  wire total_link_ctrl_0_m01_axis_TVALID;
-  wire [31:0]total_link_ctrl_0_m02_axis_TDATA;
-  wire total_link_ctrl_0_m02_axis_TLAST;
-  wire total_link_ctrl_0_m02_axis_TREADY;
-  wire total_link_ctrl_0_m02_axis_TVALID;
-  wire [31:0]total_link_ctrl_0_m03_axis_TDATA;
-  wire total_link_ctrl_0_m03_axis_TLAST;
-  wire total_link_ctrl_0_m03_axis_TREADY;
-  wire total_link_ctrl_0_m03_axis_TVALID;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m01_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]total_link_ctrl_0_m01_axis_TDATA;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m01_axis xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m01_axis_TLAST;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m01_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m01_axis_TREADY;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m01_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m01_axis_TVALID;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m02_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]total_link_ctrl_0_m02_axis_TDATA;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m02_axis xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m02_axis_TLAST;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m02_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m02_axis_TREADY;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m02_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m02_axis_TVALID;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m03_axis xilinx.com:interface:axis:1.0 None TDATA" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire [31:0]total_link_ctrl_0_m03_axis_TDATA;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m03_axis xilinx.com:interface:axis:1.0 None TLAST" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m03_axis_TLAST;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m03_axis xilinx.com:interface:axis:1.0 None TREADY" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m03_axis_TREADY;
+  (* CONN_BUS_INFO = "total_link_ctrl_0_m03_axis xilinx.com:interface:axis:1.0 None TVALID" *) (* DEBUG = "true" *) (* MARK_DEBUG *) wire total_link_ctrl_0_m03_axis_TVALID;
   wire [7:0]xlconcat_0_dout;
 
   assign data_in_1 = link0_data_in;
@@ -434,10 +442,11 @@ module design_1
         .m_axi_s2mm_wready(axi_dma_0_M_AXI_S2MM_WREADY),
         .m_axi_s2mm_wstrb(axi_dma_0_M_AXI_S2MM_WSTRB),
         .m_axi_s2mm_wvalid(axi_dma_0_M_AXI_S2MM_WVALID),
-        .m_axis_mm2s_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .m_axis_mm2s_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .m_axis_mm2s_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .m_axis_mm2s_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
+        .m_axis_mm2s_tdata(axi_dma_0_M_AXIS_MM2S1_TDATA),
+        .m_axis_mm2s_tkeep(axi_dma_0_M_AXIS_MM2S1_TKEEP),
+        .m_axis_mm2s_tlast(axi_dma_0_M_AXIS_MM2S1_TLAST),
+        .m_axis_mm2s_tready(axi_dma_0_M_AXIS_MM2S1_TREADY),
+        .m_axis_mm2s_tvalid(axi_dma_0_M_AXIS_MM2S1_TVALID),
         .mm2s_introut(axi_dma_0_mm2s_introut),
         .s2mm_introut(axi_dma_0_s2mm_introut),
         .s_axi_lite_aclk(processing_system7_0_FCLK_CLK0),
@@ -457,11 +466,11 @@ module design_1
         .s_axi_lite_wdata(smartconnect_0_M00_AXI_WDATA),
         .s_axi_lite_wready(smartconnect_0_M00_AXI_WREADY),
         .s_axi_lite_wvalid(smartconnect_0_M00_AXI_WVALID),
-        .s_axis_s2mm_tdata(total_link_ctrl_0_m00_axis_TDATA),
+        .s_axis_s2mm_tdata(axis_data_fifo_0_M_AXIS_TDATA),
         .s_axis_s2mm_tkeep({1'b1,1'b1,1'b1,1'b1}),
-        .s_axis_s2mm_tlast(total_link_ctrl_0_m00_axis_TLAST),
-        .s_axis_s2mm_tready(total_link_ctrl_0_m00_axis_TREADY),
-        .s_axis_s2mm_tvalid(total_link_ctrl_0_m00_axis_TVALID));
+        .s_axis_s2mm_tlast(axis_data_fifo_0_M_AXIS_TLAST),
+        .s_axis_s2mm_tready(axis_data_fifo_0_M_AXIS_TREADY),
+        .s_axis_s2mm_tvalid(axis_data_fifo_0_M_AXIS_TVALID));
   design_1_axi_dma_0_1 axi_dma_1
        (.axi_resetn(processing_system7_0_FCLK_RESET0_N),
         .m_axi_mm2s_aclk(processing_system7_0_FCLK_CLK0),
@@ -496,6 +505,7 @@ module design_1
         .m_axi_s2mm_wstrb(axi_dma_1_M_AXI_S2MM_WSTRB),
         .m_axi_s2mm_wvalid(axi_dma_1_M_AXI_S2MM_WVALID),
         .m_axis_mm2s_tdata(axi_dma_1_M_AXIS_MM2S_TDATA),
+        .m_axis_mm2s_tkeep(axi_dma_1_M_AXIS_MM2S_TKEEP),
         .m_axis_mm2s_tlast(axi_dma_1_M_AXIS_MM2S_TLAST),
         .m_axis_mm2s_tready(axi_dma_1_M_AXIS_MM2S_TREADY),
         .m_axis_mm2s_tvalid(axi_dma_1_M_AXIS_MM2S_TVALID),
@@ -557,6 +567,7 @@ module design_1
         .m_axi_s2mm_wstrb(axi_dma_2_M_AXI_S2MM_WSTRB),
         .m_axi_s2mm_wvalid(axi_dma_2_M_AXI_S2MM_WVALID),
         .m_axis_mm2s_tdata(axi_dma_2_M_AXIS_MM2S_TDATA),
+        .m_axis_mm2s_tkeep(axi_dma_2_M_AXIS_MM2S_TKEEP),
         .m_axis_mm2s_tlast(axi_dma_2_M_AXIS_MM2S_TLAST),
         .m_axis_mm2s_tready(axi_dma_2_M_AXIS_MM2S_TREADY),
         .m_axis_mm2s_tvalid(axi_dma_2_M_AXIS_MM2S_TVALID),
@@ -618,6 +629,7 @@ module design_1
         .m_axi_s2mm_wstrb(axi_dma_3_M_AXI_S2MM_WSTRB),
         .m_axi_s2mm_wvalid(axi_dma_3_M_AXI_S2MM_WVALID),
         .m_axis_mm2s_tdata(axi_dma_3_M_AXIS_MM2S_TDATA),
+        .m_axis_mm2s_tkeep(axi_dma_3_M_AXIS_MM2S_TKEEP),
         .m_axis_mm2s_tlast(axi_dma_3_M_AXIS_MM2S_TLAST),
         .m_axis_mm2s_tready(axi_dma_3_M_AXIS_MM2S_TREADY),
         .m_axis_mm2s_tvalid(axi_dma_3_M_AXIS_MM2S_TVALID),
@@ -813,6 +825,17 @@ module design_1
         .S07_AXI_wvalid(axi_dma_3_M_AXI_S2MM_WVALID),
         .aclk(processing_system7_0_FCLK_CLK0),
         .aresetn(processing_system7_0_FCLK_RESET0_N));
+  design_1_axis_data_fifo_0_0 axis_data_fifo_0
+       (.m_axis_tdata(axis_data_fifo_0_M_AXIS_TDATA),
+        .m_axis_tlast(axis_data_fifo_0_M_AXIS_TLAST),
+        .m_axis_tready(axis_data_fifo_0_M_AXIS_TREADY),
+        .m_axis_tvalid(axis_data_fifo_0_M_AXIS_TVALID),
+        .s_axis_aclk(processing_system7_0_FCLK_CLK0),
+        .s_axis_aresetn(processing_system7_0_FCLK_RESET0_N),
+        .s_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .s_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
+        .s_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
+        .s_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID));
   link7_imp_6D7VH2 link7
        (.channel(link0_channel),
         .clk_100M(processing_system7_0_FCLK_CLK0),
@@ -1078,6 +1101,49 @@ module design_1
         .S00_AXI_wvalid(processing_system7_0_M_AXI_GP0_WVALID),
         .aclk(processing_system7_0_FCLK_CLK0),
         .aresetn(processing_system7_0_FCLK_RESET0_N));
+  design_1_system_ila_0_0 system_ila_0
+       (.SLOT_0_AXIS_tdata(axi_dma_2_M_AXIS_MM2S_TDATA),
+        .SLOT_0_AXIS_tkeep(axi_dma_2_M_AXIS_MM2S_TKEEP),
+        .SLOT_0_AXIS_tlast(axi_dma_2_M_AXIS_MM2S_TLAST),
+        .SLOT_0_AXIS_tready(axi_dma_2_M_AXIS_MM2S_TREADY),
+        .SLOT_0_AXIS_tvalid(axi_dma_2_M_AXIS_MM2S_TVALID),
+        .SLOT_1_AXIS_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .SLOT_1_AXIS_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
+        .SLOT_1_AXIS_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
+        .SLOT_1_AXIS_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
+        .SLOT_2_AXIS_tdata(axi_dma_1_M_AXIS_MM2S_TDATA),
+        .SLOT_2_AXIS_tkeep(axi_dma_1_M_AXIS_MM2S_TKEEP),
+        .SLOT_2_AXIS_tlast(axi_dma_1_M_AXIS_MM2S_TLAST),
+        .SLOT_2_AXIS_tready(axi_dma_1_M_AXIS_MM2S_TREADY),
+        .SLOT_2_AXIS_tvalid(axi_dma_1_M_AXIS_MM2S_TVALID),
+        .SLOT_3_AXIS_tdata(axis_data_fifo_0_M_AXIS_TDATA),
+        .SLOT_3_AXIS_tlast(axis_data_fifo_0_M_AXIS_TLAST),
+        .SLOT_3_AXIS_tready(axis_data_fifo_0_M_AXIS_TREADY),
+        .SLOT_3_AXIS_tvalid(axis_data_fifo_0_M_AXIS_TVALID),
+        .SLOT_4_AXIS_tdata(total_link_ctrl_0_m01_axis_TDATA),
+        .SLOT_4_AXIS_tlast(total_link_ctrl_0_m01_axis_TLAST),
+        .SLOT_4_AXIS_tready(total_link_ctrl_0_m01_axis_TREADY),
+        .SLOT_4_AXIS_tvalid(total_link_ctrl_0_m01_axis_TVALID),
+        .SLOT_5_AXIS_tdata(total_link_ctrl_0_m02_axis_TDATA),
+        .SLOT_5_AXIS_tlast(total_link_ctrl_0_m02_axis_TLAST),
+        .SLOT_5_AXIS_tready(total_link_ctrl_0_m02_axis_TREADY),
+        .SLOT_5_AXIS_tvalid(total_link_ctrl_0_m02_axis_TVALID),
+        .SLOT_6_AXIS_tdata(total_link_ctrl_0_m03_axis_TDATA),
+        .SLOT_6_AXIS_tlast(total_link_ctrl_0_m03_axis_TLAST),
+        .SLOT_6_AXIS_tready(total_link_ctrl_0_m03_axis_TREADY),
+        .SLOT_6_AXIS_tvalid(total_link_ctrl_0_m03_axis_TVALID),
+        .SLOT_7_AXIS_tdata(axi_dma_3_M_AXIS_MM2S_TDATA),
+        .SLOT_7_AXIS_tkeep(axi_dma_3_M_AXIS_MM2S_TKEEP),
+        .SLOT_7_AXIS_tlast(axi_dma_3_M_AXIS_MM2S_TLAST),
+        .SLOT_7_AXIS_tready(axi_dma_3_M_AXIS_MM2S_TREADY),
+        .SLOT_7_AXIS_tvalid(axi_dma_3_M_AXIS_MM2S_TVALID),
+        .SLOT_8_AXIS_tdata(axi_dma_0_M_AXIS_MM2S1_TDATA),
+        .SLOT_8_AXIS_tkeep(axi_dma_0_M_AXIS_MM2S1_TKEEP),
+        .SLOT_8_AXIS_tlast(axi_dma_0_M_AXIS_MM2S1_TLAST),
+        .SLOT_8_AXIS_tready(axi_dma_0_M_AXIS_MM2S1_TREADY),
+        .SLOT_8_AXIS_tvalid(axi_dma_0_M_AXIS_MM2S1_TVALID),
+        .clk(processing_system7_0_FCLK_CLK0),
+        .resetn(processing_system7_0_FCLK_RESET0_N));
   design_1_total_link_ctrl_0_0 total_link_ctrl_0
        (.clk(processing_system7_0_FCLK_CLK0),
         .link7(total_link_ctrl_0_link7),
@@ -1085,10 +1151,10 @@ module design_1
         .link7_data(link0_data_out_1),
         .link7_err(link0_link_err),
         .link_err(total_link_ctrl_0_link_err),
-        .m00_axis_tdata(total_link_ctrl_0_m00_axis_TDATA),
-        .m00_axis_tlast(total_link_ctrl_0_m00_axis_TLAST),
-        .m00_axis_tready(total_link_ctrl_0_m00_axis_TREADY),
-        .m00_axis_tvalid(total_link_ctrl_0_m00_axis_TVALID),
+        .m00_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
+        .m00_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
+        .m00_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
+        .m00_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
         .m01_axis_tdata(total_link_ctrl_0_m01_axis_TDATA),
         .m01_axis_tlast(total_link_ctrl_0_m01_axis_TLAST),
         .m01_axis_tready(total_link_ctrl_0_m01_axis_TREADY),
@@ -1102,10 +1168,10 @@ module design_1
         .m03_axis_tready(total_link_ctrl_0_m03_axis_TREADY),
         .m03_axis_tvalid(total_link_ctrl_0_m03_axis_TVALID),
         .rstn(processing_system7_0_FCLK_RESET0_N),
-        .s00_axis_tdata(axi_dma_0_M_AXIS_MM2S_TDATA),
-        .s00_axis_tlast(axi_dma_0_M_AXIS_MM2S_TLAST),
-        .s00_axis_tready(axi_dma_0_M_AXIS_MM2S_TREADY),
-        .s00_axis_tvalid(axi_dma_0_M_AXIS_MM2S_TVALID),
+        .s00_axis_tdata(axi_dma_0_M_AXIS_MM2S1_TDATA),
+        .s00_axis_tlast(axi_dma_0_M_AXIS_MM2S1_TLAST),
+        .s00_axis_tready(axi_dma_0_M_AXIS_MM2S1_TREADY),
+        .s00_axis_tvalid(axi_dma_0_M_AXIS_MM2S1_TVALID),
         .s01_axis_tdata(axi_dma_1_M_AXIS_MM2S_TDATA),
         .s01_axis_tlast(axi_dma_1_M_AXIS_MM2S_TLAST),
         .s01_axis_tready(axi_dma_1_M_AXIS_MM2S_TREADY),

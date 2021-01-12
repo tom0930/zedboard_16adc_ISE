@@ -1,8 +1,8 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-| Date         : Wed Dec 23 15:52:17 2020
-| Host         : DESKTOP-U60VC6L running 64-bit major release  (build 9200)
+| Date         : Mon Jan 11 17:28:42 2021
+| Host         : DESKTOP-CUAMMK2 running 64-bit major release  (build 9200)
 | Command      : report_drc -file design_1_wrapper_drc_routed.rpt -pb design_1_wrapper_drc_routed.pb -rpx design_1_wrapper_drc_routed.rpx
 | Design       : design_1_wrapper
 | Device       : xc7z020clg484-1
@@ -36,7 +36,7 @@ Table of Contents
 -----------------
 RTSTAT-10#1 Warning
 No routable loads  
-30 net(s) have no routable loads. The problem bus(es) and/or net(s) are design_1_i/smartconnect_0/inst/m00_nodes/m00_ar_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m00_nodes/m00_aw_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m00_nodes/m00_b_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m00_nodes/m00_r_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m00_nodes/m00_w_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_b_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_ar_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_aw_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_r_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_w_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m02_nodes/m02_ar_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m02_nodes/m02_aw_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m02_nodes/m02_b_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m02_nodes/m02_r_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m02_nodes/m02_w_node/inst/mi_handler_m_sc_areset_pipe (the first 15 of 30 listed).
+55 net(s) have no routable loads. The problem bus(es) and/or net(s) are dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD6_RD/U_RD_FIFO/SUBCORE_FIFO.xsdbm_v3_0_0_rdfifo_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gr1.gr1_int.rfwft/aempty_fwft_i, dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg[2:0], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD7_CTL/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.UUT_MASTER/U_ICON_INTERFACE/U_CMD1/ctl_reg_en_2[1], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_capture[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_drck[0], dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_runtest[0], design_1_i/smartconnect_0/inst/m00_nodes/m00_ar_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_ar_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_aw_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_b_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_r_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m01_nodes/m01_w_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m02_nodes/m02_ar_node/inst/mi_handler_m_sc_areset_pipe, design_1_i/smartconnect_0/inst/m02_nodes/m02_aw_node/inst/mi_handler_m_sc_areset_pipe (the first 15 of 53 listed).
 Related violations: <none>
 
 REQP-181#1 Advisory

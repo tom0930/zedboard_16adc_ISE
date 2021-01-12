@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1608708581">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1610356902">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
@@ -121,8 +121,9 @@
   <BlockFileSet Type="BlockSrcs" Name="design_1_proc_sys_reset_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_8_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_s2p_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_total_link_ctrl_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_dma_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_dma_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_dma_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_total_link_ctrl_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_system_ila_0_0"/>
 </GenRun>

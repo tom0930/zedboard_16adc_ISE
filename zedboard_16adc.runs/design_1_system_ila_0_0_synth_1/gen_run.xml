@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="design_1_system_ila_0_0_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1598604295">
+<GenRun Id="design_1_system_ila_0_0_synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1610356003">
   <File Type="PA-TCL" Name="design_1_system_ila_0_0.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_system_ila_0_0_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_system_ila_0_0_reports.tcl"/>
@@ -37,6 +37,12 @@
     <Config>
       <Option Name="TopModule" Val="design_1_system_ila_0_0"/>
       <Option Name="UseBlackboxStub" Val="1"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Sun Dec 27 11:51:37 2020
+# Process ID: 31888
+# Current directory: Z:/zed16adc20181/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: Z:/zed16adc20181/webtalk/webtalk.log
+# Journal file: Z:/zed16adc20181/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

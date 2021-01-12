@@ -1,4 +1,4 @@
-// (c) Copyright 1995-2020 Xilinx, Inc. All rights reserved.
+// (c) Copyright 1995-2021 Xilinx, Inc. All rights reserved.
 // 
 // This file contains confidential and proprietary information
 // of Xilinx, Inc. and is protected under U.S. and
@@ -48,32 +48,194 @@
 
 
 // IP VLNV: xilinx.com:ip:system_ila:1.1
-// IP Revision: 3
+// IP Revision: 4
 
 `timescale 1ns/1ps
 
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_system_ila_0_0 (
   clk,
-  probe0,
-  probe1,
-  probe2,
-  probe3
+  SLOT_0_AXIS_tdata,
+  SLOT_0_AXIS_tkeep,
+  SLOT_0_AXIS_tlast,
+  SLOT_0_AXIS_tvalid,
+  SLOT_0_AXIS_tready,
+  SLOT_1_AXIS_tdata,
+  SLOT_1_AXIS_tlast,
+  SLOT_1_AXIS_tvalid,
+  SLOT_1_AXIS_tready,
+  SLOT_2_AXIS_tdata,
+  SLOT_2_AXIS_tkeep,
+  SLOT_2_AXIS_tlast,
+  SLOT_2_AXIS_tvalid,
+  SLOT_2_AXIS_tready,
+  SLOT_3_AXIS_tdata,
+  SLOT_3_AXIS_tlast,
+  SLOT_3_AXIS_tvalid,
+  SLOT_3_AXIS_tready,
+  SLOT_4_AXIS_tdata,
+  SLOT_4_AXIS_tlast,
+  SLOT_4_AXIS_tvalid,
+  SLOT_4_AXIS_tready,
+  SLOT_5_AXIS_tdata,
+  SLOT_5_AXIS_tlast,
+  SLOT_5_AXIS_tvalid,
+  SLOT_5_AXIS_tready,
+  SLOT_6_AXIS_tdata,
+  SLOT_6_AXIS_tlast,
+  SLOT_6_AXIS_tvalid,
+  SLOT_6_AXIS_tready,
+  SLOT_7_AXIS_tdata,
+  SLOT_7_AXIS_tkeep,
+  SLOT_7_AXIS_tlast,
+  SLOT_7_AXIS_tvalid,
+  SLOT_7_AXIS_tready,
+  SLOT_8_AXIS_tdata,
+  SLOT_8_AXIS_tkeep,
+  SLOT_8_AXIS_tlast,
+  SLOT_8_AXIS_tvalid,
+  SLOT_8_AXIS_tready,
+  resetn
 );
 
-(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0" *)
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.clk, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, ASSOCIATED_BUSIF SLOT_0_AXIS:SLOT_1_AXIS:SLOT_2_AXIS:SLOT_3_AXIS:SLOT_4_AXIS:SLOT_5_AXIS:SLOT_6_AXIS:SLOT_7_AXIS:SLOT_8_AXIS, ASSOCIATED_RESET resetn, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.clk CLK" *)
 input wire clk;
-input wire [0 : 0] probe0;
-input wire [0 : 0] probe1;
-input wire [0 : 0] probe2;
-input wire [0 : 0] probe3;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TDATA" *)
+input wire [31 : 0] SLOT_0_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TKEEP" *)
+input wire [3 : 0] SLOT_0_AXIS_tkeep;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TLAST" *)
+input wire SLOT_0_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TVALID" *)
+input wire SLOT_0_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_0_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_0_AXIS TREADY" *)
+input wire SLOT_0_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_1_AXIS TDATA" *)
+input wire [31 : 0] SLOT_1_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_1_AXIS TLAST" *)
+input wire SLOT_1_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_1_AXIS TVALID" *)
+input wire SLOT_1_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_1_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_1_AXIS TREADY" *)
+input wire SLOT_1_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_2_AXIS TDATA" *)
+input wire [31 : 0] SLOT_2_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_2_AXIS TKEEP" *)
+input wire [3 : 0] SLOT_2_AXIS_tkeep;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_2_AXIS TLAST" *)
+input wire SLOT_2_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_2_AXIS TVALID" *)
+input wire SLOT_2_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_2_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_2_AXIS TREADY" *)
+input wire SLOT_2_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TDATA" *)
+input wire [31 : 0] SLOT_3_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TLAST" *)
+input wire SLOT_3_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TVALID" *)
+input wire SLOT_3_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_3_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_3_AXIS TREADY" *)
+input wire SLOT_3_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TDATA" *)
+input wire [31 : 0] SLOT_4_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TLAST" *)
+input wire SLOT_4_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TVALID" *)
+input wire SLOT_4_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_4_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_4_AXIS TREADY" *)
+input wire SLOT_4_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_5_AXIS TDATA" *)
+input wire [31 : 0] SLOT_5_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_5_AXIS TLAST" *)
+input wire SLOT_5_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_5_AXIS TVALID" *)
+input wire SLOT_5_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_5_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_5_AXIS TREADY" *)
+input wire SLOT_5_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_6_AXIS TDATA" *)
+input wire [31 : 0] SLOT_6_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_6_AXIS TLAST" *)
+input wire SLOT_6_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_6_AXIS TVALID" *)
+input wire SLOT_6_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_6_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 0, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_6_AXIS TREADY" *)
+input wire SLOT_6_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_7_AXIS TDATA" *)
+input wire [31 : 0] SLOT_7_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_7_AXIS TKEEP" *)
+input wire [3 : 0] SLOT_7_AXIS_tkeep;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_7_AXIS TLAST" *)
+input wire SLOT_7_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_7_AXIS TVALID" *)
+input wire SLOT_7_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_7_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_7_AXIS TREADY" *)
+input wire SLOT_7_AXIS_tready;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_8_AXIS TDATA" *)
+input wire [31 : 0] SLOT_8_AXIS_tdata;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_8_AXIS TKEEP" *)
+input wire [3 : 0] SLOT_8_AXIS_tkeep;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_8_AXIS TLAST" *)
+input wire SLOT_8_AXIS_tlast;
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_8_AXIS TVALID" *)
+input wire SLOT_8_AXIS_tvalid;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME SLOT_8_AXIS, TDATA_NUM_BYTES 4, TDEST_WIDTH 0, TID_WIDTH 0, TUSER_WIDTH 0, HAS_TREADY 1, HAS_TSTRB 0, HAS_TKEEP 1, HAS_TLAST 1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_1_processing_system7_0_0_FCLK_CLK0, LAYERED_METADATA undef, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:interface:axis:1.0 SLOT_8_AXIS TREADY" *)
+input wire SLOT_8_AXIS_tready;
+(* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.resetn, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
+(* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.resetn RST" *)
+input wire resetn;
 
   bd_f60c inst (
     .clk(clk),
-    .probe0(probe0),
-    .probe1(probe1),
-    .probe2(probe2),
-    .probe3(probe3)
+    .SLOT_0_AXIS_tdata(SLOT_0_AXIS_tdata),
+    .SLOT_0_AXIS_tkeep(SLOT_0_AXIS_tkeep),
+    .SLOT_0_AXIS_tlast(SLOT_0_AXIS_tlast),
+    .SLOT_0_AXIS_tvalid(SLOT_0_AXIS_tvalid),
+    .SLOT_0_AXIS_tready(SLOT_0_AXIS_tready),
+    .SLOT_1_AXIS_tdata(SLOT_1_AXIS_tdata),
+    .SLOT_1_AXIS_tlast(SLOT_1_AXIS_tlast),
+    .SLOT_1_AXIS_tvalid(SLOT_1_AXIS_tvalid),
+    .SLOT_1_AXIS_tready(SLOT_1_AXIS_tready),
+    .SLOT_2_AXIS_tdata(SLOT_2_AXIS_tdata),
+    .SLOT_2_AXIS_tkeep(SLOT_2_AXIS_tkeep),
+    .SLOT_2_AXIS_tlast(SLOT_2_AXIS_tlast),
+    .SLOT_2_AXIS_tvalid(SLOT_2_AXIS_tvalid),
+    .SLOT_2_AXIS_tready(SLOT_2_AXIS_tready),
+    .SLOT_3_AXIS_tdata(SLOT_3_AXIS_tdata),
+    .SLOT_3_AXIS_tlast(SLOT_3_AXIS_tlast),
+    .SLOT_3_AXIS_tvalid(SLOT_3_AXIS_tvalid),
+    .SLOT_3_AXIS_tready(SLOT_3_AXIS_tready),
+    .SLOT_4_AXIS_tdata(SLOT_4_AXIS_tdata),
+    .SLOT_4_AXIS_tlast(SLOT_4_AXIS_tlast),
+    .SLOT_4_AXIS_tvalid(SLOT_4_AXIS_tvalid),
+    .SLOT_4_AXIS_tready(SLOT_4_AXIS_tready),
+    .SLOT_5_AXIS_tdata(SLOT_5_AXIS_tdata),
+    .SLOT_5_AXIS_tlast(SLOT_5_AXIS_tlast),
+    .SLOT_5_AXIS_tvalid(SLOT_5_AXIS_tvalid),
+    .SLOT_5_AXIS_tready(SLOT_5_AXIS_tready),
+    .SLOT_6_AXIS_tdata(SLOT_6_AXIS_tdata),
+    .SLOT_6_AXIS_tlast(SLOT_6_AXIS_tlast),
+    .SLOT_6_AXIS_tvalid(SLOT_6_AXIS_tvalid),
+    .SLOT_6_AXIS_tready(SLOT_6_AXIS_tready),
+    .SLOT_7_AXIS_tdata(SLOT_7_AXIS_tdata),
+    .SLOT_7_AXIS_tkeep(SLOT_7_AXIS_tkeep),
+    .SLOT_7_AXIS_tlast(SLOT_7_AXIS_tlast),
+    .SLOT_7_AXIS_tvalid(SLOT_7_AXIS_tvalid),
+    .SLOT_7_AXIS_tready(SLOT_7_AXIS_tready),
+    .SLOT_8_AXIS_tdata(SLOT_8_AXIS_tdata),
+    .SLOT_8_AXIS_tkeep(SLOT_8_AXIS_tkeep),
+    .SLOT_8_AXIS_tlast(SLOT_8_AXIS_tlast),
+    .SLOT_8_AXIS_tvalid(SLOT_8_AXIS_tvalid),
+    .SLOT_8_AXIS_tready(SLOT_8_AXIS_tready),
+    .resetn(resetn)
   );
 endmodule

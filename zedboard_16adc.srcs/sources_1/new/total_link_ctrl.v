@@ -80,6 +80,7 @@ module total_link_ctrl(
 
     
     reg [11:0] data_mem [4095:0];
+    reg [3:0] cnt;
     
     always @ (posedge clk) begin
         data_mem [{4'd7, 3'd0, link7_channel}] <= link7_data[11:0];
@@ -100,7 +101,8 @@ module total_link_ctrl(
             m00_axis_tvalid <= 0;
         end else begin
             s00_axis_tready <= m00_axis_tready;
-            m00_axis_tdata <= {4'b0000, data_mem[s00_axis_tdata[31:16]], 4'b0000, data_mem[s00_axis_tdata[15:0]]};
+//            m00_axis_tdata <= {4'b0000, data_mem[s00_axis_tdata[31:16]], 4'b0000, data_mem[s00_axis_tdata[15:0]]};
+            m00_axis_tdata <= s00_axis_tdata;
             m00_axis_tlast <= s00_axis_tlast;
             m00_axis_tvalid <= s00_axis_tvalid;
         end
@@ -114,7 +116,8 @@ module total_link_ctrl(
             m01_axis_tvalid <= 0;
         end else begin
             s01_axis_tready <= m01_axis_tready;
-            m01_axis_tdata <= {4'b0000, data_mem[s01_axis_tdata[31:16]], 4'b0000, data_mem[s01_axis_tdata[15:0]]};
+//            m01_axis_tdata <= {4'b0000, data_mem[s01_axis_tdata[31:16]], 4'b0000, data_mem[s01_axis_tdata[15:0]]};
+            m01_axis_tdata <= s01_axis_tdata;
             m01_axis_tlast <= s01_axis_tlast;
             m01_axis_tvalid <= s01_axis_tvalid;
         end
@@ -128,7 +131,8 @@ module total_link_ctrl(
             m02_axis_tvalid <= 0;
         end else begin
             s02_axis_tready <= m02_axis_tready;
-            m02_axis_tdata <= {4'b0000, data_mem[s02_axis_tdata[31:16]], 4'b0000, data_mem[s02_axis_tdata[15:0]]};
+//            m02_axis_tdata <= {4'b0000, data_mem[s02_axis_tdata[31:16]], 4'b0000, data_mem[s02_axis_tdata[15:0]]};
+            m02_axis_tdata <= s02_axis_tdata;
             m02_axis_tlast <= s02_axis_tlast;
             m02_axis_tvalid <= s02_axis_tvalid;
         end
@@ -142,7 +146,8 @@ module total_link_ctrl(
             m03_axis_tvalid <= 0;
         end else begin
             s03_axis_tready <= m03_axis_tready;
-            m03_axis_tdata <= {4'b0000, data_mem[s03_axis_tdata[31:16]], 4'b0000, data_mem[s03_axis_tdata[15:0]]};
+//            m03_axis_tdata <= {4'b0000, data_mem[s03_axis_tdata[31:16]], 4'b0000, data_mem[s03_axis_tdata[15:0]]};
+            m03_axis_tdata <= s03_axis_tdata;
             m03_axis_tlast <= s03_axis_tlast;
             m03_axis_tvalid <= s03_axis_tvalid;
         end
